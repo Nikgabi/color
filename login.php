@@ -45,11 +45,14 @@
     <input  type="text" name="email" placeholder="Δώστε email" size="30"><br><br>
     <label  for="password">Κωδικός πρόσβασης</label><br>
     <input  type="password" name="password" placeholder="Δώστε password"><br><br>
+	<button id="submitBtn1" class="w3-btn " type="submit" value="Είσοδος" name="submitBtn1" style="background-color: rgb(162,235,182) ;" >Είσοδος</button><br><br>
+	<a style="color:blue;" href="password_reset.php">Forgot Password ?</a><br><br>
+	<p>Δεν πήρες το mail επιβεβαίωσης ?</p><a style="color:red;" href="resend_mail.php">Resent verification mail</a>
     
-	</select><br><br>
+	<br><br>
 	
     
-    <button id="submitBtn1" class="w3-btn " type="submit" value="Είσοδος" name="submitBtn1" style="background-color: rgb(162,235,182) ;" >Είσοδος</button><br><br>
+    
 	
 	
 </form>

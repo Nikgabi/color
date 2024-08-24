@@ -91,8 +91,18 @@
 
 <div id = container ><br><br><br><br>
 <div class="w3-card-4" style="background-color: rgb(237,242,239);">
+<?php
+	if(isset($_SESSION['status'])){
+		?>
+	<h3 style="color:red"><?= $_SESSION['status']; ?></h3>';
+	<?php 
+		unset($_SESSION['status']);	
+	}
+?>	
 <form name="reg_form"  action="insert_new_user.php" method="POST" onsubmit="return FormValidate()">
+
     <label ><h2 style="font-weight: bold ;">Εγγραφή Νέου Χρήστη</h2></label><br>
+
 	<label for="name" class="w3-row">Nickname</label><br>
     <input  type="text" name="name" placeholder="Δώστε το nickname σας (το όνομα που θα έχετε)" size="50"><br><br>
     <label for="email" class="w3-row">E-mail</label><br>
