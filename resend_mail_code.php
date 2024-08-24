@@ -29,10 +29,10 @@
         $mail->isHTML(true);
         $mail->Subject = 'Resend Email Verification from ygeiafirst.net';
         $email_template = "
-            <h2>Κάνατε εγγραφή στο ygeiafirst.net</h2>
-            <h5>Κάνετε επιβεβαίωση στο mail σας για να κάνετε είσοδο κάνοντας κλίκ στο κάτωθι Link</h5>
+            <h2>Resent mail verification from ygeiafirst.net</h2>
+            <h5>You must click the Link below</h5>
             <br><br>
-            <a href='http://localhost/ptyxiaki/verify.php?token=$verify_token'>click Me</a>
+            <a href='https://ygeiafirst.net/verify.php?token=$verify_token'>click Me</a>
         ";
         $mail->Body = $email_template;
 
