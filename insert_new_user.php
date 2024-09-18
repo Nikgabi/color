@@ -29,10 +29,10 @@ function sendmail_verify($name, $email, $verify_token) {
         $mail->isHTML(true);
         $mail->Subject = 'Email Verification from ygeiafirst.net';
         $email_template = "
-            <h2>You have registered to ygeiafirst.net</h2>
-            <h5>You must click the Link below</h5>
+            <h2>Κάνατε εγγραφή στο ygeiafirst.net</h2>
+            <h5>Κάνετε επιβεβαίωση στο mail σας για να κάνετε είσοδο κάνοντας κλίκ στο κάτωθι Link</h5>
             <br><br>
-            <a href='https://ygeiafirst.net/verify.php?token=$verify_token'>click Me</a>
+            <a href='http://localhost/ptyxiaki/verify.php?token=$verify_token'>click Me</a>
         ";
         $mail->Body = $email_template;
 
@@ -63,6 +63,12 @@ if (isset($_POST['SubmitBtn'])) {
             $query_run = mysqli_query($con, $query);
 
             if ($query_run) {
+				$_SESSION['id_user'] = mysqli_insert_id($con); // Αναθέτουμε το ID του χρήστη που μόλις δημιουργήθηκε
+                $_SESSION['name'] = $name;
+                $_SESSION['email'] = $email;
+                $_SESSION['role'] = $role;
+                $_SESSION['speciality'] = $speciality;
+				
                 sendmail_verify($name, $email, $verify_token);
                 $_SESSION['status'] = "Η εγγραφή σας έγινε. Για να ολοκληρωθεί επιβεβαιώστε το email σας ακολουθώντας τον σύνδεσμο που σας στάλθηκε";
                 header('Location: login.php');

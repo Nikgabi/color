@@ -25,6 +25,8 @@
                     $_SESSION['status'] = "Κάνατε πετυχημένη είσοδο";
                     $_SESSION['email']=$row['email'];
                     $_SESSION['id_user']=$row['id_user'];
+					$_SESSION['role'] = $row['role'];
+					$_SESSION['speciality'] = $row['eidikotita']; 
                     header("Location:index.php");
                     exit(0);    
                 } else {

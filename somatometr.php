@@ -1,9 +1,58 @@
-<!DOCTYPE html>
 <?php
-	session_start();
-	include ('connection.php');
-	?>
+include('connection.php');
+session_start();
 
+// Αρχικοποίηση μεταβλητών για τα αποτελέσματα
+$bmi = $bsa = $bmr = $ibw = $abw = null;
+
+if (isset($_POST['submit'])) {
+    // Λήψη των δεδομένων από τη φόρμα
+    $height = $_POST['height'];
+    $weight = $_POST['weight'];
+    $waist = $_POST['waist'];
+    $age = $_POST['age'];
+    $gender = $_POST['gender'];
+	$user_id= $_SESSION['id_user'];
+
+    // Υπολογισμός BMI
+    $height_m = $height / 100; // Μετατροπή σε μέτρα
+    $bmi = $weight / ($height_m * $height_m);
+
+    // Υπολογισμός BSA (με τον τύπο Du Bois)
+    $bsa = 0.007184 * pow($weight, 0.425) * pow($height, 0.725);
+
+    // Υπολογισμός BMR (Mifflin-St Jeor)
+    if ($gender == 'male') {
+        $bmr = (10 * $weight) + (6.25 * $height) - (5 * $age) + 5;
+    } else {
+        $bmr = (10 * $weight) + (6.25 * $height) - (5 * $age) - 161;
+    }
+
+    // Υπολογισμός Ύψους σε ίντσες
+    $height_in_inches = $height / 2.54;
+
+    // Υπολογισμός IBW (Ιδανικό Βάρος)
+    if ($gender == 'male') {
+        $ibw = 50 + 2.3 * ($height_in_inches - 60);
+    } else {
+        $ibw = 45.5 + 2.3 * ($height_in_inches - 60);
+    }
+
+    // Υπολογισμός ABW (Προσαρμοσμένο Βάρος)
+    if ($weight > 1.3 * $ibw) {
+        $abw = $ibw + 0.4 * ($weight - $ibw);
+    } else {
+        $abw = $weight; // Αν δεν είναι υπέρβαρος, το ABW είναι ίσο με το πραγματικό βάρος
+    }
+
+    // Αποθήκευση δεδομένων στη βάση δεδομένων
+    $query = "INSERT INTO health_data (user_id,height, weight, waist, age, gender, bmi, bsa, bmr, ibw, abw) 
+              VALUES ('$user_id','$height', '$weight', '$waist', '$age', '$gender', '$bmi', '$bsa', '$bmr', '$ibw', '$abw')";
+$query_run = mysqli_query($con, $query);}
+	
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
   <!-- Basic -->
@@ -16,7 +65,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Resend Mail Form</title>
+  <title>Medical Calculations</title>
 
 
   <!-- bootstrap core css -->
@@ -71,7 +120,7 @@
           </div>
         </div>
       </div>
-      <div class="header_bottom">
+	<div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="#">
@@ -108,18 +157,39 @@
                 </ul>
               </div>
 			  <div class="quote_btn-container">
-                <a  href="login.php">
+			  <?php 
+				if(!isset($_SESSION['id_user'])){
+                echo '<a  href="login.php">
                   <i class="fa fa-user" aria-hidden="true"></i>
                   <span>
                     Login
                   </span>
-                </a>
-                <a  href="register.php">
+                </a>';}
+				else{
+					echo '<a  href="logout.php">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <span>
+                    Logout
+                  </span>
+                </a>';
+				} ?>
+				<?php 
+				if(!isset($_SESSION['id_user'])){
+                echo '<a  href="register.php">
                   <i class="fa fa-user" aria-hidden="true"></i>
                   <span>
                     Sign Up
                   </span>
-                </a>
+                </a>';}
+				else {
+					echo '<a  href="#">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <span>' ?>
+                    <?php echo $_SESSION['email'];
+                 echo '</span>
+                </a>';  } ?>
+					
+				
 				</div>
               
             </div>
@@ -128,36 +198,54 @@
       </div>
     </header>
     <!-- end header section -->
-  </div>
+  </div>  
+  
+  <div id = container class="layout_padding-bottom">
+	<div class="w3-card-4" style="background-color: rgb(240,240,240); text-align:center;">
+  
+	<h2>Συμπλήρωσε τα στοιχεία σου</h2>
+    <form action="" method="POST">
+        <label for="height">Ύψος (cm):</label>
+        <input type="number" name="height" required>
 
-<div id = container ><br><br><br><br>
-<div class="w3-card-4" style="background-color: rgb(240,240,240);">
-<?php
-	if(isset($_SESSION['status'])){
-		?>
-	<h3 style="color:red"><?= $_SESSION['status']; ?></h3>';
-	<?php 
-		unset($_SESSION['status']);	
-	}
-?>	
+        <label for="weight">Βάρος (kg):</label>
+        <input type="number" name="weight" required>
 
-<form name="resend_mail_form"  action="resend_mail_code.php" method="POST" >
-    <label ><h2 style="font-weight: bold ;">Πληκτρολόγησε το mail σου</h2></label><br>
-    <label for="email" class="w3-row">E-mail</label><br>
-    <input  type="text" name="email" placeholder="Δώστε email" size="30"><br><br>
-    
+        <label for="waist">Περίμετρος μέσης (cm):</label>
+        <input type="number" name="waist" required>
+
+        <label for="age">Ηλικία:</label>
+        <input type="number" name="age" required>
+
+        <label for="gender">Φύλο:</label>
+        <select name="gender" required>
+            <option value="male">Άνδρας</option>
+            <option value="female">Γυναίκα</option>
+        </select><br>
+
+        <input type="submit" name="submit" value="Υπολογισμός" style="background-color: rgb(162,235,182) ;"><br>
+		
+		<?php if (isset($_POST['submit'])): ?>
+        <h2>Αποτελέσματα</h2>
+        <p><strong>BMI:</strong> <?php echo number_format($bmi, 2); ?></p>
+        <p><strong>BSA:</strong> <?php echo number_format($bsa, 2); ?> m²</p>
+        <p><strong>BMR:</strong> <?php echo number_format($bmr, 2); ?> kcal/day</p>
+        <p><strong>Ιδανικό Βάρος (IBW):</strong> <?php echo number_format($ibw, 2); ?> kg</p>
+        <p><strong>Προσαρμοσμένο Βάρος (ABW):</strong> <?php echo number_format($abw, 2); ?> kg</p>
+    <?php endif; ?>
 	
-    
-    <button id="submitBtn2" class="w3-btn " type="submit" value="resend" name="submitBtn2" style="background-color: rgb(162,235,182) ;" >Resend mail</button><br><br>
-	
-	
-</form>
-
-
-
-
-
-<!-- footer section -->
+	<button style="background-color: rgb(162,235,182) ;"><a href="calculation.php">
+              Πίσω
+            </a></button><br>
+		
+    </form>	
+  
+	</div>
+	</div>
+  
+  
+  
+  <!-- footer section -->
   <footer class="footer_section">
     <div class="container">
       <p>
@@ -185,4 +273,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
+  
   </html>
