@@ -32,7 +32,7 @@ function sendmail_verify($name, $email, $verify_token) {
             <h2>Κάνατε εγγραφή στο ygeiafirst.net</h2>
             <h5>Κάνετε επιβεβαίωση στο mail σας για να κάνετε είσοδο κάνοντας κλίκ στο κάτωθι Link</h5>
             <br><br>
-            <a href='http://localhost/ptyxiaki/verify.php?token=$verify_token'>click Me</a>
+            <a href='https://ygeiafirst.net/verify.php?token=$verify_token'>click Me</a>
         ";
         $mail->Body = $email_template;
 
