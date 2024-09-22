@@ -29,8 +29,8 @@ function sendmail_verify($name, $email, $verify_token) {
         $mail->isHTML(true);
         $mail->Subject = 'Email Verification from ygeiafirst.net';
         $email_template = "
-            <h2>Κάνατε εγγραφή στο ygeiafirst.net</h2>
-            <h5>Κάνετε επιβεβαίωση στο mail σας για να κάνετε είσοδο κάνοντας κλίκ στο κάτωθι Link</h5>
+            <h2>You have registered at ygeiafirst.net</h2>
+            <h5>Confirm your email to log in by clicking on the link below</h5>
             <br><br>
             <a href='https://ygeiafirst.net/verify.php?token=$verify_token'>click Me</a>
         ";
