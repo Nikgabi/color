@@ -3,7 +3,7 @@ include('connection.php');
 session_start();
 
 // Αρχικοποίηση μεταβλητών για τα αποτελέσματα
-$bmi = $bsa = $bmr = $ibw = $abw = null;
+$bmi = $bsa = $bmr = $ibw = $abw = $rfm = null;
 
 if (isset($_POST['submit'])) {
     // Λήψη των δεδομένων από τη φόρμα
@@ -27,6 +27,13 @@ if (isset($_POST['submit'])) {
     } else {
         $bmr = (10 * $weight) + (6.25 * $height) - (5 * $age) - 161;
     }
+	
+	// Υπολογισμός RFM
+    if ($gender == 'male') {
+        $rfm = 64 - (20 * $height/$waist);
+    } else {
+        $rfm = 64 - (20 * $height/$waist) + 12;
+    }
 
     // Υπολογισμός Ύψους σε ίντσες
     $height_in_inches = $height / 2.54;
@@ -46,8 +53,8 @@ if (isset($_POST['submit'])) {
     }
 
     // Αποθήκευση δεδομένων στη βάση δεδομένων
-    $query = "INSERT INTO health_data (user_id,height, weight, waist, age, gender, bmi, bsa, bmr, ibw, abw) 
-              VALUES ('$user_id','$height', '$weight', '$waist', '$age', '$gender', '$bmi', '$bsa', '$bmr', '$ibw', '$abw')";
+    $query = "INSERT INTO health_data (user_id,height, weight, waist, age, gender, bmi, bsa, bmr, ibw, abw , rfm) 
+              VALUES ('$user_id','$height', '$weight', '$waist', '$age', '$gender', '$bmi', '$bsa', '$bmr', '$ibw', '$abw' , '$rfm')";
 $query_run = mysqli_query($con, $query);}
 	
 ?>
@@ -226,10 +233,11 @@ $query_run = mysqli_query($con, $query);}
         <input type="submit" name="submit" value="Υπολογισμός" style="background-color: rgb(162,235,182) ;"><br>
 		
 		<?php if (isset($_POST['submit'])): ?>
-        <h2>Αποτελέσματα</h2>
-        <p><strong>BMI:</strong> <?php echo number_format($bmi, 2); ?></p>
+        <h2>Αποτελέσματα ΒΜΙ (Body Mass Index) BSA (Body Surface Area) BMR (Basal Metabolic Rate) κλπ </h2>
+        <p><strong>BMI:</strong> <?php echo number_format($bmi, 2); ?> Φυσιολογικές τιμές 18.5 έως 24.9 Υπέρβαρος 25 έως 29.9 Παχύσαρκος >=30</p>
         <p><strong>BSA:</strong> <?php echo number_format($bsa, 2); ?> m²</p>
         <p><strong>BMR:</strong> <?php echo number_format($bmr, 2); ?> kcal/day</p>
+		<p><strong>(Related Fat Mass) RFM:</strong> <?php echo number_format($rfm, 2); ?> Παχυσαρκια για άνδρες > 22.8 , για γυναίκες 33.9 </p>
         <p><strong>Ιδανικό Βάρος (IBW):</strong> <?php echo number_format($ibw, 2); ?> kg</p>
         <p><strong>Προσαρμοσμένο Βάρος (ABW):</strong> <?php echo number_format($abw, 2); ?> kg</p>
     <?php endif; ?>

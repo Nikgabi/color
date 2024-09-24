@@ -175,7 +175,7 @@
             echo '<a href="somatometr.php">
               Σωματομετρικά στοιχεία
             </a>
-			<a href="under_conSTR.php">
+			<a href="under_constr.php">
               Καρδιοαγγειακός κίνδυνος
             </a>
 			<a href="under_constr.php">
