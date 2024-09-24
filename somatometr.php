@@ -51,10 +51,16 @@ if (isset($_POST['submit'])) {
     } else {
         $abw = $weight; // Αν δεν είναι υπέρβαρος, το ABW είναι ίσο με το πραγματικό βάρος
     }
+	
+	// Υπολογισμός ETD
+    $etd = ($height / 10) + 4;
+	
+	// Υπολογισμός Tidal Volume
+    $tv = $ibw * 7;
 
     // Αποθήκευση δεδομένων στη βάση δεδομένων
-    $query = "INSERT INTO health_data (user_id,height, weight, waist, age, gender, bmi, bsa, bmr, ibw, abw , rfm) 
-              VALUES ('$user_id','$height', '$weight', '$waist', '$age', '$gender', '$bmi', '$bsa', '$bmr', '$ibw', '$abw' , '$rfm')";
+    $query = "INSERT INTO health_data (user_id,height, weight, waist, age, gender, bmi, bsa, bmr, ibw, abw , rfm , etd , tv) 
+              VALUES ('$user_id','$height', '$weight', '$waist', '$age', '$gender', '$bmi', '$bsa', '$bmr', '$ibw', '$abw' , '$rfm' , '$etd' , '$tv')";
 $query_run = mysqli_query($con, $query);}
 	
 ?>
@@ -237,9 +243,11 @@ $query_run = mysqli_query($con, $query);}
         <p><strong>BMI:</strong> <?php echo number_format($bmi, 2); ?> Φυσιολογικές τιμές 18.5 έως 24.9 Υπέρβαρος 25 έως 29.9 Παχύσαρκος >=30</p>
         <p><strong>BSA:</strong> <?php echo number_format($bsa, 2); ?> m²</p>
         <p><strong>BMR:</strong> <?php echo number_format($bmr, 2); ?> kcal/day</p>
-		<p><strong>(Related Fat Mass) RFM:</strong> <?php echo number_format($rfm, 2); ?> Παχυσαρκια για άνδρες > 22.8 , για γυναίκες 33.9 </p>
+		<p><strong>Related Fat Mass (RFM):</strong> <?php echo number_format($rfm, 2); ?> Παχυσαρκια για άνδρες > 22.8 , για γυναίκες 33.9 </p>
         <p><strong>Ιδανικό Βάρος (IBW):</strong> <?php echo number_format($ibw, 2); ?> kg</p>
         <p><strong>Προσαρμοσμένο Βάρος (ABW):</strong> <?php echo number_format($abw, 2); ?> kg</p>
+		<p><strong>Endotracheal Tube Deapth (ETD):</strong> <?php echo number_format($etd, 0); ?> cm</p>
+		<p><strong>Tidal Volume - Όγκος στον αναπνευστήρα (TV):</strong> <?php echo number_format($tv, 0); ?> ml</p>
     <?php endif; ?>
 	
 	<button style="background-color: rgb(162,235,182) ;"><a href="calculation.php">
