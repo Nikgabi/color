@@ -32,7 +32,7 @@ function send_password_reset($get_name,$get_email,$token){
             <h2>Your password reset Link from ygeiafirst.net</h2>
             <h5>You receive this email to reset your password from ygeiafirst.net</h5>
             <br><br>
-            <a href='http://ygeiafirst.net/change_password.php?token=$token&email=$get_email'>click Me</a>
+            <a href='https://ygeiafirst.net/change_password.php?token=$token&email=$get_email'>click Me</a>
         ";
         $mail->Body = $email_template;
 
