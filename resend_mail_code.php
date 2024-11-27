@@ -32,7 +32,7 @@
             <h2>You have registered at ygeiafirst.net</h2>
             <h5>Confirm your email to log in by clicking on the link below</h5>
             <br><br>
-            <a href='http://ygeiafirst.net/verify.php?token=$verify_token'>click Me</a>
+            <a href='https://ygeiafirst.net/verify.php?token=$verify_token'>click Me</a>
         ";
         $mail->Body = $email_template;
 
