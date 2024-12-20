@@ -1,13 +1,13 @@
 <?php
 include('connection.php');
 session_start();
-
+/*
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
-require 'vendor/autoload.php';
+require 'vendor/autoload.php'; */
 
 function test_input($data) {
     $data = trim($data);
@@ -15,7 +15,7 @@ function test_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-
+/*
 function sendmail_verify($name, $email, $verify_token) {
     $mail = new PHPMailer(true);
 
@@ -47,7 +47,7 @@ function sendmail_verify($name, $email, $verify_token) {
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
-}
+} */
 
 if (isset($_POST['SubmitBtn'])) {
     $name = test_input($_POST['name']);
@@ -71,8 +71,8 @@ if (isset($_POST['SubmitBtn'])) {
 
             if ($query_run) {
                 $_SESSION['id_user'] = mysqli_insert_id($con);
-                sendmail_verify($name, $email, $verify_token);
-                $_SESSION['status'] = "Η εγγραφή σας έγινε. Για να ολοκληρωθεί επιβεβαιώστε το email σας ακολουθώντας τον σύνδεσμο που σας στάλθηκε";
+               // sendmail_verify($name, $email, $verify_token);
+                $_SESSION['status'] = "Η εγγραφή σας έγινε. Για να ολοκληρωθεί επιβεβαιώστε το email σας ακολουθώντας τον σύνδεσμο που θα σας σταλθεί μέσα στις επόμενες 48 ώρες;
                 header('Location: login.php');
             } else {
                 $_SESSION['status'] = "Η εγγραφή σας απέτυχε. Ξαναδοκιμάστε";
