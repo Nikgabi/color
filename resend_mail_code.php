@@ -1,7 +1,7 @@
 <?php
     include('connection.php');
     session_start();
-
+/*
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
@@ -40,7 +40,7 @@
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
-    }
+    } */
 
     if(isset($_POST['submitBtn2'])){
         if(!empty(trim($_POST['email']))){
@@ -55,8 +55,8 @@
                     $email=$row['email'];
                     $verify_token=$row['verify_token'];
 
-                    resend_email_verify($name,$email,$verify_token);
-                    $_SESSION['status']="Tο verification email Link σας έχει σταλεί στο email σας";
+                   // resend_email_verify($name,$email,$verify_token);
+                    $_SESSION['status']="Tο verification email Link σας θα σας σταλεί στο email σας μέσα στις επόμενες 48 ώρες";
                     header("Location:login.php");
                     exit(0);
 
