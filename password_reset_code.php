@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 session_start();
-
+/*
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -40,30 +40,29 @@ function send_password_reset($get_name,$get_email,$token){
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
-}
+} */
 
 if(isset($_POST['submitBtn3']))
 {
     $email=mysqli_real_escape_string($con,$_POST['email']);
     $token=md5(rand());
 
-    $check_email="SELECT email FROM user WHERE email='$email' LIMIT 1";
+    $check_email="SELECT * FROM user WHERE email='$email' LIMIT 1";
     $check_email_run=mysqli_query($con,$check_email);
 
     if($check_email_run && mysqli_num_rows($check_email_run) >0)
     {
         $row=mysqli_fetch_array($check_email_run);
-        $get_name=$row['name'];
         $get_email=$row['email'];
         $get_name=$row['name'];
 
-        $update_token="UPDATE user SET verify_token='$token' WHERE email='$get_email' LIMIT 1";
+        $update_token="UPDATE user SET verify_token='$token',ch_pass='1' WHERE email='$get_email' LIMIT 1";
         $update_token_run=mysqli_query($con,$update_token);
 
         if($update_token_run)
         {
-            send_password_reset($get_name,$get_email,$token);
-            $_SESSION['status']="Στάλθηκε ένα mail με ένα password reset Link ";
+            // send_password_reset($get_name,$get_email,$token);
+            $_SESSION['status']="Θα σταλθεί μέσα σε 48 ώρες ένα mail με ένα password reset Link ";
             header("Location:password_reset.php");
             exit(0);
         }
@@ -109,7 +108,7 @@ if(isset($_POST['submitBtn4'])){
                         if($update_password_run)
                         {
                             $new_token=md5(rand());
-                            $update_token="UPDATE user SET verify_token='$new_token' WHERE verify_token='$token' LIMIT 1 ";
+                            $update_token="UPDATE user SET verify_token='$new_token', ch_pass='0' WHERE verify_token='$token' LIMIT 1 ";
                             $update_token_run=mysqli_query($con,$update_token);
 
                             $_SESSION['status']="To Νέο Password άλλαξε επιτυχώς. Κάνετε login";
