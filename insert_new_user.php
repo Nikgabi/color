@@ -70,7 +70,7 @@ if (isset($_POST['SubmitBtn'])) {
             $query_run = mysqli_query($con, $query);
 
             if ($query_run) {
-                $_SESSION['id_user'] = mysqli_insert_id($con);
+              //  $_SESSION['id_user'] = mysqli_insert_id($con);
                // sendmail_verify($name, $email, $verify_token);
                 $_SESSION['status'] = "Η εγγραφή σας έγινε. Για να ολοκληρωθεί επιβεβαιώστε το email σας ακολουθώντας τον σύνδεσμο που θα σας σταλθεί μέσα στις επόμενες 48 ώρες";
                 header('Location: login.php');
