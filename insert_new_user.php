@@ -72,7 +72,7 @@ if (isset($_POST['SubmitBtn'])) {
             if ($query_run) {
                 $_SESSION['id_user'] = mysqli_insert_id($con);
                // sendmail_verify($name, $email, $verify_token);
-                $_SESSION['status'] = "Η εγγραφή σας έγινε. Για να ολοκληρωθεί επιβεβαιώστε το email σας ακολουθώντας τον σύνδεσμο που θα σας σταλθεί μέσα στις επόμενες 48 ώρες;
+                $_SESSION['status'] = "Η εγγραφή σας έγινε. Για να ολοκληρωθεί επιβεβαιώστε το email σας ακολουθώντας τον σύνδεσμο που θα σας σταλθεί μέσα στις επόμενες 48 ώρες";
                 header('Location: login.php');
             } else {
                 $_SESSION['status'] = "Η εγγραφή σας απέτυχε. Ξαναδοκιμάστε";
@@ -83,6 +83,7 @@ if (isset($_POST['SubmitBtn'])) {
         $_SESSION['status'] = "Κάτι πήγε στραβά κατά τον έλεγχο του email.";
         header('Location: register.php');
     }
+    
 } else {
     echo '<p>Κάτι πήγε στραβά!!</p>';
-}
+} 
