@@ -58,7 +58,7 @@ if (isset($_POST['SubmitBtn'])) {
     $password = password_hash($pass, PASSWORD_BCRYPT);
     $verify_token = md5(rand());
     $role = test_input($_POST['role']);
-    $speciality = $role == "visitor" ? "NULL" : "'$speciality'";
+    $speciality = $role == "visitor" ? "NULL" : $_POST['speciality'];
 
     $check_email_query = "SELECT email FROM user WHERE email='$email' LIMIT 1";
     $check_email_query_run = mysqli_query($con, $check_email_query);
