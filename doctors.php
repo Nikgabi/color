@@ -111,26 +111,33 @@
 		  <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/team1.jpg" alt="" />
+                <img src="images/stergios.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
-                  ΜΗΤΣΟΣ
+                  ΔΟΥΒΕΤΖΕΜΗΣ ΣΤΕΡΓΙΟΣ
                 </h5>
                 <h6>
-                  ΟΥΡΟΛΟΓΟΣ
+                  ΧΕΙΡΟΥΡΓΟΣ
                 </h6>
                 <div class="social_box">
-                  <a href="">
+                  <a href="https://www.facebook.com/douvetzemis" target="_blank">
                     <i class="fa fa-facebook" aria-hidden="true"></i>
                   </a>
-                  <a href="">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
+                  
+                  <a href="https://www.linkedin.com/in/stergios-douvetzemis-md-phd-frcs-febs-cebs-2b324b67/" target="_blank">
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+				  <a href="https://douvetzemis.gr" target="_blank">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                  </a>
+				  <a href="mailto:stergiosdouvetzemis@yahoo.gr">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+				  <a href="https://doxy.me/drdouvetzemis" target="_blank">
+                    <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://www.instagram.com/douvetzemisgr" target="_blank">
                     <i class="fa fa-instagram" aria-hidden="true"></i>
                   </a>
                 </div>

@@ -19,6 +19,20 @@
         </div>
     </div>
 	
+	<section class="team_section layout_padding layout_padding-bottom">
+	<div class="blog-container">
+        <div class="blog-post">
+            <div class="post-image">
+                <img src="images/stergios.jpg" alt="Φωτογραφία άρθρου">
+            </div>
+            <div class="post-content">
+                <h2><a href="files/stergios.pdf" target="_blank">"Εξετάσεις μαστού, κάθε πότε, πώς"  </a></h2>
+				<p style="font-style:italic;">του Στέργιου Δουβετζέμη<p><br>
+                <p>Κάθε πότε κάθε γυναίκα πρέπει να επισκέπτεται τον ειδικό.</p>
+            </div>
+        </div>
+    </div>
+	
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
