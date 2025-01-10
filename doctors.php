@@ -45,7 +45,7 @@
 		  <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/panos1.jpg" alt="" />
+                <img src="images/panos1.JPG" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
