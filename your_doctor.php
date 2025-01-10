@@ -21,7 +21,9 @@ $query = "
     INNER JOIN 
         doctors d 
     ON 
-        u.id_user = d.doctor_id";
+        u.id_user = d.doctor_id
+   WHERE
+   	u.id_user = $iatros";
 
 $result = mysqli_query($con, $query);
 
