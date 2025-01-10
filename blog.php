@@ -4,8 +4,7 @@
 	<title>Blog</title>
 </head>
 <!-- team section -->
-
-  <section class="team_section layout_padding layout_padding-bottom">
+	<section class="team_section layout_padding layout_padding-bottom">
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
@@ -18,8 +17,18 @@
             </div>
         </div>
     </div>
-	
-	<section class="team_section layout_padding layout_padding-bottom">
+	<div class="blog-container">
+        <div class="blog-post">
+            <div class="post-image">
+                <img src="images/panos1.jpg" alt="Φωτογραφία άρθρου">
+            </div>
+            <div class="post-content">
+                <h2><a href="files/kalampalikis.pdf" target="_blank">"Βρογχιολίτιδα"  </a></h2>
+				<p style="font-style:italic;">του Παναγιώτη Καλαμπαλίκη<p><br>
+                <p>Βασικά και σημαντικά στοιχεία για αυτήν την συχνή πάθηση των βρεφών.</p>
+            </div>
+        </div>
+    </div>
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">

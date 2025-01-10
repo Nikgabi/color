@@ -31,14 +31,35 @@
                   <a href="https://doxy.me/nikgabi">
                     <i class="fa fa-stethoscope" aria-hidden="true"></i>
                   </a>
-                  <a href="">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
+                  
+                  <a href="https://www.linkedin.com/in/theofano-panagea-0b035840/" target="_blank">
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
-                  <a href="">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  <a href="mailto:fpanagea@yahoo.gr">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/panos1.jpg" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  ΚΑΛΑΜΠΑΛΙΚΗΣ ΠΑΝΑΓΙΩΤΗΣ
+                </h5>
+                <h6>
+                  ΠΑΙΔΙΑΤΡΟΣ ΕΝΤΑΤΙΚΟΛΟΓΟΣ
+                </h6>
+                <div class="social_box">
+                  <a href="https://doxy.me/kalampalikis" target="_blank">
+                    <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  </a>
+                  <a href="mailto:p.kalamp@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>
@@ -47,28 +68,28 @@
           <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/team2.jpg" alt="" />
+                <img src="images/savvas.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
-                  Jenni
+                  ΠΑΠΑΓΡΗΓΟΡΙΑΔΗΣ ΣΑΒΒΑΣ
                 </h5>
                 <h6>
-                  MBBS
+                  ΧΕΙΡΟΥΡΓΟΣ
                 </h6>
                 <div class="social_box">
-                  <a href="">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
+                  
+                  
+                  <a href="https://www.linkedin.com/in/savvas-papagrigoriadis-19806222/" target="_blank">
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
-                  <a href="">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
+				  <a href="https://diverticularclinic.com/" target="_blank">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
                   </a>
+				  <a href="mailto:Lapasurgeon@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                  
                 </div>
               </div>
             </div>
@@ -143,8 +164,35 @@
                 </div>
               </div>
             </div>
+			</div>
+			<div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/stavroula1.jpg" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  ΓΑΒΑΛΑΚΗ ΣΤΑΥΡΟΥΛΑ
+                </h5>
+                <h6>
+                  ΑΚΤΙΝΟΛΟΓΟΣ
+                </h6>
+                <div class="social_box">
+                  
+                  
+                  <a href="https://www.linkedin.com/in/stavroula-gavalaki-9bb428173/" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+				  
+				  <a href="mailto:stavroula3980@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+				  
+                  
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
       </div>
     </div>
   </section>
