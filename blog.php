@@ -20,7 +20,7 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
-                <img src="images/panos1.jpg" alt="Φωτογραφία άρθρου">
+                <img src="images/panos1.JPG" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
                 <h2><a href="files/kalampalikis.pdf" target="_blank">"Βρογχιολίτιδα"  </a></h2>
