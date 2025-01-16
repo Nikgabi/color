@@ -26,7 +26,8 @@ $query = "
 $result = mysqli_query($con, $query);
 
 if(mysqli_num_rows($result) > 0){
-    echo "<table border='1'>";
+	echo "<div class='w3-card-4' style='background-color: rgb(240,240,240); text-align:center;'><br><br>
+		<table border='1' style='width: 100%; text-align: center;'>";
     echo "<tr><th>Όνομα</th><th>Email</th><th>Ειδικότητα</th><th>Facebook</th><th>LinkedIn</th><th>Website</th><th>Doxy.me</th></tr>";
 	while($data = mysqli_fetch_assoc($result)){
 		echo "<tr>";
@@ -35,10 +36,10 @@ if(mysqli_num_rows($result) > 0){
 		echo "<td>".$data['eidikotita']."</td>";
 
 		// Έλεγχος για κάθε link πριν δημιουργηθεί το κελί
-		echo "<td>".(!empty($data['fb_site']) ? "<a href='".$data['fb_site']."'>Facebook</a>" : "")."</td>";
-		echo "<td>".(!empty($data['linkin']) ? "<a href='".$data['linkin']."'>LinkedIn</a>" : "")."</td>";
-		echo "<td>".(!empty($data['site']) ? "<a href='".$data['site']."'>Website</a>" : "")."</td>";
-		echo "<td>".(!empty($data['doxy_site']) ? "<a href='".$data['doxy_site']."'>Doxy.me</a>" : "")."</td>";
+		echo "<td>".(!empty($data['fb_site']) ? "<a href='".$data['fb_site']."' target='_blank'><button>Facebook</button></a>" : "")."</td>";
+		echo "<td>".(!empty($data['linkin']) ? "<a href='".$data['linkin']."' target='_blank'><button>>LinkedIn</button></a>" : "")."</td>";
+		echo "<td>".(!empty($data['site']) ? "<a href='".$data['site']."' target='_blank'><button>>Website</button></a>" : "")."</td>";
+		echo "<td>".(!empty($data['doxy_site']) ? "<a href='".$data['doxy_site']."' target='_blank'><button>>Doxy.me</button></a>" : "")."</td>";
 		echo "</tr>";
 	}
     echo "</table>";
