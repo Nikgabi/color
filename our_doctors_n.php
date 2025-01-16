@@ -37,9 +37,9 @@ if(mysqli_num_rows($result) > 0){
 
 		// Έλεγχος για κάθε link πριν δημιουργηθεί το κελί
 		echo "<td>".(!empty($data['fb_site']) ? "<a href='".$data['fb_site']."' target='_blank'><button>Facebook</button></a>" : "")."</td>";
-		echo "<td>".(!empty($data['linkin']) ? "<a href='".$data['linkin']."' target='_blank'><button>>LinkedIn</button></a>" : "")."</td>";
-		echo "<td>".(!empty($data['site']) ? "<a href='".$data['site']."' target='_blank'><button>>Website</button></a>" : "")."</td>";
-		echo "<td>".(!empty($data['doxy_site']) ? "<a href='".$data['doxy_site']."' target='_blank'><button>>Doxy.me</button></a>" : "")."</td>";
+		echo "<td>".(!empty($data['linkin']) ? "<a href='".$data['linkin']."' target='_blank'><button>LinkedIn</button></a>" : "")."</td>";
+		echo "<td>".(!empty($data['site']) ? "<a href='".$data['site']."' target='_blank'><button>Website</button></a>" : "")."</td>";
+		echo "<td>".(!empty($data['doxy_site']) ? "<a href='".$data['doxy_site']."' target='_blank'><button>Doxy.me</button></a>" : "")."</td>";
 		echo "</tr>";
 	}
     echo "</table>";
