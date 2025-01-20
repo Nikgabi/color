@@ -17,19 +17,19 @@
         </div>
         <div class="col-md-6">
           <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                Για τους Ιατρικούς υπολογισμούς πρέπει να είστε εγγεγραμμένος χρήστης <span>και ΟΧΙ γιατρός.</span>Οι υπολογισμοί μας:
-              </h2>
-            </div>
+            
             <?php if ((isset($_SESSION['id_user']) && isset($_SESSION['role']))&& $_SESSION['role']=='visitor'){
-            echo '<a href="somatometr.php">
-              Σωματομετρικά στοιχεία
-            </a>
+            echo '<h2>
+                Οι υπολογισμοί μας:
+              </h2>
 			<a href="istoriko.php">
               Ιστορικό
             </a>
-			<a href="exetaseis.php">
+			<a href="somatometr.php">
+              Σωματομετρικά στοιχεία
+            </a>
+			
+			<a href="under_constr.php">
               Βιοχημικές εξετάσεις
             </a>
 			<a href="under_constr.php">
@@ -51,7 +51,12 @@
               Χάσμα ανιόντων
             </a>';}
 			 else {
-				echo '<h4 style="color:red ;">Πρέπει να εγγραφείτε ώς επισκέπτης για να έχετε πρόσβαση στο περιεχόμενο της σελίδας </h4>'; 
+				echo '<div class="heading_container">
+              <h2>
+                Για τους Ιατρικούς υπολογισμούς πρέπει να είστε εγγεγραμμένος χρήστης <span>και ΟΧΙ γιατρός.</span>
+              </h2>
+            </div>
+				<h4 style="color:red ;">Πρέπει να εγγραφείτε ώς επισκέπτης για να έχετε πρόσβαση στο περιεχόμενο της σελίδας </h4>'; 
 			 }
 			?>
           </div>

@@ -22,8 +22,8 @@ $query = "
         doctors d 
     ON 
         u.id_user = d.doctor_id
-   WHERE
-   	u.id_user = $iatros";
+	WHERE
+		u.id_user = $iatros";
 
 $result = mysqli_query($con, $query);
 
@@ -50,16 +50,17 @@ if ($result && mysqli_num_rows($result) > 0) {
         $site = htmlspecialchars($row['site'], ENT_QUOTES, 'UTF-8');
         $doxy_site = htmlspecialchars($row['doxy_site'], ENT_QUOTES, 'UTF-8');
 
-        echo "
-			<tr>
-				<td>$name</td>
-                <td>$email</td>
-                <td>$eidikotita</td>
-                <td><a href='$fb_site' target='_blank'><button>Facebook</button></a></td>
-                <td><a href='$linkin' target='_blank'><button>LinkedIn</button></a></td>
-                <td><a href='$site' target='_blank'><button>Ιστοσελίδα</button></a></td>
-                <td><a href='$doxy_site' target='_blank'><button>Doxy</button></a></td>
-              </tr>";
+        echo "<tr>";
+		echo "<td>".$data['name']."</td>";
+		echo "<td>".$data['email']."</td>";
+		echo "<td>".$data['eidikotita']."</td>";
+
+		// Έλεγχος για κάθε link πριν δημιουργηθεί το κελί
+		echo "<td>".(!empty($data['fb_site']) ? "<a href='".$data['fb_site']."' target='_blank'><button>Facebook</button></a>" : "")."</td>";
+		echo "<td>".(!empty($data['linkin']) ? "<a href='".$data['linkin']."' target='_blank'><button>LinkedIn</button></a>" : "")."</td>";
+		echo "<td>".(!empty($data['site']) ? "<a href='".$data['site']."' target='_blank'><button>Website</button></a>" : "")."</td>";
+		echo "<td>".(!empty($data['doxy_site']) ? "<a href='".$data['doxy_site']."' target='_blank'><button>Doxy.me</button></a>" : "")."</td>";
+		echo "</tr>";
     }
 
     echo "</table><br><br>";
