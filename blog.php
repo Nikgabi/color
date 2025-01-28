@@ -8,6 +8,18 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
+                <img src="images/liakou.jpg" alt="Φωτογραφία άρθρου">
+            </div>
+            <div class="post-content">
+                <h2><a href="files/liakou_pyretos.pdf" target="_blank">"Πυρετός.Δέκα μύθοι."  </a></h2>
+				<p style="font-style:italic;">της Χρυσούλας Λιάκου<p><br>
+                <p>Ανάλυση των μύθων σχετικά με τον πυρετό.Τι πραγματικά ισχύει.</p>
+            </div>
+        </div>
+    </div>
+	<div class="blog-container">
+        <div class="blog-post">
+            <div class="post-image">
                 <img src="images/savvas.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
@@ -20,7 +32,7 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
-                <img src="images/panos1.JPG" alt="Φωτογραφία άρθρου">
+                <img src="images/panos1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
                 <h2><a href="files/kalampalikis.pdf" target="_blank">"Βρογχιολίτιδα"  </a></h2>

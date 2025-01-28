@@ -45,7 +45,7 @@
 		  <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/panos1.JPG" alt="" />
+                <img src="images/panos1.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
@@ -59,6 +59,38 @@
                     <i class="fa fa-stethoscope" aria-hidden="true"></i>
                   </a>
                   <a href="mailto:p.kalamp@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/liakou.jpg" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  ΛΙΑΚΟΥ ΧΡΥΣΟΥΛΑ
+                </h5>
+                <h6>
+                  ΕΙΔΙΚΗ ΠΑΘΟΛΟΓΟΣ
+                </h6>
+                <div class="social_box">
+                  <a href="">
+                    <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://www.facebook.com/LKmedicalathens" target="_blank">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/chrysoula-i-liakou-md-phd-7854455/" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+				  <a href="https://www.cliakou.gr/" target="_blank">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                  </a>
+                  <a href="mailto:liakou@gmail.com">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
                 </div>
