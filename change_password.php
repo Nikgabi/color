@@ -5,7 +5,16 @@
 	<title>Change Password</title>
 </head>
 
-<div id = container ><br><br>
+<div id = container class="layout_padding-bottom"><br><br>
+<section class="about_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 ">
+          <div class="img-box">
+            <img src="images/slider-img.jpg" alt="">
+          </div>
+        </div>
+		<div class="col-md-7 ">
 <div class="w3-card-4" style="background-color: rgb(240,240,240);">
 <?php
 	if(isset($_SESSION['status'])){
@@ -29,7 +38,10 @@
 	<br><br>
 </form>
 </div>
-
+</div>
+		</div>
+	</div> 
+</section>
 
 </div>
 <?php include('down.php'); ?>
