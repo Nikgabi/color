@@ -10,12 +10,12 @@
 <section class="about_section">
     <div class="container  ">
       <div class="row">
-        <div class="col-md-6 ">
+        <div class="col-md-5 ">
           <div class="img-box">
             <img src="images/calculation.png" alt="">
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
           <div class="detail-box">
             
             <?php if ((isset($_SESSION['id_user']) && isset($_SESSION['role']))&& $_SESSION['role']=='visitor'){
@@ -35,8 +35,8 @@
 			<a href="under_constr.php">
               Καρδιοαγγειακός κίνδυνος
             </a>
-			<a href="under_constr.php">
-              Εμβολιασμοί
+			<a href="appendix_child.php">
+              Εκτίμηση οξ. σκωληκοειδίτιδας
             </a>
 			<a href="under_constr.php">
               Σπειραματική διήθηση
@@ -44,8 +44,11 @@
 			<a href="under_constr.php">
               Κολπική μαρμαρυγή και εγκεφαλικό
             </a>
-			<a href="under_constr.php">
+			<a href="depression.php">
               Εκτίμηση για κατάθλιψη
+            </a>
+			<a href="anxiety.php">
+              Εκτίμηση για άγχος
             </a>
 			<a href="under_constr.php">
               Χάσμα ανιόντων
