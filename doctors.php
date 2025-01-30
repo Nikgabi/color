@@ -129,32 +129,22 @@
           <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/Gavalakis1.jpg" alt="" />
+                <img src="images/georgop.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
-                  ΓΑΒΑΛΑΚΗΣ ΝΙΚΟΣ
+                  ΓΕΩΡΓΟΠΟΥΛΟΣ ΙΩΑΝΝΗΣ
                 </h5>
                 <h6>
                   ΠΑΙΔΟΧΕΙΡΟΥΡΓΟΣ
                 </h6>
                 <div class="social_box">
-                  <a href="">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/in/gavalakis/" target="_blank">
+                  
+                  <a href="https://www.linkedin.com/in/dr-ioannis-georgopoulos-1223279b/" target="_blank">
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
-                  <a href="">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
-                  </a>
-				  <a href="http://gavalakis.eu" target="_blank">
-                    <i class="fa fa-globe" aria-hidden="true"></i>
-                  </a>
-				  <a href="mailto:nikosgavalakis@gmail.com">
+                  
+				  <a href="mailto:georgopoulos.ioannis@yahoo.gr">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
                 </div>

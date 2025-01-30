@@ -57,11 +57,11 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
-                <img src="images/Gavalakis.jpg" alt="Φωτογραφία άρθρου">
+                <img src="images/georgop.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
                 <h2><a href="policy.pdf" target="_blank">"Τίτλος Άρθρου"  </a></h2>
-				<p style="font-style:italic;">του Νίκου Γαβαλάκη<p><br>
+				<p style="font-style:italic;">του Ιωάννη Γεωργόπουλου<p><br>
                 <p>Αυτή είναι μιά μικρή περίληψη του άρθρου.</p>
             </div>
         </div>
