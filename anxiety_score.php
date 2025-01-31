@@ -4,7 +4,7 @@
 	<title>Anxiety Score</title>
 	
 </head>
-<div class="layout_padding-bottom">
+<div  class="layout_padding-bottom">
   
   <section class="about_section">
     <div class="container">
@@ -30,18 +30,16 @@
 
 		if (isset($_POST['submit'])) {
 			$psyc_id = $_SESSION['id_user'];
-						$er1 = $_POST['er1'];
-						$er2 = $_POST['er2'];
-						$er3 = $_POST['er3'];
-						$er4 = $_POST['er4'];
-						$er5 = $_POST['er5'];
-						$er6 = $_POST['er6'];
-						$er7 = $_POST['er7'];			
-							// Collect all responses in an array for easier checking
-    $responses = [$er1, $er2, $er3, $er4, $er5, $er6, $er7];
+			$er1 = $_POST['er1'];
+			$er2 = $_POST['er2'];
+			$er3 = $_POST['er3'];
+			$er4 = $_POST['er4'];
+			$er5 = $_POST['er5'];
+			$er6 = $_POST['er6'];
+			$er7 = $_POST['er7'];			
+		// Collect all responses in an array for easier checking
+			$responses = [$er1, $er2, $er3, $er4, $er5, $er6, $er7];
 
-    
-    
         // Calculate score
         $scor = array_sum($responses);
 							
@@ -61,9 +59,9 @@
 			}
 			 ;?>
 						
-				<?php if (!empty($message) && isset($_POST['submit'])): ;?>
+				<?php if (!empty($message) && isset($_POST['submit'])): ?>
 							<h2>Απαντήσεις στο Stress Test</h2>
-							<h3><strong>SCORE:</strong> <?php echo isset($scor) ? $scor : "-"; ?></h3><br>
+							<h3><strong>SCORE:</strong> <?php echo $scor ; ?></h3><br>
                             <h3><strong>Εκτίμηση:</strong> <?php echo $message; ?></h3>
                  <?php endif; ?>
 			<button style="background-color: rgb(162,235,182) ;"><a href="calculation.php">Πίσω</a></button><br><br>
