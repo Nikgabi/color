@@ -77,8 +77,4 @@
 </section>
 </div>
 
-
-
-
-
 <?php include('down.php'); ?>
