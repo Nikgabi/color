@@ -27,8 +27,6 @@
 		<div class="col-md-10 " style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
 <?php 
 						
-						
-						$message = "";
 
 		if (isset($_POST['submit'])) {
 			$psyc_id = $_SESSION['id_user'];
@@ -42,10 +40,8 @@
 							// Collect all responses in an array for easier checking
     $responses = [$er1, $er2, $er3, $er4, $er5, $er6, $er7];
 
-    // Check if all questions are answered
-    if (in_array("", $responses, true)) {
-        $message = "Παρακαλώ απαντήστε σε όλες τις ερωτήσεις.";
-    } else {
+    
+    
         // Calculate score
         $scor = array_sum($responses);
 							
@@ -63,7 +59,7 @@
 		$query="INSERT INTO pcyc_data(psyc_id , scor_stress , message_stress) VALUES('$psyc_id','$scor','$message')";
 		$query_run = mysqli_query($con, $query);
 			}
-			} ?>
+			 ?>
 						
 				<?php if (!empty($message) && isset($_POST['submit'])): ?>
 							<h2>Απαντήσεις στο Stress Test</h2>
