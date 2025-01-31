@@ -54,8 +54,8 @@
 			} else  {
 				$message = "Επιβάλλεται να επισκεφθείτε έναν ειδικό και πιθανότατα χρειάζεστε θεραπεία";
 			}
-		$query="INSERT INTO pcyc_data('psyc_id' , 'scor_stress' , 'message_stress') VALUES('$psyc_id','$scor','$message')";
-		$query_run = mysqli_query($con, $query);
+		// $query="INSERT INTO pcyc_data('psyc_id' , 'scor_stress' , 'message_stress') VALUES('$psyc_id','$scor','$message')";
+		// $query_run = mysqli_query($con, $query);
 			}
 			 ;?>
 						
