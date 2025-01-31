@@ -59,9 +59,9 @@
 		$query="INSERT INTO pcyc_data(psyc_id , scor_stress , message_stress) VALUES('$psyc_id','$scor','$message')";
 		$query_run = mysqli_query($con, $query);
 			}
-			 ?>
+			 ;?>
 						
-				<?php if (!empty($message) && isset($_POST['submit'])): ?>
+				<?php if (!empty($message) && isset($_POST['submit'])): ;?>
 							<h2>Απαντήσεις στο Stress Test</h2>
 							<h3><strong>SCORE:</strong> <?php echo isset($scor) ? $scor : "-"; ?></h3><br>
                             <h3><strong>Εκτίμηση:</strong> <?php echo $message; ?></h3>
