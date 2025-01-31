@@ -4,7 +4,7 @@
 	<title>Anxiety Score</title>
 	
 </head>
-<div id = container class="layout_padding-bottom">
+<div class="layout_padding-bottom">
   
   <section class="about_section">
     <div class="container">
