@@ -41,7 +41,7 @@
 			<a href="under_constr.php">
               Σπειραματική διήθηση
             </a>
-			<a href="under_constr.php">
+			<a href="strock.php">
               Κολπική μαρμαρυγή και εγκεφαλικό
             </a>
 			<a href="depression.php">
