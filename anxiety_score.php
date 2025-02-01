@@ -4,7 +4,7 @@
 	<title>Anxiety Score</title>
 	
 </head>
-<div  class="layout_padding-bottom">
+<div id = "container" class="layout_padding-bottom">
   
   <section class="about_section">
     <div class="container">
@@ -54,8 +54,11 @@
 			} else  {
 				$message = "Επιβάλλεται να επισκεφθείτε έναν ειδικό και πιθανότατα χρειάζεστε θεραπεία";
 			}
-		// $query="INSERT INTO pcyc_data('psyc_id' , 'scor_stress' , 'message_stress') VALUES('$psyc_id','$scor','$message')";
-		// $query_run = mysqli_query($con, $query);
+			$psyc_id = mysqli_real_escape_string($con, $psyc_id);
+			$scor = mysqli_real_escape_string($con, $scor);
+			$message = mysqli_real_escape_string($con, $message);
+			$query="INSERT INTO pcyc_data (psyc_id , scor_stress , message_stress) VALUES('$psyc_id','$scor','$message')";
+			$query_run = mysqli_query($con, $query);
 			}
 			 ;?>
 						
