@@ -59,8 +59,17 @@
 			$message = mysqli_real_escape_string($con, $message);
 			var_dump($psyc_id, $scor, $message);
 			exit();
-			$query="INSERT INTO pcyc_data (psyc_id , scor_stress , message_stress) VALUES('$psyc_id','$scor','$message')";
-			$query_run = mysqli_query($con, $query);
+			$query = "INSERT INTO pcyc_data (psyc_id, scor_stress, message_stress) 
+          VALUES('$psyc_id', '$scor', '$message')";
+
+				$query_run = mysqli_query($con, $query);
+
+				if (!$query_run) {
+					die("SQL Error: " . mysqli_error($con));
+				} else {
+					echo "Insert successful!";
+				}
+
 			}
 			 ;?>
 						
