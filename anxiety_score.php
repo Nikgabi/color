@@ -58,7 +58,6 @@
 			$scor = mysqli_real_escape_string($con, $scor);
 			$message = mysqli_real_escape_string($con, $message);
 			var_dump($psyc_id, $scor, $message);
-			exit();
 			$query = "INSERT INTO pcyc_data (psyc_id, scor_stress, message_stress) 
           VALUES('$psyc_id', '$scor', '$message')";
 
