@@ -62,11 +62,7 @@
 
 				$query_run = mysqli_query($con, $query);
 
-				if (!$query_run) {
-					die("SQL Error: " . mysqli_error($con));
-				} else {
-					echo "Insert successful!";
-				}
+				
 
 			}
 			 ;?>
