@@ -10,12 +10,12 @@
 <section class="about_section">
     <div class="container  ">
       <div class="row">
-        <div class="col-md-5 ">
+        <div class="col-md-4 ">
           <div class="img-box">
             <img src="images/calculation.png" alt="">
           </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-8">
           <div class="detail-box">
             
             <?php if ((isset($_SESSION['id_user']) && isset($_SESSION['role']))&& $_SESSION['role']=='visitor'){
@@ -32,8 +32,8 @@
 			<a href="under_constr.php">
               Βιοχημικές εξετάσεις
             </a>
-			<a href="under_constr.php">
-              Καρδιοαγγειακός κίνδυνος
+			<a href="mi_er.php">
+               Κίνδυνος εμφράγματος
             </a>
 			<a href="appendix_child.php">
               Εκτίμηση οξ. σκωληκοειδίτιδας
