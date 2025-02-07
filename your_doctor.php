@@ -10,7 +10,8 @@ if($row){
     $query = "
         SELECT 
             u.name,
-            u.email, 
+            u.email,
+			d.img,
             u.eidikotita, 
             d.fb_site, 
             d.linkin, 
@@ -33,6 +34,7 @@ if($row){
         echo "<tr>
                 <th>Όνομα</th>
                 <th>Email</th>
+				<th>Φωτο</th>
                 <th>Ειδικότητα</th>
                 <th>Facebook</th>
                 <th>LinkedIn</th>
@@ -44,6 +46,10 @@ if($row){
             echo "<tr>";
             echo "<td>" . htmlspecialchars($data['name']) . "</td>";
             echo "<td>" . htmlspecialchars($data['email']) . "</td>";
+			echo "<td style='width: 200px;'>
+					  <img src='" . $data['img'] . "' style='width: 75%;'>
+					
+				  </td>";
             echo "<td>" . htmlspecialchars($data['eidikotita']) . "</td>";
 
             // Εμφάνιση μόνο αν δεν είναι κενά

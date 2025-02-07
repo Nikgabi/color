@@ -4,16 +4,16 @@
 <section class="about_section">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 ">
+        <div class="col-md-2 ">
           <div class="img-box">
             <img src="images/slider-img.jpg" alt="">
           </div>
         </div>
 
 
-<div class="col-md-8 ">
+<div class="col-md-10 " style="text-align:center;">
 <br><br>
-<div class="w3-card-4" style="background-color: rgb(240,240,240); text-align:center;">
+<!--<div class="w3-card-4" style="background-color: rgb(240,240,240); text-align:center;">-->
 <?php
 // Εκτέλεση του query για την ανάκτηση των στοιχείων των ασθενών
 $query = "SELECT name, email, id_user FROM user WHERE id_user = {$_SESSION['id_user']} and role != 'Doctor'";
@@ -21,12 +21,12 @@ $result = mysqli_query($con, $query);
 $patient_id = $_SESSION['id_user'];
 
 if ($result && mysqli_num_rows($result) > 0) {
-	echo '<div class="w3-card-4" style="background-color: rgb(240,240,240);  text-align:center;">';
+	//echo '<div class="w3-card-4" style="background-color: rgb(240,240,240);  text-align:center;">';
 	echo "<h2 style='color:green;' >Your DATA</h2>";
     echo "<table border='1' style='width: 100%; text-align: center;'>";
     echo "<tr>
             <th>Όνομα</th>
-            <th>Email</th>
+            
             <th>Ενέργειες</th>
           </tr>";
 
@@ -38,17 +38,31 @@ if ($result && mysqli_num_rows($result) > 0) {
 
         echo "<tr>
                 <td>$name</td>
-                <td>$email</td>
+                
                 <td>
+					<a href='istorika.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Ιστορικό</button>
+                    </a>
                     <a href='somatometrika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Σωματομετρικά</button>
                     </a>
-                    <a href='istorika.php?patient_id=$patient_id'>
-                        <button style='margin-right: 5px;'>Ιστορικό</button>
+                    
+                    <a href='bioximika.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Βιοχημικά</button>
                     </a>
-                    <a href='under_constr.php'>
-                        <button>Βιοχημικά</button>
+					<a href='aimatologika.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Αιματολογικά</button>
                     </a>
+					<a href='aktinologika.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Απεικονιστικά</button>
+                    </a>
+					<a href='stress.php?patient_id=$patient_id'>
+                        <button>Stress</button>
+                    </a>
+					<a href='depress.php?patient_id=$patient_id'>
+                        <button>Κατάθλιψη</button>
+                    </a>
+					
                 </td>
               </tr>";
     }

@@ -1,6 +1,4 @@
-<?php include('up.php'); 
-
-?>
+<?php include('up.php'); ?>
 
 <head>
 	<title>Σωματομετρικοί υπολογισμοί</title>
@@ -12,12 +10,13 @@
   <section class="about_section">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 ">
+        <div class="col-md-2 ">
           <div class="img-box">
             <img src="images/106.jpg" alt="">
           </div>
         </div>
-		<div class="col-md-9 ">
+		<div class="col-md-10 ">
+		<div class="w3-card-4" style="background-color: rgb(240,240,240); text-align:center;">
 		<form action="result_somatom.php" method="POST">	
 		  <div style="display: flex; gap: 20px; flex-direction: row;">
 			<h2 style="align-items: center;">Συμπλήρωσε τα στοιχεία σου</h2>
@@ -76,6 +75,7 @@
 			</div><br>	
 			</form>	
 		  
+			</div>
 			</div>
 			</div> 
 		  </div>

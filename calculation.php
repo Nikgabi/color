@@ -10,17 +10,17 @@
 <section class="about_section">
     <div class="container  ">
       <div class="row">
-        <div class="col-md-4 ">
+        <div class="col-md-3 ">
           <div class="img-box">
             <img src="images/calculation.png" alt="">
           </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
           <div class="detail-box">
             
             <?php if ((isset($_SESSION['id_user']) && isset($_SESSION['role']))&& $_SESSION['role']=='visitor'){
             echo '<h2>
-                Οι υπολογισμοί μας:
+                Εισαγωγή ιστορικού & εξετάσεων και ιατρικοί υπολογισμοί:
               </h2>
 			<a href="istoriko.php">
               Ιστορικό
@@ -29,8 +29,14 @@
               Σωματομετρικά στοιχεία
             </a>
 			
-			<a href="under_constr.php">
+			<a href="bioximiko.php">
               Βιοχημικές εξετάσεις
+            </a>
+			<a href="aimatologiko.php">
+              Αιματολογικές εξετάσεις
+            </a>
+			<a href="aktino.php">
+              Απεικονιστικές εξετάσεις
             </a>
 			<a href="mi_er.php">
                Κίνδυνος εμφράγματος

@@ -2,9 +2,9 @@
 include('up.php');
 ?>
 
-<div id = container class="layout_padding-bottom"><br>
+<div id = container style="text-align:center;" class="layout_padding-bottom"><br>
 
-<div class="w3-card-4" style="background-color: rgb(240,240,240); text-align:center;">
+<!--<div class="w3-card-4" style="background-color: rgb(240,240,240); text-align:center;">-->
 
 <?php
 // Εξασφαλίζουμε ότι έχουμε το patient_id από το URL
@@ -27,6 +27,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "<table border='1' style='width:100%; border-collapse:collapse; text-align:center;'>
             <thead>
                 <tr>
+					<th>Ημερομηνία Καταχώρησης</th>
                     <th>Παθήσεις</th>
                     <th>Φάρμακα</th>
                     <th>Χειρουργικές Επεμβάσεις</th>
@@ -47,6 +48,7 @@ if (mysqli_num_rows($result) > 0) {
     // Εμφάνιση κάθε γραμμής δεδομένων
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>
+				<td>" . date("d-m-Y", strtotime($row['created_at'])) . "</td>
                 <td>{$row['pathiseis']}</td>
                 <td>{$row['farmaka']}</td>
                 <td>{$row['xeirourg']}</td>
@@ -62,7 +64,15 @@ if (mysqli_num_rows($result) > 0) {
                 <td>{$row['kataxr']}</td>
               </tr>";
     }
-    echo "</tbody></table>";
+    echo "</tbody></table><br>";
+	if (isset($_SESSION['role']) && $_SESSION['role'] == 'Doctor'){
+		echo '<button style="background-color: rgb(162,235,182) ;"><a href="patiens.php">
+					  Πίσω
+					</a></button><br><br>';
+	} else {
+	echo '<button style="background-color: rgb(162,235,182) ;"><a href="my_data.php">
+					  Πίσω
+	</a></button><br><br>';}
     echo "</div>";
 } else {
     echo "<p style='color:red;'>Δεν βρέθηκαν ιστορικά δεδομένα για τον χρήστη.</p>";
