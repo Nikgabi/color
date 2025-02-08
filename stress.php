@@ -34,7 +34,7 @@ if (mysqli_num_rows($result) > 0) {
     // Παίρνουμε κάθε γραμμή δεδομένων
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>
-                <td>" . date("d-m-Y", strtotime($row['date_created_stress'])) . "</td>
+                <td>" . date("d-m-Y", strtotime($row['date_created'])) . "</td>
                 <td>{$row['scor_stress']}</td>
                 <td>{$row['message_stress']}</td>
                 
