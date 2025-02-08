@@ -14,7 +14,7 @@ if (!isset($_GET['patient_id']) || empty($_GET['patient_id'])) {
 $patient_id = mysqli_real_escape_string($con, $_GET['patient_id']);
 
 // Ερώτημα για να πάρουμε τα δεδομένα του χρήστη με ταξινόμηση κατά ημερομηνία
-$query = "SELECT * FROM pcyc_data WHERE psyc_id = '$patient_id' ORDER BY date_created_stress DESC"; 
+$query = "SELECT * FROM pcyc_data WHERE psyc_id = '$patient_id' ORDER BY date_created DESC"; 
 $result = mysqli_query($con, $query);
 
 // Ελέγχουμε αν υπάρχουν αποτελέσματα
