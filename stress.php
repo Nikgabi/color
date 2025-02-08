@@ -55,7 +55,7 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     echo "<p style='color:red;'>Δεν βρέθηκαν δεδομένα για τον ασθενή με ID: $patient_id.</p>";
 } 
-	endif;
+	
 echo'</div>';
 ?>
 
