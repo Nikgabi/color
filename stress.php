@@ -14,7 +14,7 @@ if (!isset($_GET['patient_id']) || empty($_GET['patient_id'])) {
 $patient_id = mysqli_real_escape_string($con, $_GET['patient_id']);
 
 // Ερώτημα για να πάρουμε τα δεδομένα του χρήστη με ταξινόμηση κατά ημερομηνία
-$query = "SELECT * FROM pcyc_data WHERE psyc_id = '$patient_id' ORDER BY date_created DESC"; 
+$query = "SELECT * FROM pcyc_data WHERE psyc_id = '$patient_id' ORDER BY created_date DESC"; 
 $result = mysqli_query($con, $query);
 
 // Ελέγχουμε αν υπάρχουν αποτελέσματα
@@ -34,7 +34,7 @@ if (mysqli_num_rows($result) > 0) {
     // Παίρνουμε κάθε γραμμή δεδομένων
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>
-                <td>" . date("d-m-Y", strtotime($row['date_created'])) . "</td>
+                <td>" . date("d-m-Y", strtotime($row['created_date'])) . "</td>
                 <td>{$row['scor_stress']}</td>
                 <td>{$row['message_stress']}</td>
                 
