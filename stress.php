@@ -54,6 +54,15 @@ if (mysqli_num_rows($result) > 0) {
     echo "</div>";
 } else {
     echo "<p style='color:red;'>Δεν βρέθηκαν δεδομένα για τον ασθενή με ID: $patient_id.</p>";
+	if (isset($_SESSION['role']) && $_SESSION['role'] == 'Doctor'){
+		echo '<button style="background-color: rgb(162,235,182) ;"><a href="patiens.php">
+					  Πίσω
+					</a></button><br><br>';
+	} else {
+	
+	echo '<button style="background-color: rgb(162,235,182) ;"><a href="my_data.php">
+					  Πίσω
+	</a></button><br><br>';}
 } 
 	
 echo'</div>';

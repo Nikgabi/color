@@ -129,7 +129,7 @@
 						$message = "";
 
 						if (isset($_POST['submit'])) {
-							// Collect all responses in an array for easier checking
+		// Collect all responses in an array for easier checking
     $responses = [$er1, $er2, $er3, $er4, $er5, $er6, $er7, $er8];
 
     
@@ -137,15 +137,15 @@
         $scor = array_sum($responses);
 							
 
-								// Determine message based on score
-								if ($scor <= 3) {
-									$message = "Απίθανη η διάγνωση σκωληκοειδίτιδας. Εξετάστε άλλες διαγνώσεις";
-								} elseif ($scor <= 6) {
-									$message = "Η σκωληκοειδίτιδα δεν μπορεί να αποκλεισθεί. Κάνετε έλεγχο με υπερηχογράφημα ή CT ή παραπέμψετε σε χειρουργό";
-								} 
-								} else {
-									$message = "Πολύ πιθανή η σκωληκοειδίτιδα. Πρέπει να εκτιμηθεί από Χειρουργό";
-								}
+		// Determine message based on score
+		if ($scor <= 3) {
+			$message = "Απίθανη η διάγνωση σκωληκοειδίτιδας. Εξετάστε άλλες διαγνώσεις";
+		} elseif ($scor <= 6) {
+			$message = "Η σκωληκοειδίτιδα δεν μπορεί να αποκλεισθεί. Κάνετε έλεγχο με υπερηχογράφημα ή CT ή παραπέμψετε σε χειρουργό";
+		} 
+		} else {
+			$message = "Πολύ πιθανή η σκωληκοειδίτιδα. Πρέπει να εκτιμηθεί από Χειρουργό";
+		}
 							
 							
 						 ?>

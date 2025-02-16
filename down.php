@@ -9,6 +9,12 @@
         <a  href="files/policy.pdf" target="_blank">ΠΟΛΙΤΙΚΗ ΑΠΟΡΡΗΤΟΥ</a>
 		---
 		<a  href="files/instructions.pdf" target="_blank">ΟΔΗΓΙΕΣ</a>
+		---
+		<a  href="bibliography.php" >ΒΙΒΛΙΟΓΡΑΦΙΑ</a>
+		---
+		<a  href="testimonials.php" >TESTIMONIALS</a>
+		---
+		<a  href="about.php" >ABOUT</a>
       </p>
     </div>
   </footer>

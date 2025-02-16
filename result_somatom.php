@@ -2,20 +2,27 @@
 // Αρχικοποίηση μεταβλητών για τα αποτελέσματα
 $bmi = $bsa = $bmr = $ibw = $abw = $rfm = $C0=$CI=$SV=$MAP=null;
 
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 if (isset($_POST['submit'])) {
     // Λήψη των δεδομένων από τη φόρμα
-    $height = $_POST['height'];
-    $weight = $_POST['weight'];
-    $waist = $_POST['waist'];
-    $age = $_POST['age'];
-    $gender = $_POST['gender'];
-	$sbp=$_POST['sbp'];
-	$dbp=$_POST['dbp'];
-	$HR=$_POST['HR'];
-	$apost=$_POST['apost'];
-	$Hb=$_POST['Hb'];
-	$SaO2=$_POST['SaO2'];
-	$SvO2=$_POST['SvO2'];
+    $height = test_input($_POST['height']);
+    $weight = test_input($_POST['weight']);
+    $waist = test_input($_POST['waist']);
+    $age = test_input($_POST['age']);
+    $gender = test_input($_POST['gender']);
+	$sbp=test_input($_POST['sbp']);
+	$dbp=test_input($_POST['dbp']);
+	$HR=test_input($_POST['HR']);
+	$apost=test_input($_POST['apost']);
+	$Hb=test_input($_POST['Hb']);
+	$SaO2=test_input($_POST['SaO2']);
+	$SvO2 = empty(test_input($_POST['SvO2'])) ? 75 : test_input($_POST['SvO2']);
 	$user_id= $_SESSION['id_user'];
 
     // Υπολογισμός BMI

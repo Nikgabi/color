@@ -10,45 +10,51 @@
 <section class="about_section">
     <div class="container  ">
       <div class="row">
-        <div class="col-md-3 ">
+        <div class="col-md-1 "><br><br><br>
           <div class="img-box">
             <img src="images/calculation.png" alt="">
+          </div><br><br>
+		  <div class="img-box">
+            <img src="images/images.jpeg" alt="">
+          </div><br><br>
+		  <div class="img-box">
+            <img src="images/chatgpt.jpg" alt="">
+          </div><br><br>
+		  <div class="img-box">
+            <img src="images/history.jpg" alt="">
           </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-11">
           <div class="detail-box">
             
             <?php if ((isset($_SESSION['id_user']) && isset($_SESSION['role']))&& $_SESSION['role']=='visitor'){
             echo '<h2>
-                Εισαγωγή ιστορικού & εξετάσεων και ιατρικοί υπολογισμοί:
+                Ιατρικοί υπολογισμοί και εκτιμήσεις κινδύνων:
               </h2>
-			<a href="istoriko.php">
-              Ιστορικό
-            </a>
+			
 			<a href="somatometr.php">
-              Σωματομετρικά στοιχεία
+              Σωματομετρικά στοιχεία και υπολογισμοί
+            </a>
+			<a href="strock.php">
+              Κολπική μαρμαρυγή και εγκεφαλικό
             </a>
 			
-			<a href="bioximiko.php">
-              Βιοχημικές εξετάσεις
-            </a>
-			<a href="aimatologiko.php">
-              Αιματολογικές εξετάσεις
-            </a>
-			<a href="aktino.php">
-              Απεικονιστικές εξετάσεις
-            </a>
 			<a href="mi_er.php">
                Κίνδυνος εμφράγματος
             </a>
 			<a href="appendix_child.php">
               Εκτίμηση οξ. σκωληκοειδίτιδας
             </a>
-			<a href="under_constr.php">
+			
+			
+			<a href="clear_creat.php">
               Σπειραματική διήθηση
             </a>
-			<a href="strock.php">
-              Κολπική μαρμαρυγή και εγκεφαλικό
+			<a href="child_height.php">
+              Υπολογισμός τελικού ύψους παιδιού
+            </a>
+			<a href="birth.php">
+              Πιθανή ημερομηνία γέννησης
             </a>
 			<a href="depression.php">
               Εκτίμηση για κατάθλιψη
@@ -56,9 +62,14 @@
 			<a href="anxiety.php">
               Εκτίμηση για άγχος
             </a>
-			<a href="under_constr.php">
+			<a href="anion_gap.php">
               Χάσμα ανιόντων
-            </a>';}
+            </a><hr>
+			<h3>Τεχνητή νοημοσύνη </h3>
+			<a href="chatgpt3.php">
+              Ερώτημα προς το ChatGpt-4
+            </a>
+			';}
 			 else {
 				echo '<div class="heading_container">
               <h2>

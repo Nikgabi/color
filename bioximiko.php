@@ -93,7 +93,7 @@
 			<div style="display: flex; gap: 20px; flex-direction: row;">
 				<input type="submit" name="submit" value="Υπολογισμός" style="background-color: rgb(162,235,182) ;"><br>
 			
-			<button style="background-color: rgb(162,235,182) ;"><a href="calculation.php">
+			<button style="background-color: rgb(162,235,182) ;"><a href="calculation_istor.php">
 					  Πίσω
 					</a></button><br>
 			</div><br>	

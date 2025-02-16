@@ -1,5 +1,12 @@
 <?php include('up.php'); ?>
 <?php
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 function calculateRisk($age, $totalCholesterol, $hdlCholesterol, $systolicBP, $treatedBP, $smoker, $gender) {
     // Υπολογισμός των φυσικών λογαρίθμων
     $lnAge = log($age);
@@ -54,10 +61,10 @@ function risk_general($age , $gender){
 	}
 } 
 
-$age = $_POST['age'];
-$totalCholesterol = $_POST['tot_chol'];
-$hdlCholesterol = $_POST['hdl_chol'];
-$systolicBP = $_POST['sbp'];
+$age = test_input($_POST['age']);
+$totalCholesterol = test_input($_POST['tot_chol']);
+$hdlCholesterol = test_input($_POST['hdl_chol']);
+$systolicBP = test_input($_POST['sbp']);
 $treatedBP = $_POST['er1']; // 1 αν λαμβάνει αγωγή, 0 αν όχι
 $smoker = $_POST['er2']; // 1 αν καπνίζει, 0 αν όχι
 $gender = $_POST['er3'];

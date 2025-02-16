@@ -47,8 +47,17 @@ if ($result && mysqli_num_rows($result) > 0) {
 					<a href='aimatologika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Αιματολογικά</button>
                     </a>
+					<a href='ormon_res.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Μικροβιολογικές κ.α. εξετ.</button>
+                    </a>
 					<a href='aktinologika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Απεικονιστικά</button>
+                    </a>
+					<a href='loipes_exet_res.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Λοιπές εξετάσεις</button>
+                    </a>
+					<a href='gnomat_res.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Γνωματεύσεις</button>
                     </a>
 					<a href='stress.php?patient_id=$patient_id'>
                         <button>Stress</button>

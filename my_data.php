@@ -4,15 +4,15 @@
 <section class="about_section">
     <div class="container">
       <div class="row">
-        <div class="col-md-2 ">
+        <div class="col-md-5 ">
           <div class="img-box">
             <img src="images/slider-img.jpg" alt="">
           </div>
         </div>
 
 
-<div class="col-md-10 " style="text-align:center;">
-<br><br>
+<div class="col-md-7 " style="text-align:center;">
+
 <!--<div class="w3-card-4" style="background-color: rgb(240,240,240); text-align:center;">-->
 <?php
 // Εκτέλεση του query για την ανάκτηση των στοιχείων των ασθενών
@@ -23,7 +23,7 @@ $patient_id = $_SESSION['id_user'];
 if ($result && mysqli_num_rows($result) > 0) {
 	//echo '<div class="w3-card-4" style="background-color: rgb(240,240,240);  text-align:center;">';
 	echo "<h2 style='color:green;' >Your DATA</h2>";
-    echo "<table border='1' style='width: 100%; text-align: center;'>";
+    echo "<table border='2' style='width: 100%; text-align: center;'>";
     echo "<tr>
             <th>Όνομα</th>
             
@@ -50,11 +50,38 @@ if ($result && mysqli_num_rows($result) > 0) {
                     <a href='bioximika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Βιοχημικά</button>
                     </a>
+					
+					
+                </td>
+              </tr>
+			  <tr>
+                <td></td>
+                
+                <td>
+					
 					<a href='aimatologika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Αιματολογικά</button>
                     </a>
+					<a href='ormon_res.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Μικροβιολογικές κ.α. εξετ. </button>
+                    </a>
 					<a href='aktinologika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Απεικονιστικά</button>
+                    </a>
+					
+					
+                </td>
+              </tr>
+			  <tr>
+                <td></td>
+                
+                <td>
+					
+					<a href='loipes_exet_res.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Λοιπές εξετάσεις</button>
+                    </a>
+					<a href='gnomat_res.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Γνωματεύσεις</button>
                     </a>
 					<a href='stress.php?patient_id=$patient_id'>
                         <button>Stress</button>

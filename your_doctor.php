@@ -39,7 +39,7 @@ if($row){
                 <th>Facebook</th>
                 <th>LinkedIn</th>
                 <th>Ιστοσελίδα</th>
-                <th>Doxy</th>
+                <th>Τηλεδιάσκεψη</th>
             </tr>";
 
         while ($data = mysqli_fetch_assoc($result)) {

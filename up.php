@@ -80,20 +80,26 @@
                     <a class="nav-link " href="index.php">Home</a> 
                   </li>
 				  <li class="nav-item">
+                    <a class="nav-link " href="calculation_istor.php">ιστορικο</a>
+                  </li>
+				  <li class="nav-item">
                     <a class="nav-link " href="calculation.php">υπολογισμοι</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="blog.php"> Blog</a>
+                    <a class="nav-link " href="blog.php"> αρθρα</a>
                   </li>
-                  <li class="nav-item">
+                 <!-- <li class="nav-item">
                     <a class="nav-link " href="bibliography.php">Βιβλιογραφια</a>
-                  </li>
+                  </li>-->
                   <li class="nav-item active">
                     <a class="nav-link " href="doctors.php">Doctors</a>
                   </li>
-				  <li class="nav-item">
-                    <a class="nav-link " href="about.php">about</a>
+				  <li class="nav-item active">
+                    <a class="nav-link " href="charts.php">Διαγραμματα</a>
                   </li>
+				  <!--<li class="nav-item">
+                    <a class="nav-link " href="testimonials.php">αποψεις</a>
+                  </li>-->
 				  <?php
 					if (isset($_SESSION['consultant']) && $_SESSION['consultant'] !== '0' && !empty($_SESSION['consultant'])) {
 						
@@ -108,20 +114,21 @@
 						<li class="nav-item">
 							<a class="nav-link " href="choose_doctor.php">ΔΙΑΛΕΞΕ ΓΙΑΤΡΟ</a>
 						</li>';
-					} else if ((isset($_SESSION['email']) && isset($_SESSION['role'])) && $_SESSION['role'] == 'Doctor') {
+					} /*else if ((isset($_SESSION['email']) && isset($_SESSION['role'])) && $_SESSION['role'] == 'Doctor') {
 						// Αν ο χρήστης είναι γιατρός
 						echo '
 						<li class="nav-item">
 							<a class="nav-link " href="patiens.php">ΑΣΘΕΝΕΙΣ ΣΟΥ</a>
 						</li>';
-					} else {
+					} */else {
 						// Αν δεν ικανοποιείται καμία από τις παραπάνω συνθήκες
 						echo '
 						<li class="nav-item">
 							<a class="nav-link " href=""></a>
 						</li>';
 					}
-?>
+					?>
+					
 
 
                   
@@ -152,13 +159,20 @@
                     Sign Up
                   </span>
                 </a>';}
-				else {
-					echo '<a  href="my_data.php">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                  <span>' ?>
-                    <?php echo $_SESSION['email'];
-                 echo '</span>
-                </a>';  } ?>
+				else {if ( isset($_SESSION['role']) && $_SESSION['role'] == 'visitor') {
+						// Αν ο χρήστης είναι επισκέπτης
+						echo '
+						<i aria-hidden="true">
+							<a class="fa  " href="my_data.php">YOUR DATA</a>
+						</i>';
+					} else if ( isset($_SESSION['role']) && $_SESSION['role'] == 'Doctor') {
+						// Αν ο χρήστης είναι γιατρός
+						echo '
+						<i aria-hidden="true">
+							<a class="fa  " href="patiens.php">ΑΣΘΕΝΕΙΣ ΣΟΥ</a>
+						</i>';
+					}
+					  } ?>
 					
 				
 				</div>
