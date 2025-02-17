@@ -79,10 +79,10 @@ if (isset($_POST['submit'])) {
 
     // Αποθήκευση δεδομένων στη βάση δεδομένων
     $query = "INSERT INTO bio_tests (biox_id,glu, ouria, krea, ouriko, cholist, hdl, trigl,al_f, sgot, sgpt, ggt , choler ,choler1, ka , na, cl, ca, mgn, leuk, alboum ,glu_hb, amyl,amyl1, crp ,  psa , cpk ) 
-              VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+              VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			  
 	$stmt = $con->prepare($query);
-	$stmt->bind_param("dddddddddddddddddddddddddd",
+	$stmt->bind_param("ddddddddddddddddddddddddddd",
 					'$biox_id','$glu', '$ouria', '$krea', '$ouriko', '$cholist', '$hdl', '$trigl','$al_f', '$sgot', '$sgpt', '$ggt' , '$choler' ,'$choler1' , '$ka' , '$na','$cl','$ca','$mgn','$leuk','$alboum','$glu_hb','$amyl','$amyl1','$crp','$psa','$cpk');	
 	$stmt->execute(); }
 	
