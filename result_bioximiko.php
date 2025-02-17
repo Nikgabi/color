@@ -3,6 +3,7 @@
 $glu = $ouria = $krea = $ouriko = $cholist = $hdl = $trigl =$al_f = $sgot =$sgpt=$ggt=null;
 $choler = $choler1 =$ka = $na = $cl = $ca = $mgn  =$na_cor=$ca_cor=  null;
 $leuk = $crp = $alboum = $psa = $cpk = $amyl =$amyl1 =$glu_hb = null;
+$osmo =$ldl=$na_cor = $ca_cor= null;
 
 function test_input($data) {
     $data = trim($data);
