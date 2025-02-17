@@ -77,9 +77,16 @@ if (isset($_POST['submit'])) {
 		}
 
     // Αποθήκευση δεδομένων στη βάση δεδομένων
-    $query = "INSERT INTO aimo_data (user_id,Hb, Htc, eryth, leuk, oudet, lemfo, mono, ios, bas, plt , Fe , ferit , b12, filiko, pt, pt1, inr, ptt, ino ) 
-              VALUES ('$user_id','$Hb', '$Htc', '$eryth', '$leuk', '$oudet', '$lemfo', '$mono', '$ios', '$bas', '$plt' , '$Fe' , '$ferit' , '$b12','$filiko','$pt','$pt1','$inr','$ptt','$ino')";
-$query_run = mysqli_query($con, $query);}
+    $query = "INSERT INTO aimo_data (user_id,Hb, Htc, eryth, leuk, oudet,
+				lemfo, mono, ios, bas, plt , Fe , ferit , b12, filiko, pt, pt1, inr, ptt, ino ) 
+              VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			  
+	$stmt = $con->prepare($query);
+	$stmt->bind_param("dddddddddddddddddddd",
+					$user_id,$Hb, $Htc, $eryth, $leuk, $oudet, $lemfo, $mono,$ios,
+					$bas, $plt, $Fe , $ferit ,$b12 , $filiko , $pt,$pt1,$inr,$ptt,$ino);	
+	$stmt->execute();		  
+		}
 	
 
 ?>
