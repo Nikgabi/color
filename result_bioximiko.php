@@ -1,4 +1,8 @@
 <?php include('up.php');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
 // Αρχικοποίηση μεταβλητών για τα αποτελέσματα
 $glu = $ouria = $krea = $ouriko = $cholist = $hdl = $trigl =$al_f = $sgot =$sgpt=$ggt=null;
 $choler = $choler1 =$ka = $na = $cl = $ca = $mgn  =$na_cor=$ca_cor=  null;
@@ -13,6 +17,7 @@ function test_input($data) {
 }
 
 if (isset($_POST['submit'])) {
+	
     // Λήψη των δεδομένων από τη φόρμα
     $glu = test_input($_POST['glu']);
     $ouria = test_input($_POST['ouria']);
@@ -56,15 +61,12 @@ if (isset($_POST['submit'])) {
 	if($ca<>null && $alboum<>null && $alboum< 4){
 		$ca_cor=$ca + 0.8*(4-$alboum) ;
 		}
-
-    
-	
 	
 
     // Αποθήκευση δεδομένων στη βάση δεδομένων
     $query = "INSERT INTO bio_tests (biox_id,glu, ouria, krea, ouriko, cholist, hdl, trigl,al_f, sgot, sgpt, ggt , choler ,choler1, ka , na, cl, ca, mgn, leuk, alboum ,glu_hb, amyl,amyl1, crp ,  psa , cpk ) 
               VALUES ('$biox_id','$glu', '$ouria', '$krea', '$ouriko', '$cholist', '$hdl', '$trigl','$al_f', '$sgot', '$sgpt', '$ggt' , '$choler' ,'$choler1' , '$ka' , '$na','$cl','$ca','$mgn','$leuk','$alboum','$glu_hb','$amyl','$amyl1','$crp','$psa','$cpk')";
-$query_run = mysqli_query($con, $query);}
+	$query_run = mysqli_query($con, $query);}
 	
 
 ?>
@@ -88,7 +90,7 @@ $query_run = mysqli_query($con, $query);}
 			<?php if (isset($_POST['submit'])): ?>
 				<h3 style="color: red">Οι βιοχημικές εξετάσεις σας αποθηκεύτηκαν</h3>
 				<h3 style="color: green">Επιπλέον υπολογίσθηκαν οι κάτωθι τιμές</h3><br>
-		
+			
 				
 				<?php if (!is_null($osmo)) { ?>
 					<p><strong>Οσμωτικότητα:</strong> <?php echo number_format($osmo, 0); ?> mOsm/L</p>
@@ -124,4 +126,6 @@ $query_run = mysqli_query($con, $query);}
 	</section>
 	</div>
   
-  <?php include('down.php'); ?>	
+  <?php 
+  echo "Reached down.php";
+  include('down.php'); ?>	

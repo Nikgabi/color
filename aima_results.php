@@ -1,4 +1,8 @@
 <?php include('up.php');
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Αρχικοποίηση μεταβλητών για τα αποτελέσματα
 $Hb = $Htc = $eryth = $leuk = $oudet = $lemfo = $mono=$ios=$bas=$plt=null;
 $Fe = $ferit = $b12 = $filiko = $pt = $pt1 = $inr=$ptt=$ino=null;
@@ -138,4 +142,6 @@ $query_run = mysqli_query($con, $query);}
 	</section>
 	</div>
   
-  <?php include('down.php'); ?>	
+  <?php 
+  echo "Reached down.php";
+  include('down.php'); ?>	
