@@ -83,7 +83,7 @@ if (isset($_POST['submit'])) {
 			  
 	$stmt = $con->prepare($query);
 	$stmt->bind_param("ddddddddddddddddddddddddddd",
-					'$biox_id','$glu', '$ouria', '$krea', '$ouriko', '$cholist', '$hdl', '$trigl','$al_f', '$sgot', '$sgpt', '$ggt' , '$choler' ,'$choler1' , '$ka' , '$na','$cl','$ca','$mgn','$leuk','$alboum','$glu_hb','$amyl','$amyl1','$crp','$psa','$cpk');	
+					$biox_id,$glu, $ouria, $krea, $ouriko, $cholist, $hdl, $trigl,$al_f, $sgot, $sgpt, $ggt , $choler ,$choler1 , $ka , $na,$cl,$ca,$mgn,$leuk,$alboum,$glu_hb,$amyl,$amyl1,$crp,$psa,$cpk);	
 	$stmt->execute(); }
 	
 
