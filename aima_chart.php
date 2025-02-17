@@ -115,7 +115,7 @@ function test_input($data) {
             <select name="er1" required style="width: 100%; padding: 8px; height: 200px; overflow: auto;" >
                 <option value="" selected>Επιλέξτε...</option>
                 <option value="Hb">Αιμοσφαιρίνη</option>  
-                <option value="Htc">Αιματοκρίτης</option>
+                <option value="Hct">Αιματοκρίτης</option>
                 <option value="eryth">Ερυθρά</option>
                 <option value="leuk">Λευκά</option>
                 <option value="oudet">Ουδετερόφιλα</option>
