@@ -3,6 +3,19 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+$fields = ['Hb', 'Htc', 'eryth', 'leuk', 'oudet', 'lemfo', 'mono', 'ios', 
+           'bas', 'plt', 'Fe', 'ferit', 'b12', 'filiko', 'pt', 'pt1', 'inr', 
+           'ptt', 'ino'];
+
+foreach ($fields as $field) {
+    if (isset($_POST[$field]) && $_POST[$field] !== '') {
+        $$field = (float) str_replace(',', '.', $_POST[$field]); // Μετατροπή αριθμού
+    } else {
+        $$field = null; // Αν είναι κενό, αποθηκεύεται ως NULL
+    }
+}
+
+
 // Αρχικοποίηση μεταβλητών για τα αποτελέσματα
 $Hb = $Htc = $eryth = $leuk = $oudet = $lemfo = $mono=$ios=$bas=$plt=null;
 $Fe = $ferit = $b12 = $filiko = $pt = $pt1 = $inr=$ptt=$ino=null;

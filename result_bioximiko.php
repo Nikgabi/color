@@ -2,6 +2,20 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+$fields = ['glu', 'ouria', 'krea', 'ouriko', 'cholist', 'hdl', 'trigl', 'al_f', 
+           'sgot', 'sgpt', 'ggt', 'choler', 'choler1', 'ka', 'na', 'cl', 'ca', 
+           'mgn',  'leuk', 'crp', 'alboum', 'psa', 'cpk', 
+           'amyl', 'amyl1', 'glu_hb'];
+
+foreach ($fields as $field) {
+    if (isset($_POST[$field]) && $_POST[$field] !== '') {
+        $$field = (float) str_replace(',', '.', $_POST[$field]); // Μετατροπή αριθμού
+    } else {
+        $$field = null; // Αν είναι κενό, αποθηκεύεται ως NULL
+    }
+}
+
+
 
 // Αρχικοποίηση μεταβλητών για τα αποτελέσματα
 $glu = $ouria = $krea = $ouriko = $cholist = $hdl = $trigl =$al_f = $sgot =$sgpt=$ggt=null;
