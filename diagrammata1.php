@@ -40,7 +40,7 @@ function test_input($data) {
 		if (isset($_SESSION['id_user']) && $_SESSION['role'] == 'visitor') {
 			$user_id = $_SESSION['id_user'];
 
-			$stmt1 = $con->prepare("SELECT AVG($metabl) as avg_value FROM health_data WHERE user_id=?");
+			$stmt1 = $con->prepare("SELECT AVG(NULLIF($metabl, '')) as avg_value FROM health_data WHERE user_id=?");
 			$stmt1->bind_param("i", $user_id);
 			$stmt1->execute();
 			$result1 = $stmt1->get_result()->fetch_assoc();
@@ -60,7 +60,7 @@ function test_input($data) {
 
 			if (!empty($patient_ids)) {
 				$placeholders = implode(',', array_fill(0, count($patient_ids), '?'));
-				$query2 = "SELECT AVG($metabl) as avg_value FROM health_data WHERE user_id IN ($placeholders)";
+				$query2 = "SELECT AVG(NULLIF($metabl, '')) as avg_value FROM health_data WHERE user_id IN ($placeholders)";
 				$stmt4 = $con->prepare($query2);
 				$stmt4->bind_param(str_repeat("i", count($patient_ids)), ...$patient_ids);
 				$stmt4->execute();
