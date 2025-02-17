@@ -32,7 +32,7 @@ function test_input($data) {
 if (isset($_POST['submit'])) {
     // Λήψη των δεδομένων από τη φόρμα
     $Hb = test_input($_POST['Hb']);
-    $Htc = test_input($_POST['Htc']);
+    $Hct = test_input($_POST['Htc']);
     $eryth =test_input($_POST['eryth']);
     $leuk = test_input($_POST['leuk']);
     $oudet =test_input($_POST['oudet']);
@@ -77,13 +77,13 @@ if (isset($_POST['submit'])) {
 		}
 
     // Αποθήκευση δεδομένων στη βάση δεδομένων
-    $query = "INSERT INTO aimo_data (user_id,Hb, Htc, eryth, leuk, oudet,
+    $query = "INSERT INTO aimo_data (user_id,Hb, Hct, eryth, leuk, oudet,
 				lemfo, mono, ios, bas, plt , Fe , ferit , b12, filiko, pt, pt1, inr, ptt, ino ) 
               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			  
 	$stmt = $con->prepare($query);
 	$stmt->bind_param("dddddddddddddddddddd",
-					$user_id,$Hb, $Htc, $eryth, $leuk, $oudet, $lemfo, $mono,$ios,
+					$user_id,$Hb, $Hct, $eryth, $leuk, $oudet, $lemfo, $mono,$ios,
 					$bas, $plt, $Fe , $ferit ,$b12 , $filiko , $pt,$pt1,$inr,$ptt,$ino);	
 	$stmt->execute();		  
 		}
