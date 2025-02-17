@@ -52,7 +52,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<tr>
                 <td>" . date("d-m-Y", strtotime($row['created_at'])) . "</td>
                 <td>{$row['Hb']}</td>
-                <td>{$row['Htc']}</td>
+                <td>{$row['Hct']}</td>
                 <td>{$row['eryth']}</td>
                 <td>{$row['leuk']}</td>
                 <td>{$row['oudet']}</td>

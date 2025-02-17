@@ -162,6 +162,4 @@ if (isset($_POST['submit'])) {
 	</section>
 	</div>
   
-  <?php 
-  echo "Reached down.php";
-  include('down.php'); ?>	
+  <?php include('down.php'); ?>	
