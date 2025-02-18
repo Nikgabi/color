@@ -28,7 +28,7 @@
                   ΚΛΙΝΙΚΗ ΜΙΚΡΟΒΙΟΛΟΓΟΣ
                 </h6>
                 <div class="social_box">
-                  <a href="https://doxy.me/nikgabi">
+                  <a href="https://doxy.me/drpanagea">
                     <i class="fa fa-stethoscope" aria-hidden="true"></i>
                   </a>
                   
@@ -121,6 +121,9 @@
 				  <a href="mailto:Lapasurgeon@gmail.com">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
+				  <a href="https://doxy.me/gutclinic" target="_blank">
+                    <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  </a>
                   
                 </div>
               </div>
@@ -210,6 +213,38 @@
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
 				  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/Gavalakis.jpg" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  ΓΑΒΑΛΑΚΗΣ ΝΙΚΟΣ
+                </h5>
+                <h6>
+                  ΧΕΙΡΟΥΡΓΟΣ
+                </h6>
+                <div class="social_box">
+                  
+                  
+                  <a href="https://www.linkedin.com/in/gavalakis/" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+				  <a href="http://gavalakis.eu/" target="_blank">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                  </a>
+				  <a href="mailto:fb7985@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+				  <a href="https://doxy.me/nikgabi" target="_blank">
+                    <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  </a>
                   
                 </div>
               </div>

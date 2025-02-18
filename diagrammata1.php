@@ -45,6 +45,11 @@ function test_input($data) {
 			$stmt1->execute();
 			$result1 = $stmt1->get_result()->fetch_assoc();
 			$avg_user = $result1['avg_value'];
+			
+			$stmt2 = $con->prepare("SELECT NULLIF($metabl, '') as metabliti , DATE(created_at) as date FROM health_data WHERE user_id=?");
+			$stmt2-> bind_param("i", $user_id);
+			$stmt2-> execute();
+			$result2 = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
 		} elseif (isset($_SESSION['id_user']) && $_SESSION['role'] == 'Doctor') {
 			$doctor_id = $_SESSION['id_user'];
 			$query = "SELECT id_user FROM user WHERE consultant = ?";
@@ -157,13 +162,62 @@ function test_input($data) {
 					chart.draw(data, options);
 				}
 			</script>
+			
+			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+			<script type="text/javascript">
+				google.charts.load('current', {'packages':['corechart']});
+				google.charts.setOnLoadCallback(drawChart);
 
+				function drawChart() {
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Ημερομηνία');
+			data.addColumn('number', 'Μεταβλητή');
+
+			var result1 = <?php echo json_encode($result2); ?>;
+			var chartData = [['Ημερομηνία', 'Τιμή']]; // Πρώτη γραμμή (τίτλοι)
+
+			if (Array.isArray(result1)) {
+				result1.forEach(function(row) {
+					if (row.date && row.metabliti !== null) {
+						chartData.push([row.date, parseFloat(row.metabliti) || 0]);
+					}
+				});
+			}
+
+			console.log("Final Chart Data:", chartData); // Debugging
+
+			if (chartData.length === 1) {
+				console.error("No valid data to display");
+				return;
+			}
+
+			data.addRows(chartData.slice(1)); // Προσθήκη δεδομένων, χωρίς την πρώτη γραμμή
+
+			var options = {
+				title: 'Μεταβολή τιμής μεταβλητής',
+				curveType: 'function',
+				legend: { position: 'bottom' },
+				hAxis: { title: 'Ημερομηνία' },
+				vAxis: { title: 'Τιμή' }
+			};
+
+			var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+			chart.draw(data, options);
+		}
+    </script>
 
 	
+        <?php if ($_SESSION['role'] == 'visitor'):?>
         <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-                                              
+          <div id="curve_chart" style="width: 400px; height: 300px;"></div>
+		  <div id="chart" style="width: 400px; height: 300px;"></div>                                    
         </div>
-		<div id="chart" style="width: 400px; height: 300px;"></div>
+	<?php endif; ?>	
+	<?php if ($_SESSION['role'] == 'Doctor'):?>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+		  <div id="chart" style="width: 400px; height: 300px;"></div>                                    
+        </div>
+	<?php endif; ?>	</div>
     </form>
 	
 </div>

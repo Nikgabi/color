@@ -23,7 +23,7 @@
                 <img src="images/savvas.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="policy.pdf" target="_blank">"Τίτλος Άρθρου"  </a></h2>
+                <h2><a href="" target="_blank">"Τίτλος Άρθρου"  </a></h2>
 				<p style="font-style:italic;">του Σάββα Παπαγρηγοριάδη<p><br>
                 <p>Αυτή είναι μιά μικρή περίληψη του άρθρου.</p>
             </div>
@@ -60,7 +60,7 @@
                 <img src="images/georgop.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="policy.pdf" target="_blank">"Τίτλος Άρθρου"  </a></h2>
+                <h2><a href="" target="_blank">"Τίτλος Άρθρου"  </a></h2>
 				<p style="font-style:italic;">του Ιωάννη Γεωργόπουλου<p><br>
                 <p>Αυτή είναι μιά μικρή περίληψη του άρθρου.</p>
             </div>
@@ -73,9 +73,21 @@
                 <img src="images/panagea.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="policy.pdf" target="_blank">"Τίτλος Άρθρου"  </a></h2>
+                <h2><a href="" target="_blank">"Τίτλος Άρθρου"  </a></h2>
 				<p style="font-style:italic;">της Θεοφανούς Παναγέα<p><br>
                 <p>Αυτή είναι μιά μικρή περίληψη του άρθρου.</p>
+            </div>
+        </div>
+    </div>
+	<div class="blog-container">
+        <div class="blog-post">
+            <div class="post-image">
+                <img src="images/Gavalakis.jpg" alt="Φωτογραφία άρθρου">
+            </div>
+            <div class="post-content">
+                <h2><a href="files/gavalakis.pdf" target="_blank">"Ενούρηση στα παιδιά"  </a></h2>
+				<p style="font-style:italic;">του Γαβαλάκη Νίκου<p><br>
+                <p>Συμβουλές στον γονιό.</p>
             </div>
         </div>
     </div>

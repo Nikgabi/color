@@ -19,7 +19,8 @@
 <div class="w3-card-4" style="background-color: rgb(240,240,240); text-align:center;"> <br>
 <h3 style="color: red; font-weight: bold;">Προσοχή η επιλογή γιατρού δεν αλλάζει.</h3>
 <h4 style="color: red; font-weight: bold;">Επανέλθετε αργότερα για περισσότερες επιλογές γιατρού και ειδικότητας</h4>
-<h4 style="color: green; font-weight: bold;">Επισκεφθείτε την σελίδα των γιατρών μας για να επιλέξετε</h4>
+<h5 style="color: green; font-weight: bold;">Η επιλογή ειδικότητας γιατρού δεν έχει σημασία καθόσον όλοι έχουν ρόλο γενικού γιατρού</h5>
+<h5 style="color: green; font-weight: bold;">Επισκεφθείτε την σελίδα των γιατρών μας για να επιλέξετε</h5>
 <?php
 $user_id=$_SESSION['id_user'];
 // Εκτέλεση του SQL query για την επιλογή των γιατρών
