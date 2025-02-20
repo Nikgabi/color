@@ -8,7 +8,7 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
-                <img src="images/liakou.jpg" alt="Φωτογραφία άρθρου">
+                <img src="images/liakou2.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
                 <h2><a href="files/liakou_pyretos.pdf" target="_blank">"Πυρετός.Δέκα μύθοι."  </a></h2>
@@ -20,7 +20,7 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
-                <img src="images/savvas.jpg" alt="Φωτογραφία άρθρου">
+                <img src="images/savvas1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
                 <h2><a href="https://www.youtube.com/watch?v=YV9VN2RBzuk&t=185s&ab_channel=TopDoctorsUK" target="_blank">"Εκκολπωματίτιδα παχέως εντέρου"  </a></h2>
@@ -32,7 +32,7 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
-                <img src="images/stavroula1.jpg" alt="Φωτογραφία άρθρου">
+                <img src="images/stavroula2.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
                 <h2><a href="files/ultrasound.pdf" target="_blank">"Ο υπέρηχος: το νέο "στηθοσκόπιο" των γιατρών"  </a></h2>
@@ -44,7 +44,7 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
-                <img src="images/panos1.jpg" alt="Φωτογραφία άρθρου">
+                <img src="images/panos2.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
                 <h2><a href="files/kalampalikis.pdf" target="_blank">"Βρογχιολίτιδα"  </a></h2>
@@ -56,7 +56,7 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
-                <img src="images/stergios.jpg" alt="Φωτογραφία άρθρου">
+                <img src="images/stergios1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
                 <h2><a href="files/stergios.pdf" target="_blank">"Εξετάσεις μαστού, κάθε πότε, πώς"  </a></h2>
@@ -69,7 +69,7 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
-                <img src="images/georgop.jpg" alt="Φωτογραφία άρθρου">
+                <img src="images/georgop1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
                 <h2><a href="" target="_blank">"Τίτλος Άρθρου"  </a></h2>
@@ -82,7 +82,7 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
-                <img src="images/panagea.jpg" alt="Φωτογραφία άρθρου">
+                <img src="images/panagea1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
                 <h2><a href="files/panagea.pdf" target="_blank">"Χοληστερόλη, η καλή, η κακή και η ... άσκηση"  </a></h2>
@@ -94,7 +94,7 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
-                <img src="images/Gavalakis.jpg" alt="Φωτογραφία άρθρου">
+                <img src="images/Gavalakis1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
                 <h2><a href="files/gavalakis.pdf" target="_blank">"Ενούρηση στα παιδιά"  </a></h2>

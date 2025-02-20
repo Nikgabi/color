@@ -18,7 +18,7 @@
           <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/panagea.jpg" alt="" />
+                <img src="images/panagea1.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
@@ -45,11 +45,11 @@
 		  <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/panos1.jpg" alt="" />
+                <img src="images/panos2.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
-                  ΚΑΛΑΜΠΑΛΙΚΗΣ ΠΑΝΑΓΙΩΤΗΣ
+                  ΚΑΛΑΜΠΑΛΙΚΗΣ ΠΑΝΟΣ
                 </h5>
                 <h6>
                   ΠΑΙΔΙΑΤΡΟΣ ΕΝΤΑΤΙΚΟΛΟΓΟΣ
@@ -68,7 +68,7 @@
 		  <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/liakou.jpg" alt="" />
+                <img src="images/liakou2.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
@@ -100,7 +100,7 @@
           <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/savvas.jpg" alt="" />
+                <img src="images/savvas1.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
@@ -132,7 +132,7 @@
           <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/georgop.jpg" alt="" />
+                <img src="images/georgop1.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
@@ -157,7 +157,7 @@
 		  <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/stergios.jpg" alt="" />
+                <img src="images/stergios1.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
@@ -193,7 +193,7 @@
 			<div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/stavroula1.jpg" alt="" />
+                <img src="images/stavroula2.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
@@ -221,7 +221,7 @@
 		  <div class="item">
             <div class="box">
               <div class="img-box">
-                <img src="images/Gavalakis.jpg" alt="" />
+                <img src="images/Gavalakis1.jpg" alt="" />
               </div>
               <div class="detail-box">
                 <h5>
