@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
         </div>
         
         <label for="er2" required style="font-weight: bold;">Περιγραφή και Απαντήσεις εξέτασης</label>
-        <textarea rows="8" cols="100" name="er2" style="width: 100%; max-width: 800px; padding: 8px;"></textarea>
+        <textarea rows="8" cols="100" name="er2" placeholder="Γράψε μιά περίληψη μέχρι 1000 χαρακτήρες." style="width: 100%; max-width: 800px; padding: 8px;"></textarea>
         
         <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
             <input type="submit" name="submit" value="Καταχώρηση" style="background-color: rgb(162,235,182); padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">

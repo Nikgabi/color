@@ -15,7 +15,10 @@
 		<a  href="testimonials.php" >TESTIMONIALS</a>
 		---
 		<a  href="about.php" >ABOUT</a>
+		---
+		<small>&copy; Copyright 2025 All Rights Reserved by ygeiafirst.net</small>
       </p>
+	  
     </div>
   </footer>
   <!-- footer section -->
