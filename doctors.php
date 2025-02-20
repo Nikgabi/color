@@ -1,7 +1,7 @@
 <?php include('up.php'); ?>
 
 <head>
-	<title>Doctors</title>
+	<title>Doctors </title>
 </head>
 
 <!-- team section -->
