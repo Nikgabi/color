@@ -29,6 +29,20 @@
 		  
 		   <h3 style="color:green;">Τα στατιστικά της βάσης δεδομένων μας : </h3>
 		<?php 
+		$total=$doctors=$visitors=$totals=null;
+		$query1 ="SELECT 
+			COUNT(*) AS total_records,
+			COUNT(CASE WHEN role = 'Doctor' THEN 1 END) AS matching_records
+			FROM user ";
+		$query1_run = mysqli_query($con,$query1);
+			
+		if ($query1_run && mysqli_num_rows($query1_run)>0) {
+			$row = mysqli_fetch_assoc($query1_run);
+			$total = $row['total_records'];
+			$doctors = $row['matching_records'];
+			$visitors = $total - $doctors;
+		}
+		
 		$mapping = [
 			"user" => "ΧΡΗΣΤΕΣ",
 			"doctors" => "ΣΤΟΙΧΕΙΑ ΓΙΑΤΡΩΝ",
@@ -69,6 +83,7 @@
 				echo "<h6> " . $translated_name . " - Σύνολο εγγραφών: " . $data['total_records'] . "</h6>";
 			}
 		}
+		echo "<h6> ΧΡΗΣΤΕΣ : " . $total . ", ΓΙΑΤΡΟΙ: " . $doctors . ", ΕΠΙΣΚΕΠΤΕΣ :" . $visitors . "</h6>" ;
 	?>
 	<br>
 		</div></div></div></div></div></section>
