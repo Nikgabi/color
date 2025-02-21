@@ -5,12 +5,12 @@
 </head>
 
 <div id = "container" class="layout_padding2-bottom">
-<br><br>
+
 
 <section class="about_section">
     <div class="container  ">
       <div class="row">
-        <div class="col-md-1 "><br><br><br>
+        <div class="col-md-1 ">
           <div class="img-box">
             <img src="images/calculation.png" alt="">
           </div><br><br>
@@ -72,11 +72,41 @@
 			';}
 			 else {
 				echo '<div class="heading_container">
-              <h2>
-                Για τους Ιατρικούς υπολογισμούς πρέπει να είστε εγγεγραμμένος χρήστης <span>και ΟΧΙ γιατρός.</span>
-              </h2>
+              <h4>Σε πολλούς υπολογισμούς γίνεται εισαγωγή των δεδομένων στη βάση δεδομένων της εφαρμογής</h4>
+               <h5> Για αυτούς τους υπολογισμούς πρέπει να είστε εγγεγραμμένος χρήστης <span style="color:green;">και ΟΧΙ γιατρός.</span>
+              </h5>
             </div>
-				<h4 style="color:red ;">Πρέπει να εγγραφείτε ώς επισκέπτης για να έχετε πρόσβαση στο περιεχόμενο της σελίδας </h4>'; 
+				<h5 style="color:green ;">Οι υπολογισμοί για τους οποίους έχετε πρόσβαση: </h5>
+				<a href="strock.php">
+              Κολπική μαρμαρυγή και εγκεφαλικό
+            </a>
+			
+			<a href="mi_er.php">
+               Κίνδυνος εμφράγματος
+            </a>
+			<a href="appendix_child.php">
+              Εκτίμηση οξ. σκωληκοειδίτιδας
+            </a>
+			
+			
+			<a href="clear_creat.php">
+              Σπειραματική διήθηση
+            </a>
+			<a href="child_height.php">
+              Υπολογισμός τελικού ύψους παιδιού
+            </a>
+			<a href="birth.php">
+              Πιθανή ημερομηνία γέννησης
+            </a>
+			<a href="anion_gap.php">
+              Χάσμα ανιόντων
+            </a><hr>
+			
+			<h3>Τεχνητή νοημοσύνη <span style="color:green;"> μόνο για εγγεγραμένους χρήστες.</span> </h3>
+			<a href="chatgpt3.php">
+              Ερώτημα προς το ChatGpt-4
+            </a>
+				'; 
 			 }
 			?>
           </div>

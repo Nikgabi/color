@@ -65,6 +65,18 @@
             </div>
         </div>
     </div>
+	<div class="blog-container">
+        <div class="blog-post">
+            <div class="post-image">
+                <img src="images/karam.jpg" alt="Φωτογραφία άρθρου">
+            </div>
+            <div class="post-content">
+                <h2><a href="files/karamalis.pdf" target="_blank">"Πρόληψη καρκίνου τραχήλου μήτρας"  </a></h2>
+				<p style="font-style:italic;">του Γιώργου Καράμαλη<p><br>
+                <p>Κατευθυντήριες οδηγίες από την Ελληνική γυναικολογική εταιρεία.</p>
+            </div>
+        </div>
+    </div>
 	
 	<div class="blog-container">
         <div class="blog-post">

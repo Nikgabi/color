@@ -87,6 +87,7 @@ if (isset($_POST['submit'])) {
 				</div><br>
 				<?php if (isset($_POST['submit'])): ?>
 				<p><strong>Πιθανή ημερομηνία γέννησης:</strong> <?php echo  ucfirst($birth_date); // Κεφαλαίο το πρώτο γράμμα ?> </p><br>
+				<p>Βιβλιογραφία, Αμερικάνικη εταιρεία γυναικολογίας: <button><a href="files/Methods for Estimating the Due Date.pdf" target="_blank">Δές το άρθρο</a></button></p><br>
 				<?php endif; ?>
 				</div>
 				<br>

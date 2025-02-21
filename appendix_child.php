@@ -153,6 +153,7 @@
 				<?php if (!empty($message) && isset($_POST['submit'])): ?>
 							<h3><strong>SCORE:</strong> <?php echo isset($scor) ? $scor : "-"; ?></h3><br>
                             <h3><strong>Εκτίμηση:</strong> <?php echo $message; ?></h3>
+							<h4>Βιβλιογραφία, Journal of Paediatric Surgery: <button><a href="files/Pediatric-Appendicitis-Score.pdf" target="_blank">Δές το άρθρο</a></button></h4><br>
                  <?php endif; ?>		
 					
 	

@@ -68,6 +68,33 @@
 		  <div class="item">
             <div class="box">
               <div class="img-box">
+                <img src="images/karam.jpg" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  ΚΑΡΑΜΑΛΗΣ ΓΙΩΡΓΟΣ
+                </h5>
+                <h6>
+                  ΓΥΝΑΙΚΟΛΟΓΟΣ
+                </h6>
+                <div class="social_box">
+                  <a href="https://doxy.me/drkaramalis">
+                    <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  </a>
+                  
+                  <a href="https://www.linkedin.com/in/george-karamalis-15702544/" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="mailto:georgeakar@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="item">
+            <div class="box">
+              <div class="img-box">
                 <img src="images/liakou2.jpg" alt="" />
               </div>
               <div class="detail-box">

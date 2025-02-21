@@ -71,6 +71,7 @@
 							<h2>Απαντήσεις στο Stress Test</h2>
 							<h3><strong>SCORE:</strong> <?php echo $scor ; ?></h3><br>
                             <h3><strong>Εκτίμηση:</strong> <?php echo $message; ?></h3>
+							<h4>Βιβλιογραφία, Arch of internal medicine: <button><a href="https://pubmed.ncbi.nlm.nih.gov/16717171/" target="_blank">Δές το άρθρο</a></button></h4><br>
                  <?php endif; ?>
 			<button style="background-color: rgb(162,235,182) ;"><a href="calculation.php">Πίσω</a></button><br><br>
 </div>

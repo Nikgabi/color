@@ -163,17 +163,25 @@
 						// Αν ο χρήστης είναι επισκέπτης
 						echo '
 						<i aria-hidden="true">
-							<a class="fa  " href="my_data.php">YOUR DATA</a>
+						
+							<a class="  " href="my_data.php">YOUR DATA</a>
+							
 						</i>';
 					} else if ( isset($_SESSION['role']) && $_SESSION['role'] == 'Doctor') {
 						// Αν ο χρήστης είναι γιατρός
 						echo '
 						<i aria-hidden="true">
-							<a class="fa  " href="patiens.php">ΑΣΘΕΝΕΙΣ ΣΟΥ</a>
+						<span>
+							<a class=" " href="patiens.php">ΑΣΘΕΝΕΙΣ ΣΟΥ</a>
+						</span>	
 						</i>';
 					}
 					  } ?>
-					
+				<i aria-hidden="true">
+						<span>
+							<a class=" " href="statistics.php">STAT</a>
+						</span>	
+						</i>
 				
 				</div>
               
