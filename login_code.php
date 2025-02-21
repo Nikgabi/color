@@ -23,6 +23,10 @@
                     $_SESSION['role'] = $row['role'];
                     $_SESSION['speciality'] = $row['eidikotita'];
 					$_SESSION['consultant']=$row['consultant'];
+					$_SESSION['id_user'] = $user_id;
+					$session_id = session_id();
+					$query = "REPLACE INTO active_sessions (session_id, user_id) VALUES ('$session_id', '$user_id')";
+					mysqli_query($con, $query);
                     header("Location:index.php");
                     exit(0);
                 } else {
