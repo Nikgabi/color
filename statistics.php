@@ -34,14 +34,7 @@
 		$row = mysqli_fetch_assoc($result);
 		$active_db_connections = $row['Value'];
 
-		// 2️⃣ Πόσοι χρήστες έχουν κάνει login
-		$query = "SELECT COUNT(DISTINCT user_id) AS active_users FROM active_sessions";
-		$result = mysqli_query($con, $query);
-		$row = mysqli_fetch_assoc($result);
-		$logged_in_users = $row['active_users'];
-
-		// 3️⃣ Διαγραφή ανενεργών συνδέσεων (π.χ. αν κάποιος έχει ανενεργό session 30+ λεπτά)
-		mysqli_query($con, "DELETE FROM active_sessions WHERE last_activity < NOW() - INTERVAL 30 MINUTE");
+		
 
 		
 		
@@ -103,7 +96,7 @@
 		
 	?>
 		<p>🔹 Ενεργές συνδέσεις στη βάση: <b><?php echo $active_db_connections; ?></b></p>
-		<p>👤 Χρήστες με ενεργό login: <b><?php echo $logged_in_users; ?></b></p>
+		
 	<br>
 		</div></div></div></div></div></section>
 
