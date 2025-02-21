@@ -95,6 +95,33 @@
 		  <div class="item">
             <div class="box">
               <div class="img-box">
+                <img src="images/maria.jpg" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  ΓΑΒΑΛΑΚΗ ΜΑΡΙΑ
+                </h5>
+                <h6>
+                  ΑΙΜΑΤΟΛΟΓΟΣ
+                </h6>
+                <div class="social_box">
+                  <a href="">
+                    <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  </a>
+                  
+                  <a href="https://www.linkedin.com/in/maria-gavalaki-0bb0843b/" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="mailto:gavalaki@hotmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="item">
+            <div class="box">
+              <div class="img-box">
                 <img src="images/liakou2.jpg" alt="" />
               </div>
               <div class="detail-box">

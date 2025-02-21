@@ -68,6 +68,18 @@
 	<div class="blog-container">
         <div class="blog-post">
             <div class="post-image">
+                <img src="images/maria.jpg" alt="Φωτογραφία άρθρου">
+            </div>
+            <div class="post-content">
+                <h2><a href="files/maria.pdf" target="_blank">"Αιμορροφιλία παρακολούθηση και θεραπεία"  </a></h2>
+				<p style="font-style:italic;">της Μαρίας Γαβαλάκη<p><br>
+                <p>Ενημέρωση για αυτή την σπάνια πάθηση.</p>
+            </div>
+        </div>
+    </div>
+	<div class="blog-container">
+        <div class="blog-post">
+            <div class="post-image">
                 <img src="images/karam.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
