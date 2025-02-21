@@ -47,10 +47,10 @@
 
 		// Δημιουργία δυναμικής SQL για καταμέτρηση εγγραφών σε όλους τους πίνακες
 		$query = "SELECT GROUP_CONCAT(
-		            CONCAT('SELECT \"', TABLE_NAME, '\" AS table_name, COUNT(*) AS total_records FROM `', TABLE_NAME, '`')
-		          SEPARATOR ' UNION ALL ') AS full_query
-		          FROM information_schema.tables 
-		          WHERE table_schema = 'gavalakis'";
+					CONCAT('SELECT \"', TABLE_NAME, '\" AS table_name, COUNT(*) AS total_records FROM ', TABLE_NAME)
+				  SEPARATOR ' UNION ALL ') AS full_query
+				  FROM information_schema.tables 
+				  WHERE table_schema = 'gavalakis'";
 
 		$query_run = mysqli_query($con, $query);
 
