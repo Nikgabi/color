@@ -29,12 +29,12 @@
 		  
 		   <h3 style="color:green;">Τα στατιστικά της βάσης δεδομένων μας : </h3>
 		<?php 
-		// 1️⃣ Πόσες MySQL συνδέσεις υπάρχουν τώρα;
-		$result = mysqli_query($con, "SHOW STATUS WHERE Variable_name = 'Threads_connected'");
-		$row = mysqli_fetch_assoc($result);
-		$active_db_connections = $row['Value'];
-
 		
+
+		$query3 = "SELECT COUNT(*) AS active_connections FROM information_schema.processlist";
+		$result3 = mysqli_query($con, $query3);
+		$row3 = mysqli_fetch_assoc($result3);
+		$active_connections = $row3['active_connections'];
 
 		
 		
@@ -95,7 +95,7 @@
 		echo "<h6> ΧΡΗΣΤΕΣ : " . $total . ", ΓΙΑΤΡΟΙ: " . $doctors . ", ΕΠΙΣΚΕΠΤΕΣ :" . $visitors . "</h6>" ;
 		
 	?>
-		<p>🔹 Ενεργές συνδέσεις στη βάση: <b><?php echo $active_db_connections; ?></b></p>
+		<p> Ενεργές συνδέσεις στον ιστότοπο: <b><?php echo $active_connections; ?></b></p>
 		
 	<br>
 		</div></div></div></div></div></section>

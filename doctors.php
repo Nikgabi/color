@@ -262,7 +262,9 @@
                   <a href="https://www.linkedin.com/in/stavroula-gavalaki-9bb428173/" target="_blank">
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
-				  
+				  <a href="https://doxy.me/gavalaki" target="_blank">
+                    <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  </a>
 				  <a href="mailto:stavroula3980@gmail.com">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
