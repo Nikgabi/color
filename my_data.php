@@ -50,6 +50,9 @@ if ($result && mysqli_num_rows($result) > 0) {
                     <a href='bioximika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Βιοχημικά</button>
                     </a>
+					<a href='teleconfer.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Τηλεδιασκέψεις</button>
+                    </a>
 					
 					
                 </td>

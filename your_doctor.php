@@ -1,4 +1,26 @@
 <?php include('up.php'); ?>
+<head>
+	<style>
+    .form-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        white-space: nowrap;
+    }
+    .form-container label {
+        font-weight: bold;
+    }
+    .form-container input {
+        padding: 5px;
+        font-size: 16px;
+    }
+    input[type="time"]::-webkit-datetime-edit-seconds-field,
+    input[type="time"]::-webkit-datetime-edit-millisecond-field {
+        display: none;
+    }
+</style>
+	
+</head>
 
 <?php
 $iatros= $_SESSION['consultant'];
@@ -65,19 +87,65 @@ if($row){
 
         
 		echo "  <div class='w3-card' style='background-color: rgb(240,240,240); text-align:center; width: 70%; margin: auto;'>
-				<h3 style='color: green;'><strong > Από τα άνωθεν Links: </strong></h3>
-			<h4>Έχεις την δυνατότητα να στείλεις e-mail στον γιατρό σου.
-			Μπορείς να δείς τις σελίδες του από τα κοινωνικά και επαγγελματικά του δίκτυα, εφόσον τις έχει καταχωρήσει.
-			Επίσης μπορείς να τον καλέσεις σε τηλεδιάσκεψη από το Doxy μετά από προσυνεννόηση μαζί του.
-			Ο ιστότοπος αυτός δεν έχει ευθύνη για τις ιατρικές πληροφορίες που αναζητάτε
-			και είναι πληροφοριακού χαρακτήρα και μόνο.</h4>
-			<h4><strong> Για ιατρική συμβουλή και θεραπεία απευθύνεστε στους ειδικούς γιατρούς που εμπιστεύεστε.</strong></h4><br>
-			<h3 style='color:red'>Αν θέλεις να αλλάξεις γιατρό <button><a href='update_doctor.php'>Click εδώ</a></button> </h3></div>";
-    } else {
-        echo "<p>No data found.</p>";
-    }
-} else {
-    echo "<p>User not found.</p>";
-}
+				
+			<h4>Έχεις την δυνατότητα να στείλεις e-mail στον γιατρό σου ή
+			</h4><br>
+			<form name='doxy' action='' method='POST' class='form-container'>
+			<div style='display: flex; gap: 20px; flex-direction: row;'>
+		
+			<h4 style='color:green' ><label> τηλεδιάσκεψη την:</label>
+			<label for='meet'>Ημερομηνία</label>
+			<input type='date' name='meet'>
+			<label for='last'>Ώρα</label>
+			<input type='time' name='last' step='3600'>
+			<button style='color:blue' type='submit'>Υποβολή</button></h4>
+			</form>
+			
+			</div><br>
+			<h3 style='color:green'>Αν θέλεις να αλλάξεις γιατρό <button><a href='update_doctor.php'>Click εδώ</a></button> </h3></div><br>
+			
+			<div class='w3-card' style='background-color: rgb(240,240,240); text-align:center; width: 70%; margin: auto;'>
+			<h4>Ο ιστότοπος αυτός δεν έχει ευθύνη για τις ιατρικές πληροφορίες που αναζητάτε.</h4>
+			<h4><strong> Για ιατρική συμβουλή και θεραπεία απευθύνεστε στους ειδικούς γιατρούς που εμπιστεύεστε.</strong></h4>
+			</div>
+			<br><br><br>";
+			
+			
+			$user_id = $_SESSION['id_user'];
+
+			if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+				$date = $_POST['meet'];
+				$time = $_POST['last'];
+
+				// Μετατροπή ημερομηνίας σε αντικείμενο DateTime
+				$dateObject = new DateTime($date);
+				$now = new DateTime();
+				
+				// Προσθήκη 2 ημερών στην τρέχουσα ημερομηνία
+				$now->modify('+2 days');
+
+				if ($dateObject >= $now) {
+					// Εισαγωγή στο πίνακα τηλεδιασκέψεων
+					$query = "INSERT INTO teleconference (id_user, consultant, date, time) VALUES (?, ?, ?, ?)";
+					$stmt = mysqli_prepare($con, $query);
+					mysqli_stmt_bind_param($stmt, 'iiss', $user_id, $iatros, $date, $time);
+					mysqli_stmt_execute($stmt);
+					mysqli_stmt_close($stmt);
+
+					// Εμφάνιση pop-up με το μήνυμα
+					echo "<script type='text/javascript'>alert('Η τηλεδιάσκεψη έχει κλείσει! Εάν υπάρχει πρόβλημα θα ενημερωθείτε με email από τον γιατρό σας');</script>";
+				} else {            
+					echo "<script type='text/javascript'>
+						alert('Η τηλεδιάσκεψη πρέπει να κλεισθεί τουλάχιστον 2 μέρες πριν!');
+					</script>";
+				}
+			}
+			} else {
+				echo "<p>No data found.</p>";
+			}
+		} else {
+			echo "<p>User not found.</p>";
+	}
+
 ?>
 <?php include('down.php'); ?>

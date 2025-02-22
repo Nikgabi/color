@@ -114,13 +114,13 @@
 						<li class="nav-item">
 							<a class="nav-link " href="choose_doctor.php">ΔΙΑΛΕΞΕ ΓΙΑΤΡΟ</a>
 						</li>';
-					} /*else if ((isset($_SESSION['email']) && isset($_SESSION['role'])) && $_SESSION['role'] == 'Doctor') {
+					} else if ((isset($_SESSION['email']) && isset($_SESSION['role'])) && $_SESSION['role'] == 'Doctor') {
 						// Αν ο χρήστης είναι γιατρός
 						echo '
 						<li class="nav-item">
-							<a class="nav-link " href="patiens.php">ΑΣΘΕΝΕΙΣ ΣΟΥ</a>
+							<a class="nav-link " href="teleconfer_con.php?consultant='. $_SESSION['id_user'].'">ΤΗΛΕΙΑΤΡΙΚΗ</a>
 						</li>';
-					} */else {
+					} else {
 						// Αν δεν ικανοποιείται καμία από τις παραπάνω συνθήκες
 						echo '
 						<li class="nav-item">

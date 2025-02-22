@@ -34,6 +34,9 @@ if ($result && mysqli_num_rows($result) > 0) {
                 <td>$name</td>
                 <td>$email</td>
                 <td>
+					<a href='teleconfer.php?patient_id=$patient_id'>
+                        <button style='margin-right: 5px;'>Τηλεδιασκέψεις</button>
+                    </a>
                     <a href='istorika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Ιστορικό</button>
                     </a>
