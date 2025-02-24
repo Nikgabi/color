@@ -68,7 +68,7 @@
 			"leipes_data" => "ΑΛΛΕΣ ΕΞΕΤΑΣΕΙΣ",
 			"teleconference" => "ΤΗΛΕΣΥΝΕΔΡΙΑΣΕΙΣ"
 		];
-
+		SET SESSION group_concat_max_len = 100000;
 		// Δημιουργία δυναμικής SQL για καταμέτρηση εγγραφών σε όλους τους πίνακες
 		$query = "SELECT GROUP_CONCAT(
 					CONCAT('SELECT \"', TABLE_NAME, '\" AS table_name, COUNT(*) AS total_records FROM ', TABLE_NAME)
