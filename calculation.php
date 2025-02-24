@@ -10,21 +10,17 @@
 <section class="about_section">
     <div class="container  ">
       <div class="row">
-        <div class="col-md-1 ">
+        <div class="col-md-3 "><br><br>
           <div class="img-box">
             <img src="images/calculation.png" alt="">
           </div><br><br>
-		  <div class="img-box">
-            <img src="images/images.jpeg" alt="">
-          </div><br><br>
+		  
 		  <div class="img-box">
             <img src="images/chatgpt.jpg" alt="">
           </div><br><br>
-		  <div class="img-box">
-            <img src="images/history.jpg" alt="">
-          </div>
+		  
         </div>
-        <div class="col-md-11">
+        <div class="col-md-9">
           <div class="detail-box">
             
             <?php if ((isset($_SESSION['id_user']) && isset($_SESSION['role']))&& $_SESSION['role']=='visitor'){
@@ -72,9 +68,8 @@
 			';}
 			 else {
 				echo '<div class="heading_container">
-              <h4>Σε πολλούς υπολογισμούς γίνεται εισαγωγή των δεδομένων στη βάση δεδομένων της εφαρμογής</h4>
-               <h5> Για αυτούς τους υπολογισμούς πρέπει να είστε εγγεγραμμένος χρήστης <span style="color:green;">και ΟΧΙ γιατρός.</span>
-              </h5>
+              <h4>Στους υπολογισμούς που γίνεται εισαγωγή των δεδομένων δεν έχετε πρόσβαση</h4>
+               
             </div>
 				<h5 style="color:green ;">Οι υπολογισμοί για τους οποίους έχετε πρόσβαση: </h5>
 				<a href="strock.php">
@@ -102,7 +97,7 @@
               Χάσμα ανιόντων
             </a><hr>
 			
-			<h3>Τεχνητή νοημοσύνη <span style="color:green;"> μόνο για εγγεγραμένους χρήστες.</span> </h3>
+			<h4>Τεχνητή νοημοσύνη <span style="color:green;"> μόνο για εγγεγραμένους χρήστες.</span> </h4>
 			<a href="chatgpt3.php">
               Ερώτημα προς το ChatGpt-4
             </a>

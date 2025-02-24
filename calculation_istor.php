@@ -10,12 +10,12 @@
 <section class="about_section">
     <div class="container  ">
       <div class="row">
-        <div class="col-md-4 ">
+        <div class="col-md-3 ">
           <div class="img-box">
             <img src="images/history1.jpg" alt="">
           </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
           <div class="detail-box">
             
             <?php if ((isset($_SESSION['id_user']) && isset($_SESSION['role']))&& $_SESSION['role']=='visitor'){
@@ -50,8 +50,8 @@
 			';}
 			 else {
 				echo '<div class="heading_container">
-              <h2 style="color:green;">Από την σελίδα αυτή γίνεται εισαγωγή των δεδομένων σας στη βάση δεδομένων της εφαρμογής.</h2>
-              <h2> Για αυτόν τον λόγο για την συμπλήρωση του Ιατρικού Ιστορικού σας και των εξετάσεών σας πρέπει να είστε εγγεγραμμένος χρήστης <span>και ΟΧΙ γιατρός.</span>
+              <h2 style="color:green;">Στη σελίδα αυτή γίνεται εισαγωγή  δεδομένων.</h2>
+              <h2> Για την συμπλήρωση του Ιατρικού Ιστορικού σας και των εξετάσεών σας πρέπει να είστε εγγεγραμμένος χρήστης <span>και ΟΧΙ γιατρός.</span>
               </h2>
             </div>
 				<h4 style="color:red ;">Πρέπει να εγγραφείτε ώς επισκέπτης για να έχετε πρόσβαση στο περιεχόμενο της σελίδας </h4>'; 
