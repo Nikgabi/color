@@ -24,7 +24,7 @@
 		<div class="col-md-10 ">
 
 	<div class='flex justify-content-center' style='background-color: rgb(240,240,240); padding: 20px; text-align: center;'><br>
-		<div class="w3-card-4" style="background-color: rgb(240,240,240); text-align:center;"><br>	
+		<div class="w3-card-4" style="background-color: rgb(240,240,240); text-align:center;">	
 		  
 		  
 		   <h3 style="color:green;">Τα στατιστικά της βάσης δεδομένων μας : </h3>
@@ -94,7 +94,7 @@
 				echo "<h6> " . $translated_name . " - Σύνολο εγγραφών: " . $data['total_records'] . "</h6>";
 			}
 		}
-		echo "<h6> ΧΡΗΣΤΕΣ : " . $total . ", ΓΙΑΤΡΟΙ: " . $doctors . ", ΕΠΙΣΚΕΠΤΕΣ :" . $visitors . "</h6>" ;
+		echo "<h6> ΓΙΑΤΡΟΙ: " . $doctors . ", ΕΠΙΣΚΕΠΤΕΣ :" . $visitors . "</h6>" ;
 		
 	?>
 		<p> Ενεργές συνδέσεις στον ιστότοπο: <b><?php echo $active_connections; ?></b></p>
