@@ -23,7 +23,12 @@
 		  
 		  
         </div>
-		<div class="col-md-10 ">
+		<div class="col-md-2 "><br><br>
+          
+		  
+		  
+        </div>
+		<div class="col-md-8 ">
 		<div class="detail-box">
             
             <?php if (!isset($_SESSION['id_user'])): ?>
