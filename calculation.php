@@ -20,7 +20,11 @@
           </div><br><br>
 		  
         </div>
-        <div class="col-md-9">
+		<div class="col-md-1 "><br><br>
+          
+		  
+        </div>
+        <div class="col-md-8">
           <div class="detail-box">
             
             <?php if ((isset($_SESSION['id_user']) && isset($_SESSION['role']))&& $_SESSION['role']=='visitor'){
@@ -68,10 +72,10 @@
 			';}
 			 else {
 				echo '<div class="heading_container">
-              <h4>Στους υπολογισμούς που γίνεται εισαγωγή των δεδομένων δεν έχετε πρόσβαση</h4>
+              
                
             </div>
-				<h5 style="color:green ;">Οι υπολογισμοί για τους οποίους έχετε πρόσβαση: </h5>
+				<h2 style="color:green ;">Οι υπολογισμοί για τους οποίους έχετε πρόσβαση: </h2>
 				<a href="strock.php">
               Κολπική μαρμαρυγή και εγκεφαλικό
             </a>

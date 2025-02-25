@@ -15,6 +15,7 @@
             <img src="images/history1.jpg" alt="">
           </div>
         </div>
+		
         <div class="col-md-9">
           <div class="detail-box">
             
@@ -50,7 +51,7 @@
 			';}
 			 else {
 				echo '<div class="heading_container">
-              <h2 style="color:green;">Στη σελίδα αυτή γίνεται εισαγωγή  δεδομένων.</h2>
+              
               <h2> Για την συμπλήρωση του Ιατρικού Ιστορικού σας και των εξετάσεών σας πρέπει να είστε εγγεγραμμένος χρήστης <span>και ΟΧΙ γιατρός.</span>
               </h2>
             </div>

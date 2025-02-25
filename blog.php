@@ -96,9 +96,9 @@
                 <img src="images/georgop1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="" target="_blank">"Τίτλος Άρθρου"  </a></h2>
+                <h2><a href="files/testis.pdf" target="_blank">"Κρυψορχία στα παιδιά"  </a></h2>
 				<p style="font-style:italic;">του Ιωάννη Γεωργόπουλου<p><br>
-                <p>Αυτή είναι μιά μικρή περίληψη του άρθρου.</p>
+                <p>Πότε και γιατί πρέπει να χειρουργείται το παιδί.</p>
             </div>
         </div>
     </div>
