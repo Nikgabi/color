@@ -56,7 +56,7 @@
                 Call : +30 6944818841
               </span>
             </a>
-            <a href="">
+            <a href="mailto:info@ygeiafirst.net">
               <i class="fa fa-envelope" aria-hidden="true"></i>
               <span>
                 Email : info@ygeiafirst.net
@@ -66,6 +66,13 @@
               <i class="fa fa-map-marker" aria-hidden="true"></i>
               <span>
                 Location
+              </span>
+            </a>
+			</a>
+			<a href="testimonials.php">
+              <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+              <span>
+                Testimonials
               </span>
             </a>
           </div>

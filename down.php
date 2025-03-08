@@ -20,7 +20,9 @@
       </p>
 	  
     </div>
+	
   </footer>
+  
   <!-- footer section -->
 
   <!-- jQery -->

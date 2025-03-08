@@ -13,7 +13,7 @@
           Our <span>Doctors</span>
         </h2>
       </div>
-      <div class="carousel-wrap " style="padding-bottom: 35px;">
+      <div class="carousel-wrap " style="padding-bottom: 80px;">
         <div class="owl-carousel team_carousel">
           <div class="item">
             <div class="box">
@@ -86,6 +86,60 @@
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
                   <a href="mailto:georgeakar@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/mellos.jpg" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  ΜΕΛΛΟΣ ΕΛΕΥΘΕΡΙΟΣ
+                </h5>
+                <h6>
+                  ΨΥΧΙΑΤΡΟΣ
+                </h6>
+                <div class="social_box">
+                  <a href="https://doxy.me/">
+                    <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  </a>
+                  
+                  <a href="" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="mailto:elmellos1962@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/petroulak.jpg" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  ΠΕΤΡΟΥΛΑΚΗ ΕΛΕΥΘΕΡΙΑ
+                </h5>
+                <h6>
+                  ΠΑΘΟΛΟΓΟΣ
+                </h6>
+                <div class="social_box">
+                  <a href="https://doxy.me/">
+                    <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  </a>
+                  
+                  <a href="https://www.linkedin.com/in/eleftheria-petroulaki-11a46643/" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="mailto:epetroulakiemellos@gmail.com">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -199,6 +253,9 @@
                   
                   <a href="https://www.linkedin.com/in/dr-ioannis-georgopoulos-1223279b/" target="_blank">
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+				  <a href="https://doxy.me/drgeorgopoulos" target="_blank">
+                    <i class="fa fa-stethoscope" aria-hidden="true"></i>
                   </a>
                   
 				  <a href="mailto:georgopoulos.ioannis@yahoo.gr">
