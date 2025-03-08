@@ -1044,13 +1044,13 @@ a:focus {
 /* footer section*/
 
 .footer_section {
-  position: relative;
-  background-color: $primary2;
+  position: fixed;
+  background-color: $primary1;
   text-align: center;
 
   p {
     color: $white;
-    padding: 25px 0;
+    padding: 5px 5px;
     margin: 0;
 
     a {
