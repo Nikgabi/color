@@ -1,5 +1,17 @@
 <?php include('up.php');
 
+// Αρχικοποίηση μεταβλητών για τα αποτελέσματα
+$Hb = $Htc = $eryth = $leuk = $oudet = $lemfo = $mono=$ios=$bas=$plt=null;
+$Fe = $ferit = $b12 = $filiko = $pt = $pt1 = $inr=$ptt=$ino=null;
+$MCV = $MCH = $MCHC = $oud_no = $lemfo_no = $mono_no = $bas_no=$ios_no=null;
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -15,19 +27,10 @@ foreach ($fields as $field) {
     }
 }
 
-
-// Αρχικοποίηση μεταβλητών για τα αποτελέσματα
-$Hb = $Htc = $eryth = $leuk = $oudet = $lemfo = $mono=$ios=$bas=$plt=null;
-$Fe = $ferit = $b12 = $filiko = $pt = $pt1 = $inr=$ptt=$ino=null;
-$MCV = $MCH = $MCHC = $oud_no = $lemfo_no = $mono_no = $bas_no=$ios_no=null;
+ error_log("Htc: $Htc, Hb: $Hb, eryth: $eryth");
 
 
-function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
+
 
 if (isset($_POST['submit'])) {
     // Λήψη των δεδομένων από τη φόρμα
@@ -145,14 +148,15 @@ if (isset($_POST['submit'])) {
 				<?php if (!is_null($ios_no)) { ?>
 					<p><strong>Ηωσινόφιλα:</strong> <?php echo number_format($ios_no, 0); ?> /μL</p><br>
 				<?php } ?>
-
+				
+				
 				
 				
 				
 				
 			<?php endif; ?>
-		<button style="background-color: rgb(162,235,182) ;"><a href="calculation.php">
-					  Υπολογισμοί
+		<button style="background-color: rgb(162,235,182) ;"><a href="calculation_istor.php">
+					  Πίσω
 					</a></button><br>
 					<p style="color: red">Μπορείτε σε επόμενο χρόνο να εισάγετε νέα αποτελέσματα εξετάσεών σας</p><br><br>
 			</div>
