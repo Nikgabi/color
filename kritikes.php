@@ -21,6 +21,7 @@ if ($query_run && mysqli_num_rows($query_run)>0) {
 	$query1='SELECT * FROM kritiki_data ';
 	$query1_run = mysqli_query($con,$query1);
 	if($query1_run && mysqli_num_rows($query1_run)>0){
+		echo "<h2 style='color:green;'>Οι κριτικές σας για το YgeiaFirst</h2><br>";
 		echo "<table border='1' style='width: 100%; text-align: center;'>";
     echo "<tr>
             <th>Ημερομηνία</th>
@@ -33,7 +34,7 @@ if ($query_run && mysqli_num_rows($query_run)>0) {
         
         $email = htmlspecialchars($row['mail'], ENT_QUOTES, 'UTF-8');
 		$kritiki = htmlspecialchars($row['kritiki'], ENT_QUOTES, 'UTF-8');
-		echo "<h2 style='color:green;'>Οι κριτικές σας για το YgeiaFirst</h2><br>";
+		
         echo "<tr>
                 <td>" . date("d-m-Y", strtotime($row['created_at'])) . "</td>
                 <td>$email</td>
