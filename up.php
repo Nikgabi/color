@@ -11,9 +11,12 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content="Medecine , Doctors, Medical functions , ΕΑΠ , πτυχιακή" />
+  <meta name="description" content="Διαδικτυακή πλατφόρμα ιατρικών υπολογισμών, τηλειατρικής και 
+  πληροφοριών τεχνητής νοημοσύνης στα πλαίσια πτυχιακής εργασίας στο Ελληνικό Ανοικτό Πανεπιστήμιο " />
+  <meta name="author" content="Gavalakis Nikos" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <!-- fonts style -->
