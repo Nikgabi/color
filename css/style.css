@@ -1238,4 +1238,17 @@ select {
         display: block; /* Εξαναγκάζει εμφάνιση ως λίστα */
     }
 
+
+.pdf-container {
+	width: 50vw; /* 50% του πλάτους της οθόνης */
+	height: 70vh; /* 50% του ύψους της οθόνης */
+	border: 1px solid #ccc; /* Προαιρετικό περίγραμμα */
+	overflow: hidden; /* Απόκρυψη επιπλέον περιεχομένου */
+}
+
+.pdf-container iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
 /*# sourceMappingURL=style.css.map */
