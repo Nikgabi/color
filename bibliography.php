@@ -14,15 +14,15 @@
             </div>
             <div class="post-titles">
 				<h4 style="font-weight:bold;">ΙΑΤΡΙΚΟΙ ΑΛΓΟΡΙΘΜΟΙ ΚΑΙ ΕΞΙΣΩΣΕΙΣ</h4>
-                <h4><a href="files/Atrial Fibrillation and stroke prevention.pdf" target="_blank">Κολπική μαρμαριγή και πρόληψη εγκεφαλικού</a></h4>
-                <h4><a href="files/derivation simple-index-for-prediction-of-cardiac-risk-of-major.pdf" target="_blank">Πρόβλεψη καρδιακών επιπλοκών σε μεγάλες επεμβάσεις</a></h4>
-                <h4><a href="files/guideline-on-the-assessment-of-cardiovascular-risk.pdf" target="_blank">Εκτίμηση καρδιοαγγειακού κινδύνου</a></h4>
-                <h4><a href="files/Heart score.pdf" target="_blank">Θωρακικός πόνος και η "αξία" του καρδιακού σκόρ</a></h4>
-				<h4><a href="files/ideal body weight equation.pdf" target="_blank">Εξίσωση ιδεώδους Βάρους σώματος</a></h4>
-				<h4><a href="files/Osmolal Gap.pdf" target="_blank">Χάσμα Ανιόντων</a></h4>
-				<h4><a href="files/PHQ-9.pdf" target="_blank">Εκτίμηση για κατάθλιψη , Ερωτηματολόγιο PHQ-9</a</h4>
-				<h4><a href="files/Estimate Glomerular Filtration Rate.pdf" target="_blank">Εκτίμηση σπειραματικής διήθησης</a></h4>
-				<h4><a href="files/GFR Estimate with Cystatin and Creatinine .pdf " target="_blank">Νέα Εκτίμηση σπειραματικής διήθησης Κρεατινίνη -Cystacin-C χωρίς την φυλή</a></h4>
+                <h4><a href="atrial.php">Κολπική μαρμαριγή και πρόληψη εγκεφαλικού</a></h4>
+                <h4><a href="derivation.php">Πρόβλεψη καρδιακών επιπλοκών σε μεγάλες επεμβάσεις</a></h4>
+                <h4><a href="guideline.php">Εκτίμηση καρδιοαγγειακού κινδύνου</a></h4>
+                <h4><a href="Heart.php" >Θωρακικός πόνος και η "αξία" του καρδιακού σκόρ</a></h4>
+				<h4><a href="ideal.php">Εξίσωση ιδεώδους Βάρους σώματος</a></h4>
+				<h4><a href="Osmolal.php">Χάσμα Ανιόντων</a></h4>
+				<h4><a href="PHQ.php">Εκτίμηση για κατάθλιψη , Ερωτηματολόγιο PHQ-9</a></h4>
+				<h4><a href="Estimate.php" >Εκτίμηση σπειραματικής διήθησης</a></h4>
+				<h4><a href="GFR.php">Νέα Εκτίμηση σπειραματικής διήθησης Κρεατινίνη -Cystacin-C χωρίς την φυλή</a></h4>
 				
             </div>
         </div>
@@ -35,11 +35,11 @@
             </div>
             <div class="post-titles">
 				<h4 style="font-weight:bold;">ΤΕΧΝΙΚΗ ΝΟΗΜΟΣΥΝΗ ΚΑΙ ΜΗΧΑΝΙΚΗ ΜΑΘΗΣΗ</h4>
-                <h4><a href="files/AI in mediccine.pdf" target="_blank">AI - Μιά επανάσταση στην Ιατρική. Πώς θα είναι ?</a></h4>
-                <h4><a href="files/chatGPT and Perinatal Medicine.pdf" target="_blank">ChatGPT και περιγεννητική Ιατρική</a></h4>
-                <h4><a href="files/2024-07-applications-ai-medicine.pdf" target="_blank">Εφαρμογές AI στην Ιατρική</a></h4>
-                <h4><a href="files/reviews of chatbots.pdf" target="_blank">Ανασκόπηση των chat-bot στην Ιατρική</a></h4>
-				<h4><a href="files/Γενικός Κανονισμός για την Προστασία Δεδομένων_el.pdf" target="_blank">Γενικός Κανονισμός για την Προστασία Δεδομένων</a></h4>
+                <h4><a href="AI.php" >AI - Μιά επανάσταση στην Ιατρική. Πώς θα είναι ?</a></h4>
+                <h4><a href="chat.php" >ChatGPT και περιγεννητική Ιατρική</a></h4>
+                <h4><a href="2024.php" >Εφαρμογές AI στην Ιατρική</a></h4>
+                <h4><a href="reviews.php" >Ανασκόπηση των chat-bot στην Ιατρική</a></h4>
+				<h4><a href="genikos.php" >Γενικός Κανονισμός για την Προστασία Δεδομένων</a></h4>
 				
             </div>
         </div>
