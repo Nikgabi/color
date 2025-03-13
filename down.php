@@ -4,11 +4,11 @@
       <p>
 	   <span id="displayYear" hidden></span><!-- All Rights Reserved By
         <a href="https://html.design/">Free Html Templates</a><br>-->
-        <a  href="files/rules.pdf" target="_blank">ΟΡΟΙ</a>
+        <a  href="rules.php">ΟΡΟΙ</a>
 		---
-        <a  href="files/policy.pdf" target="_blank">ΠΟΛΙΤΙΚΗ ΑΠΟΡΡΗΤΟΥ</a>
+        <a  href="policy.php">ΠΟΛΙΤΙΚΗ ΑΠΟΡΡΗΤΟΥ</a>
 		---
-		<a  href="files/instructions.pdf" target="_blank">ΟΔΗΓΙΕΣ</a>
+		<a  href="instructions.php">ΟΔΗΓΙΕΣ</a>
 		---
 		<a  href="bibliography.php" >ΒΙΒΛΙΟΓΡΑΦΙΑ</a>
 		---
