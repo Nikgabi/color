@@ -1,7 +1,8 @@
 <?php
+   $env = parse_ini_file('/var/www/html/color/.env1');
    $server = 'localhost';
    $user = 'root';
-   $passw = 'new_password';
+   $passw = $env['PASSW'];
    $dbname = 'gavalakis';
    
 $con = mysqli_connect($server,$user,$passw,$dbname);
