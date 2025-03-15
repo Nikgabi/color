@@ -31,6 +31,12 @@ $token = $provider->getAccessToken('authorization_code', [
     'code' => $_GET['code']
 ]);
 
+// Εκτύπωση όλων των δεδομένων που επιστρέφει η Google
+echo '<pre>';
+print_r($token);
+echo '</pre>';
+
+
 echo 'Access Token: ' . $token->getToken() . "<br>";
 echo 'Refresh Token: ' . $token->getRefreshToken();
 ?>
