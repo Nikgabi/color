@@ -15,7 +15,7 @@ $provider = new Google([
     'clientId'     => $clientId,
     'clientSecret' => $clientSecret,
     'redirectUri'  => $redirectUri,
-    'scope'        => 'https://www.googleapis.com/auth/gmail.send',
+    'scope'        => 'https://www.googleapis.com/auth/gmail.send offline_access',
 ]);
 
 // Βήμα 1: Δημιουργία του URL για εξουσιοδότηση
