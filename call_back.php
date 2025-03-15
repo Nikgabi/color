@@ -1,3 +1,4 @@
+<?php include('up.php'); ?>
 <?php
 require 'vendor/autoload.php';
 
