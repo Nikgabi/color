@@ -21,7 +21,6 @@ $googleProvider = new Google([
 // Δημιουργία του URL εξουσιοδότησης
 $authorizationUrl = $googleProvider->getAuthorizationUrl();
 
-// Κατευθύνει τον χρήστη στη Google για να δώσει άδεια
-header('Location: ' . $authorizationUrl);
-exit();
+echo "Πατήστε στον παρακάτω σύνδεσμο για να επιλέξετε λογαριασμό:<br>";
+echo "<a href='$authorizationUrl'>$authorizationUrl</a>";
 ?>
