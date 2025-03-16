@@ -83,7 +83,7 @@ try {
         'provider' => $provider,
         'clientId' => $client_id,
         'clientSecret' => $client_secret,
-        'refreshToken' => $refreshToken2,
+        'refreshToken' => $refreshToken,
         'userName' => 'nikos.gavalakis@ygeiafirst.net'
     ]));
 
