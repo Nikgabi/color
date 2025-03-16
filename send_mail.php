@@ -53,18 +53,14 @@ $client_secret = $env['CLIENT_SECRET'];
 $sql="SELECT access_token, refresh_token, UNIX_TIMESTAMP(expires_at) as expires_at FROM tokens WHERE id = 1" ;
 $result = mysqli_query($con, $sql);
 $row = $result->fetch_assoc();
+$accessToken = $row['access_token'];
+$refreshToken = $row['refresh_token'];
+$expiresAt = $row['expires_at'];
 
 // Αν το access token έχει λήξει, πάρε νέο
 if (time() >= $expiresIn) {
     $accessToken = refreshAccessToken($con, $client_id, $client_secret, $refreshToken);
 }
-
-
-
-$accessToken = $row['access_token'];
-$refreshToken = $row['refresh_token'];
-$expiresAt = $row['expires_at'];
-
 
 
 // Δημιουργία PHPMailer
