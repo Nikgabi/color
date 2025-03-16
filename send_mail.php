@@ -33,11 +33,11 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
 
     if (isset($response['access_token'])) {
         $newAccessToken = $response['access_token'];
-        $expiresIn = time() + $response['expires_in'];
+        $expiresAt = time() + $response['expires_at'];
 
         // Ενημέρωση της βάσης
-        $stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_in = ? WHERE id = 1");
-        $stmt->bind_param("si", $newAccessToken, $expiresIn);
+        $stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_at = ? WHERE id = 1");
+        $stmt->bind_param("si", $newAccessToken, $expiresAt);
         $stmt->execute();
         $stmt->close();
 
