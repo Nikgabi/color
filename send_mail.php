@@ -27,6 +27,9 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
     $context = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     $response = json_decode($result, true);
+	if (!$response) {
+		die("Error decoding response: " . $result);
+	}
 
     if (isset($response['access_token'])) {
         $newAccessToken = $response['access_token'];
