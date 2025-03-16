@@ -44,7 +44,7 @@ try {
 			'access_type' => 'offline',	
 			],
         ]
-    ]);
+    );
 
     // Αποκωδικοποιούμε την απάντηση JSON
     $body = json_decode((string) $response->getBody(), true);
