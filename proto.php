@@ -20,6 +20,7 @@ $googleProvider = new Google([
     'redirectUri'  => $redirect_uri,
 	'scope' => 'https://www.googleapis.com/auth/gmail.send', 
 	'access_type' => 'offline', // Αναγκαίο για το refresh token
+	'prompt' => 'consent'
 ]);
 
 // Δημιουργία του URL εξουσιοδότησης
