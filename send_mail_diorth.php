@@ -48,7 +48,7 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
     // 6. Έλεγχος αν η απόκριση περιέχει νέο access token
     if (isset($response['access_token'])) {
         $newAccessToken = $response['access_token'];
-        $expiresAt = time() + $response['expires_in']; // Διόρθωση: Χρήση του `expires_in`
+        $expiresAt = date('Y-m-d H:i:s', time() + $response['expires_in']); // Διόρθωση: Χρήση του `expires_in`
 		
 		// Δες τι επιστρέφει η Google
         echo "New Token: $newAccessToken <br>";
@@ -93,7 +93,7 @@ $row = $result->fetch_assoc();
 
 $accessToken = $row['access_token'];
 $refreshToken = $row['refresh_token'];
-$expiresAt = $row['expires_at'];
+$expiresAt = strtotime($row['expires_at']);
 
 // 2. Έλεγχος αν το access token έχει λήξει
 if (time() >= $expiresAt) {
