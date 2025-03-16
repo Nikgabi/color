@@ -25,7 +25,6 @@ $params = [
     'client_id' => $clientId,
     'client_secret' => $clientSecret,
     'redirect_uri' => $redirectUri,
-	'scope'    => 'https://www.googleapis.com/auth/gmail.send ',
     'grant_type' => 'authorization_code'
 ];
 
