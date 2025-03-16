@@ -7,27 +7,62 @@ use League\OAuth2\Client\Provider\Google;
 
 require 'vendor/autoload.php'; // Εάν χρησιμοποιείς Composer
 
+function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
+    $url = 'https://oauth2.googleapis.com/token';
+    $data = [
+        'client_id' => $clientId,
+        'client_secret' => $clientSecret,
+        'refresh_token' => $refreshToken,
+        'grant_type' => 'refresh_token',
+    ];
+
+    $options = [
+        'http' => [
+            'header' => "Content-Type: application/x-www-form-urlencoded",
+            'method' => 'POST',
+            'content' => http_build_query($data),
+        ],
+    ];
+
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $response = json_decode($result, true);
+
+    if (isset($response['access_token'])) {
+        $newAccessToken = $response['access_token'];
+        $expiresIn = time() + $response['expires_in'];
+
+        // Ενημέρωση της βάσης
+        $stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_in = ? WHERE id = 1");
+        $stmt->bind_param("si", $newAccessToken, $expiresIn);
+        $stmt->execute();
+        $stmt->close();
+
+        return $newAccessToken;
+    } else {
+        die("Error refreshing token: " . json_encode($response));
+    }
+}
+
 $client_id = $env['CLIENT_ID'];
 $client_secret = $env['CLIENT_SECRET'];
 
 $sql="SELECT access_token, refresh_token, UNIX_TIMESTAMP(expires_at) as expires_at FROM tokens WHERE id = 1" ;
 $result = mysqli_query($con, $sql);
-
-
 $row = $result->fetch_assoc();
 
-if (!$row) {
-    die("Δεν βρέθηκαν tokens στη βάση!");
+// Αν το access token έχει λήξει, πάρε νέο
+if (time() >= $expiresIn) {
+    $accessToken = refreshAccessToken($con, $client_id, $client_secret, $refreshToken);
 }
+
+
 
 $accessToken = $row['access_token'];
 $refreshToken = $row['refresh_token'];
 $expiresAt = $row['expires_at'];
 
-// Έλεγχος αν έχει λήξει το token
-if (time() >= $expiresAt) {
-    die("Το access token έχει λήξει! Ανανεώστε το πρώτα.");
-}
+
 
 // Δημιουργία PHPMailer
 $mail = new PHPMailer(true);
