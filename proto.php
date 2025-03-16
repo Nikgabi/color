@@ -18,11 +18,7 @@ $googleProvider = new Google([
     'clientId'     => $client_id,
     'clientSecret' => $client_secret,
     'redirectUri'  => $redirect_uri,
-	'scope' => [
-        'https://www.googleapis.com/auth/gmail.send', 
-        'email', 
-        'profile'
-    ],
+	'scope' => 'https://www.googleapis.com/auth/gmail.send', 
 	'access_type' => 'offline', // Αναγκαίο για το refresh token
 ]);
 

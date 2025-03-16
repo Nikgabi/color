@@ -5,6 +5,10 @@ require 'vendor/autoload.php';  // Φόρτωσε τα απαιτούμενα de
 use League\OAuth2\Client\Provider\Google;
 use GuzzleHttp\Client;
 
+$authCode = $_GET['code'];
+echo "Authorization Code: " . htmlspecialchars($authCode) . "<br>";
+$client = new Client();
+
 $env = parse_ini_file('/var/www/html/color/.env1');
 
 // Ρυθμίσεις Google API
@@ -15,20 +19,15 @@ $scope = 'https://www.googleapis.com/auth/gmail.send';
 
 // Δημιουργία του Google provider
 $googleProvider = new Google([
-    'clientId'     => $client_id,
-    'clientSecret' => $client_secret,
-    'redirectUri'  => $redirect_uri,
+    'client_id'     => $client_id,
+    'client_secret' => $client_secret,
+    'redirect_uri'  => $redirect_uri,
 ]);
 
 // Έλεγχος αν υπάρχει authorization code
 if (!isset($_GET['code'])) {
     die("Error: No authorization code provided. Please visit the authorization URL first.");
 }
-	$authCode = $_GET['code'];
-	echo "Authorization Code: " . htmlspecialchars($authCode) . "<br>";
-	$client = new Client();
-
-
 
 try {
 	
@@ -41,10 +40,8 @@ try {
             'client_secret' => $client_secret,
             'redirect_uri' => $redirect_uri,
             'grant_type' => 'authorization_code',
-			'scope' => [
-				'https://www.googleapis.com/auth/gmail.send', 
-				'email', 
-				'profile'
+			'scope' => 'https://www.googleapis.com/auth/gmail.send', 
+			'access_type' => 'offline',	
 			],
         ]
     ]);
