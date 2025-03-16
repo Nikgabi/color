@@ -24,7 +24,12 @@ $googleProvider = new Google([
 ]);
 
 // Δημιουργία του URL εξουσιοδότησης
-$authorizationUrl = $googleProvider->getAuthorizationUrl();
+
+
+$authorizationUrl = $googleProvider->getAuthorizationUrl([
+    'access_type' => 'offline',
+    'prompt' => 'consent'
+]);
 
 echo "Πατήστε στον παρακάτω σύνδεσμο για να επιλέξετε λογαριασμό:<br>";
 echo "<a href='$authorizationUrl'>$authorizationUrl</a>";
