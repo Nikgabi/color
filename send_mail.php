@@ -58,7 +58,7 @@ $refreshToken = $row['refresh_token'];
 $expiresAt = $row['expires_at'];
 
 // Αν το access token έχει λήξει, πάρε νέο
-if (time() >= $expiresIn) {
+if (time() >= $expiresAt) {
     $accessToken = refreshAccessToken($con, $client_id, $client_secret, $refreshToken);
 }
 
@@ -83,7 +83,7 @@ try {
         'provider' => $provider,
         'clientId' => $client_id,
         'clientSecret' => $client_secret,
-        'refreshToken' => $refreshToken,
+        'refreshToken' => $refreshToken2,
         'userName' => 'nikos.gavalakis@ygeiafirst.net'
     ]));
 
