@@ -72,19 +72,26 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
 $client_id = $env['CLIENT_ID'];
 $client_secret = $env['CLIENT_SECRET'];
 
-$sql="SELECT access_token, refresh_token, UNIX_TIMESTAMP(expires_at) as expires_at FROM tokens WHERE id = 1" ;
+// 1. Ανάκτηση των token από τη βάση
+$sql = "SELECT access_token, refresh_token, UNIX_TIMESTAMP(expires_at) as expires_at FROM tokens WHERE id = 1";
 $result = mysqli_query($con, $sql);
 $row = $result->fetch_assoc();
+
 $accessToken = $row['access_token'];
 $refreshToken = $row['refresh_token'];
 $expiresAt = $row['expires_at'];
 
-
-
-// Αν το access token έχει λήξει, πάρε νέο
+// 2. Έλεγχος αν το access token έχει λήξει
 if (time() >= $expiresAt) {
     list($accessToken, $refreshToken) = refreshAccessToken($con, $client_id, $client_secret, $refreshToken);
+
+    // 3. Ενημέρωση της βάσης με τα νέα tokens
+    $stmt = $con->prepare("UPDATE tokens SET access_token = ?, refresh_token = ?, expires_at = ? WHERE id = 1");
+    $stmt->bind_param("ssi", $accessToken, $refreshToken, $expiresAt);
+    $stmt->execute();
+    $stmt->close();
 }
+
 
 
 // Δημιουργία PHPMailer
