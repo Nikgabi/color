@@ -11,32 +11,50 @@ $clientId = $env['CLIENT_ID'];
 $clientSecret = $env['CLIENT_SECRET'];
 $redirectUri = 'https://ygeiafirst.net/call_back.php';
 
-$provider = new Google([
-    'clientId'     => $clientId,
-    'clientSecret' => $clientSecret,
-    'redirectUri'  => $redirectUri,
-    'scope'        => 'https://www.googleapis.com/auth/gmail.send offline_access',
-]);
 
-// Βήμα 1: Δημιουργία του URL για εξουσιοδότηση
+// Έλεγχος αν υπάρχει authorization code
 if (!isset($_GET['code'])) {
-    $authUrl = $provider->getAuthorizationUrl();
-    echo 'Open the following URL in your browser to authorize the app:<br>';
-    echo '<a href="' . htmlspecialchars($authUrl) . '">' . htmlspecialchars($authUrl) . '</a>';
-    exit;
+    die("No authorization code provided.");
 }
 
-// Βήμα 2: Ανταλλαγή Authorization Code με Refresh Token
-$token = $provider->getAccessToken('authorization_code', [
-    'code' => $_GET['code']
-]);
+// Ανταλλαγή του authorization code με access & refresh token
+$token_url = "https://oauth2.googleapis.com/token";
+$params = [
+    'code' => $_GET['code'],
+    'client_id' => $clientId,
+    'client_secret' => $clientSecret,
+    'redirect_uri' => $redirectUri,
+    'grant_type' => 'authorization_code'
+];
 
-// Εκτύπωση όλων των δεδομένων που επιστρέφει η Google
-echo '<pre>';
-print_r($token);
-echo '</pre>';
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, $token_url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($params));
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
+$response = curl_exec($curl);
+curl_close($curl);
 
-echo 'Access Token: ' . $token->getToken() . "<br>";
-echo 'Refresh Token: ' . $token->getRefreshToken();
+$token_info = json_decode($response, true);
+
+if (!isset($token_info['access_token'], $token_info['refresh_token'])) {
+    die("Error fetching tokens: " . $response);
+}
+
+// Παίρνουμε τα tokens
+$access_token = $token_info['access_token'];
+$refresh_token = $token_info['refresh_token'];
+$expires_at = date('Y-m-d H:i:s', time() + $token_info['expires_in']);
+
+// Αποθήκευση στη βάση δεδομένων
+$stmt = $conn->prepare("INSERT INTO tokens (access_token, refresh_token, expires_at) VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $access_token, $refresh_token, $expires_at);
+$stmt->execute();
+$stmt->close();
+
+// Κλείσιμο σύνδεσης
+$conn->close();
+
+echo "Tokens saved successfully! You can now use send_email.php.";
 ?>
