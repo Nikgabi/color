@@ -11,6 +11,7 @@ $env = parse_ini_file('/var/www/html/color/.env1');
 $client_id = $env['CLIENT_ID'];
 $client_secret = $env['CLIENT_SECRET'];
 $redirect_uri = 'https://ygeiafirst.net/call_back.php';  // Πρέπει να είναι το ίδιο με το Google Console
+$scope = 'https://www.googleapis.com/auth/gmail.send';
 
 // Δημιουργία του Google provider
 $googleProvider = new Google([
@@ -36,10 +37,11 @@ try {
     $response = $client->post('https://oauth2.googleapis.com/token', [
         'form_params' => [
             'code' => $authCode,
-            'client_id' => $clientId,
-            'client_secret' => $clientSecret,
-            'redirect_uri' => $redirectUri,
-            'grant_type' => 'authorization_code'
+            'client_id' => $client_id,
+            'client_secret' => $client_secret,
+            'redirect_uri' => $redirect_uri,
+            'grant_type' => 'authorization_code',
+			'scope' => $scope  // Πρόσθεσες το scope εδώ
         ]
     ]);
 
