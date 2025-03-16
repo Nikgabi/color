@@ -1,5 +1,9 @@
 <?php include('up.php'); ?>
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\OAuth;
@@ -31,6 +35,9 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
     // 4. Αποστολή του αιτήματος και λήψη της απόκρισης
     $context = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
+	// Δες αν το API απαντάει σωστά
+    echo "Google API Response: $result <br>";
+	
     $response = json_decode($result, true);
 
     // 5. Έλεγχος αν η απόκριση είναι έγκυρη
@@ -42,7 +49,12 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
     if (isset($response['access_token'])) {
         $newAccessToken = $response['access_token'];
         $expiresAt = time() + $response['expires_in']; // Διόρθωση: Χρήση του `expires_in`
-
+		
+		// Δες τι επιστρέφει η Google
+        echo "New Token: $newAccessToken <br>";
+        echo "Expires At: $expiresAt <br>";
+		
+		
         // 7. Αν η απόκριση περιέχει και νέο refresh token, αποθηκεύουμε και αυτό
         if (isset($response['refresh_token'])) {
             $newRefreshToken = $response['refresh_token'];
@@ -62,6 +74,8 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
 
         // 11. Επιστροφή των νέων tokens (αν υπάρχει νέο refresh token, το επιστρέφουμε, αλλιώς κρατάμε το παλιό)
         return [$newAccessToken, $newRefreshToken ?? $refreshToken];
+		
+		
     } else {
         // 12. Αν υπάρξει σφάλμα, εμφανίζουμε το μήνυμα σφάλματος
         die("Error refreshing token: " . json_encode($response));
@@ -84,11 +98,23 @@ $expiresAt = $row['expires_at'];
 // 2. Έλεγχος αν το access token έχει λήξει
 if (time() >= $expiresAt) {
     list($accessToken, $refreshToken) = refreshAccessToken($con, $client_id, $client_secret, $refreshToken);
+	
+	// Δες τι επιστρέφει η συνάρτηση
+    echo "New Access Token: $accessToken <br>";
+    echo "New Refresh Token: $refreshToken <br>";
 
     // 3. Ενημέρωση της βάσης με τα νέα tokens
     $stmt = $con->prepare("UPDATE tokens SET access_token = ?, refresh_token = ?, expires_at = ? WHERE id = 1");
     $stmt->bind_param("ssi", $accessToken, $refreshToken, $expiresAt);
     $stmt->execute();
+	if ($stmt->affected_rows > 0) {
+			echo "Η βάση ενημερώθηκε επιτυχώς! <br>";
+		} else {
+			echo "Η βάση ΔΕΝ ενημερώθηκε! SQL Error: " . $stmt->error . "<br>";
+		}
+	
+	
+	
     $stmt->close();
 }
 
