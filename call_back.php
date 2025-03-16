@@ -12,6 +12,7 @@ $clientSecret = $env['CLIENT_SECRET'];
 $redirectUri = 'https://ygeiafirst.net/call_back.php';
 
 
+
 // Έλεγχος αν υπάρχει authorization code
 if (!isset($_GET['code'])) {
     die("No authorization code provided.");
@@ -24,6 +25,7 @@ $params = [
     'client_id' => $clientId,
     'client_secret' => $clientSecret,
     'redirect_uri' => $redirectUri,
+	'scope'    => 'https://www.googleapis.com/auth/gmail.send ',
     'grant_type' => 'authorization_code'
 ];
 
