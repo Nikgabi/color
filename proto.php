@@ -12,12 +12,18 @@ $client_secret = $env['CLIENT_SECRET'];
 $redirect_uri = 'https://ygeiafirst.net/call_back.php';  // Πρέπει να είναι το ίδιο με το Google Console
 $scope = 'https://www.googleapis.com/auth/gmail.send';
 
+
 // Δημιουργία του Google provider
 $googleProvider = new Google([
     'clientId'     => $client_id,
     'clientSecret' => $client_secret,
     'redirectUri'  => $redirect_uri,
-	'scope' => $scope
+	'scope' => [
+        'https://www.googleapis.com/auth/gmail.send', 
+        'email', 
+        'profile'
+    ],
+	'access_type' => 'offline', // Αναγκαίο για το refresh token
 ]);
 
 // Δημιουργία του URL εξουσιοδότησης

@@ -41,7 +41,11 @@ try {
             'client_secret' => $client_secret,
             'redirect_uri' => $redirect_uri,
             'grant_type' => 'authorization_code',
-			'scope' => $scope  // Πρόσθεσες το scope εδώ
+			'scope' => [
+				'https://www.googleapis.com/auth/gmail.send', 
+				'email', 
+				'profile'
+			],
         ]
     ]);
 
