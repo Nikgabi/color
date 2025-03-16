@@ -1,60 +1,51 @@
 <?php include('up.php'); ?>
 <?php
-require 'vendor/autoload.php';
+require 'vendor/autoload.php';  // Φόρτωσε τα απαιτούμενα dependencies μέσω Composer
 
 use League\OAuth2\Client\Provider\Google;
 
 $env = parse_ini_file('/var/www/html/color/.env1');
 
-// Βάλε τα δικά σου Client ID & Secret
-$clientId = $env['CLIENT_ID'];
-$clientSecret = $env['CLIENT_SECRET'];
-$redirectUri = 'https://ygeiafirst.net/call_back.php';
+// Ρυθμίσεις Google API
+$client_id = $env['CLIENT_ID'];
+$client_secret = $env['CLIENT_SECRET'];
+$redirect_uri = 'https://ygeiafirst.net/call_back.php';  // Πρέπει να είναι το ίδιο με το Google Console
 
-
+// Δημιουργία του Google provider
+$googleProvider = new Google([
+    'clientId'     => $client_id,
+    'clientSecret' => $client_secret,
+    'redirectUri'  => $redirect_uri,
+]);
 
 // Έλεγχος αν υπάρχει authorization code
 if (!isset($_GET['code'])) {
-    die("No authorization code provided.");
+    die("Error: No authorization code provided. Please visit the authorization URL first.");
 }
 
-// Ανταλλαγή του authorization code με access & refresh token
-$token_url = "https://oauth2.googleapis.com/token";
-$params = [
-    'code' => $_GET['code'],
-    'client_id' => $clientId,
-    'client_secret' => $clientSecret,
-    'redirect_uri' => $redirectUri,
-    'grant_type' => 'authorization_code'
-];
+try {
+    // Ανάκτηση του access token και refresh token με τον authorization code
+    $accessToken = $googleProvider->getAccessToken('authorization_code', [
+        'code' => $_GET['code'],
+    ]);
 
-$curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, $token_url);
-curl_setopt($curl, CURLOPT_POST, true);
-curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($params));
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    // Παίρνουμε το refresh token (αν υπάρχει)
+    $refreshToken = $accessToken->getRefreshToken();
+    $expiresAt = $accessToken->getExpires();
 
-$response = curl_exec($curl);
-curl_close($curl);
+    
 
-$token_info = json_decode($response, true);
+    // Αποθήκευση του access token και του refresh token στη βάση δεδομένων
+    $stmt = $con->prepare("INSERT INTO tokens (access_token, refresh_token, expires_at) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $accessToken->getToken(), $refreshToken, date('Y-m-d H:i:s', $expiresAt));
+    $stmt->execute();
+    $stmt->close();
 
-if (!isset($token_info['access_token'], $token_info['refresh_token'])) {
-    die("Error fetching tokens: " . $response);
+    
+
+    echo "✅ Tokens saved successfully! You can now use send_email.php.";
+} catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
+    // Αν υπάρχει σφάλμα στην εξουσιοδότηση
+    echo 'Error fetching access token: ' . $e->getMessage();
 }
-
-// Παίρνουμε τα tokens
-$access_token = $token_info['access_token'];
-$refresh_token = $token_info['refresh_token'];
-$expires_at = date('Y-m-d H:i:s', time() + $token_info['expires_in']);
-
-// Αποθήκευση στη βάση δεδομένων
-$stmt = $conn->prepare("INSERT INTO tokens (access_token, refresh_token, expires_at) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $access_token, $refresh_token, $expires_at);
-$stmt->execute();
-$stmt->close();
-
-
-
-echo "Tokens saved successfully! You can now use send_email.php.";
 ?>
