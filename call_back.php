@@ -3,6 +3,7 @@
 require 'vendor/autoload.php';  // Φόρτωσε τα απαιτούμενα dependencies μέσω Composer
 
 use League\OAuth2\Client\Provider\Google;
+use GuzzleHttp\Client;
 
 $env = parse_ini_file('/var/www/html/color/.env1');
 
@@ -22,16 +23,41 @@ $googleProvider = new Google([
 if (!isset($_GET['code'])) {
     die("Error: No authorization code provided. Please visit the authorization URL first.");
 }
+	$authCode = $_GET['code'];
+	echo "Authorization Code: " . htmlspecialchars($authCode) . "<br>";
+	$client = new Client();
+
+
 
 try {
-    // Ανάκτηση του access token και refresh token με τον authorization code
-    $accessToken = $googleProvider->getAccessToken('authorization_code', [
-        'code' => $_GET['code'],
+	
+
+    // Στέλνουμε το αίτημα για να ανταλλάξουμε τον authorization code για access token
+    $response = $client->post('https://oauth2.googleapis.com/token', [
+        'form_params' => [
+            'code' => $authCode,
+            'client_id' => $clientId,
+            'client_secret' => $clientSecret,
+            'redirect_uri' => $redirectUri,
+            'grant_type' => 'authorization_code'
+        ]
     ]);
 
-    // Παίρνουμε το refresh token (αν υπάρχει)
-    $refreshToken = $accessToken->getRefreshToken();
-    $expiresAt = $accessToken->getExpires();
+    // Αποκωδικοποιούμε την απάντηση JSON
+    $body = json_decode((string) $response->getBody(), true);
+
+    // Αν υπάρχει λάθος στην απάντηση, το εκτυπώνουμε
+    if (isset($body['error'])) {
+        exit("Error fetching access token: " . json_encode($body));
+    }
+
+    // Αν όλα πάνε καλά, παίρνουμε το access token και το refresh token
+    $accessToken = $body['access_token'];
+    $refreshToken = $body['refresh_token'];
+
+    echo "Access Token: " . htmlspecialchars($accessToken) . "<br>";
+    echo "Refresh Token: " . htmlspecialchars($refreshToken) . "<br>";
+
 
     
 
@@ -44,8 +70,8 @@ try {
     
 
     echo "✅ Tokens saved successfully! You can now use send_email.php.";
-} catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
-    // Αν υπάρχει σφάλμα στην εξουσιοδότηση
-    echo 'Error fetching access token: ' . $e->getMessage();
+} catch (Exception $e) {
+    // Αν υπάρξει σφάλμα κατά την εκτέλεση του αιτήματος, το εκτυπώνουμε
+    echo "Error: " . $e->getMessage();
 }
 ?>
