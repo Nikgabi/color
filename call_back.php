@@ -54,8 +54,7 @@ $stmt->bind_param("sss", $access_token, $refresh_token, $expires_at);
 $stmt->execute();
 $stmt->close();
 
-// Κλείσιμο σύνδεσης
-$conn->close();
+
 
 echo "Tokens saved successfully! You can now use send_email.php.";
 ?>
