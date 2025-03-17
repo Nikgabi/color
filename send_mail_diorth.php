@@ -48,7 +48,7 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
     // 6. Έλεγχος αν η απόκριση περιέχει νέο access token
     if (isset($response['access_token'])) {
         $newAccessToken = $response['access_token'];
-        $expiresAt = (int)(time() + $response['expires_in']); // Διόρθωση: Χρήση του `expires_in`
+        $expiresAt = date('YmdHis', time() + $response['expires_in']); // Διόρθωση: Χρήση του `expires_in`
 		
 		// Δες τι επιστρέφει η Google
         echo "New Token: $newAccessToken <br>";
@@ -56,7 +56,7 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
 		echo "Expires At (RAW TIMESTAMP): " . $expiresAt . " (" . gettype($expiresAt) . ")<br>";
 		// Ενημέρωση της βάσης
 			$stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_at=CAST(? AS UNSIGNED) WHERE id = 1");
-			$stmt->bind_param("ssi", $newAccessToken, (int)$expiresAt); 
+			$stmt->bind_param("ssi", $newAccessToken, $expiresAt); 
 			//$stmt->bind_param("ssi", $accessToken, $refreshToken, (int) $expiresAt);
 
 			$stmt->execute();
@@ -72,12 +72,12 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
             $newRefreshToken = $response['refresh_token'];
 
             // 8. Ενημέρωση της βάσης δεδομένων με το νέο access token και refresh token
-            $stmt = $con->prepare("UPDATE tokens SET access_token = ?, refresh_token = ?, expires_at = ? WHERE id = 1");
-            $stmt->bind_param("ssi", $newAccessToken, $newRefreshToken, (int)$expiresAt);
+            $stmt = $con->prepare("UPDATE tokens SET access_token = ?, refresh_token = ?, expires_at =CAST(? AS UNSIGNED) WHERE id = 1");
+            $stmt->bind_param("ssi", $newAccessToken, $newRefreshToken, $expiresAt);
         } else {
             // 9. Ενημέρωση της βάσης δεδομένων μόνο με το νέο access token αν δεν υπάρχει νέο refresh token
             $stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_at=CAST(? AS UNSIGNED) WHERE id = 1");
-            $stmt->bind_param("ssi", $newAccessToken,(int) $expiresAt);
+            $stmt->bind_param("ssi", $newAccessToken, $expiresAt);
 			// 10. Εκτέλεση της SQL εντολής
         $stmt->execute();
         $stmt->close();
@@ -93,7 +93,7 @@ $client_id = $env['CLIENT_ID'];
 $client_secret = $env['CLIENT_SECRET'];
 
 // 1. Ανάκτηση των token από τη βάση
-$sql = "SELECT access_token, refresh_token, UNIX_TIMESTAMP(expires_at) as expires_at FROM tokens WHERE id = 1";
+$sql = "SELECT access_token, refresh_token, expires_at  FROM tokens WHERE id = 1";
 $result = mysqli_query($con, $sql);
 $row = $result->fetch_assoc();
 
@@ -111,7 +111,7 @@ if (time() >= $expiresAt) {
 
     // 3. Ενημέρωση της βάσης με τα νέα tokens
     $stmt = $con->prepare("UPDATE tokens SET access_token = ?, refresh_token = ?, expires_at=CAST(? AS UNSIGNED) WHERE id = 1");
-    $stmt->bind_param("ssi", $accessToken, $refreshToken,(int)$expiresAt);
+    $stmt->bind_param("ssi", $accessToken, $refreshToken,$expiresAt);
     $stmt->execute();
 	if ($stmt->affected_rows > 0) {
 			echo "Η βάση ενημερώθηκε επιτυχώς! <br>";
