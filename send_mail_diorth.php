@@ -53,7 +53,17 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
 		// Δες τι επιστρέφει η Google
         echo "New Token: $newAccessToken <br>";
         echo "Expires At: $expiresAt <br>";
-		
+		// Ενημέρωση της βάσης
+			$stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_at = ? WHERE id = 1");
+			$stmt->bind_param("ss", $newAccessToken, $expiresAt); // 🔹 Χρήση "ss" για string τύπους
+
+			$stmt->execute();
+			$stmt->close();
+
+			return $newAccessToken;
+		} else {
+			die("Error refreshing token: " . json_encode($response));
+		}
 		
         // 7. Αν η απόκριση περιέχει και νέο refresh token, αποθηκεύουμε και αυτό
         if (isset($response['refresh_token'])) {
