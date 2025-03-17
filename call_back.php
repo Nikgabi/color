@@ -63,15 +63,30 @@ try {
 
 		$expiresAt = time() + $expiresIn; // UNIX timestamp
 
-		$stmt = $con->prepare("INSERT INTO tokens (access_token, refresh_token, expires_at) VALUES (?, ?, ?)");
-		$stmt->bind_param("ssi", $accessToken, $refreshToken, $expiresAt);
+		// Διαγραφή όλων των περιττών εγγραφών, κρατώντας μόνο 1
+        $con->query("DELETE FROM tokens WHERE id NOT IN (SELECT id FROM (SELECT id FROM tokens ORDER BY id DESC LIMIT 1) AS t)");
 
-		// Εκτέλεση με έλεγχο για σφάλματα
-		if (!$stmt->execute()) {
-			die("Database Error: " . $stmt->error);
-		}
+        // Έλεγχος αν υπάρχει ήδη εγγραφή στη βάση
+        $result = $con->query("SELECT id FROM tokens LIMIT 1");
 
-		$stmt->close();
+        if ($result->num_rows > 0) {
+            // Υπάρχει ήδη εγγραφή, κάνουμε UPDATE
+            $stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_at = ? WHERE id = (SELECT id FROM (SELECT id FROM tokens ORDER BY id DESC LIMIT 1) AS t)");
+            $stmt->bind_param("si", $newAccessToken, $expiresAt);
+        } else {
+            // Δεν υπάρχει εγγραφή, κάνουμε INSERT
+            $stmt = $con->prepare("INSERT INTO tokens (access_token, refresh_token, expires_at) VALUES (?, ?, ?)");
+            $stmt->bind_param("ssi", $newAccessToken, $refreshToken, $expiresAt);
+        }
+
+        // Εκτέλεση της SQL εντολής και έλεγχος σφαλμάτων
+        if ($stmt->execute()) {
+            echo "Η βάση ενημερώθηκε επιτυχώς!<br>";
+        } else {
+            echo "SQL Error: " . $stmt->error . "<br>";
+        }
+
+        $stmt->close();
 	
 	
 	
