@@ -71,8 +71,8 @@ try {
 
         if ($result->num_rows > 0) {
             // Υπάρχει ήδη εγγραφή, κάνουμε UPDATE
-            $stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_at = ? WHERE id = (SELECT id FROM (SELECT id FROM tokens ORDER BY id DESC LIMIT 1) AS t)");
-            $stmt->bind_param("si", $accessToken, $expiresAt);
+            $stmt = $con->prepare("UPDATE tokens SET access_token = ?,refresh_token= ?, expires_at = ? WHERE id = (SELECT id FROM (SELECT id FROM tokens ORDER BY id DESC LIMIT 1) AS t)");
+            $stmt->bind_param("ssi", $accessToken,$refreshToken, $expiresAt);
         } else {
             // Δεν υπάρχει εγγραφή, κάνουμε INSERT
             $stmt = $con->prepare("INSERT INTO tokens (access_token, refresh_token, expires_at) VALUES (?, ?, ?)");
