@@ -57,16 +57,30 @@ try {
     // Αν όλα πάνε καλά, παίρνουμε το access token και το refresh token
     $accessToken = $body['access_token'];
     $refreshToken = $body['refresh_token'];
+	$expiresIn = $body['expires_in'];
+	
+	
+	$expiresAt = time() + $expiresIn;
+	$expiresTime = date('His', $expiresAt); // Μορφή HHMMSS
+
+	echo "Expires At (HHMMSS): " . $expiresTime . "<br>";
+	
+	$fullExpiresTime = date('ymdHis', $expiresAt); // Μορφή YYMMDDHHMMSS
+
+	echo "Expires At (YYMMDDHHMMSS): " . $fullExpiresTime . "<br>";
+
+	
 
     echo "Access Token: " . htmlspecialchars($accessToken) . "<br>";
     echo "Refresh Token: " . htmlspecialchars($refreshToken) . "<br>";
+	echo "Expires In: " . htmlspecialchars($expiresIn) . " seconds<br>";
 
 
     
 
     // Αποθήκευση του access token και του refresh token στη βάση δεδομένων
     $stmt = $con->prepare("INSERT INTO tokens (access_token, refresh_token, expires_at) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $accessToken->getToken(), $refreshToken, date('Y-m-d H:i:s', $expiresAt));
+    $stmt->bind_param("ssi", $accessToken->getToken(), $refreshToken,(int) $fullExpiresTime);
     $stmt->execute();
     $stmt->close();
 
