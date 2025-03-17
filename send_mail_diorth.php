@@ -76,17 +76,18 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
             // 9. Ενημέρωση της βάσης δεδομένων μόνο με το νέο access token αν δεν υπάρχει νέο refresh token
             $stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_at = ? WHERE id = 1");
             $stmt->bind_param("si", $newAccessToken, $expiresAt);
-        }
-
-        // 10. Εκτέλεση της SQL εντολής
+			// 10. Εκτέλεση της SQL εντολής
         $stmt->execute();
         $stmt->close();
 
         // 11. Επιστροφή των νέων tokens (αν υπάρχει νέο refresh token, το επιστρέφουμε, αλλιώς κρατάμε το παλιό)
         return [$newAccessToken, $newRefreshToken ?? $refreshToken];
+        }
+
+        
 		
 		
-    } else {
+     else {
         // 12. Αν υπάρξει σφάλμα, εμφανίζουμε το μήνυμα σφάλματος
         die("Error refreshing token: " . json_encode($response));
     }
