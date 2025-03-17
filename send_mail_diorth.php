@@ -1,8 +1,7 @@
 <?php include('up.php'); ?>
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -162,6 +161,7 @@ try {
 } catch (Exception $e) {
     echo "Σφάλμα κατά την αποστολή: " . $mail->ErrorInfo;
 }
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 ?>
