@@ -1,8 +1,5 @@
 <?php include('up.php'); ?>
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -48,14 +45,16 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
     // 6. Έλεγχος αν η απόκριση περιέχει νέο access token
     if (isset($response['access_token'])) {
         $newAccessToken = $response['access_token'];
-        $expiresAt = date('Y-m-d H:i:s', time() + $response['expires_in']); // Διόρθωση: Χρήση του `expires_in`
+        $expiresAt = (int)(time() + $response['expires_in']); // Διόρθωση: Χρήση του `expires_in`
 		
 		// Δες τι επιστρέφει η Google
         echo "New Token: $newAccessToken <br>";
         echo "Expires At: $expiresAt <br>";
+		echo "Expires At (RAW TIMESTAMP): " . $expiresAt . " (" . gettype($expiresAt) . ")<br>";
 		// Ενημέρωση της βάσης
-			$stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_at = ? WHERE id = 1");
-			$stmt->bind_param("ss", $newAccessToken, $expiresAt); // 🔹 Χρήση "ss" για string τύπους
+			$stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_at=CAST(? AS UNSIGNED) WHERE id = 1");
+			$stmt->bind_param("ssi", $newAccessToken, (int)$expiresAt); 
+			//$stmt->bind_param("ssi", $accessToken, $refreshToken, (int) $expiresAt);
 
 			$stmt->execute();
 			$stmt->close();
@@ -71,11 +70,11 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
 
             // 8. Ενημέρωση της βάσης δεδομένων με το νέο access token και refresh token
             $stmt = $con->prepare("UPDATE tokens SET access_token = ?, refresh_token = ?, expires_at = ? WHERE id = 1");
-            $stmt->bind_param("ssi", $newAccessToken, $newRefreshToken, $expiresAt);
+            $stmt->bind_param("ssi", $newAccessToken, $newRefreshToken, (int)$expiresAt);
         } else {
             // 9. Ενημέρωση της βάσης δεδομένων μόνο με το νέο access token αν δεν υπάρχει νέο refresh token
-            $stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_at = ? WHERE id = 1");
-            $stmt->bind_param("si", $newAccessToken, $expiresAt);
+            $stmt = $con->prepare("UPDATE tokens SET access_token = ?, expires_at=CAST(? AS UNSIGNED) WHERE id = 1");
+            $stmt->bind_param("ssi", $newAccessToken,(int) $expiresAt);
 			// 10. Εκτέλεση της SQL εντολής
         $stmt->execute();
         $stmt->close();
@@ -97,7 +96,7 @@ $row = $result->fetch_assoc();
 
 $accessToken = $row['access_token'];
 $refreshToken = $row['refresh_token'];
-$expiresAt = strtotime($row['expires_at']);
+$expiresAt = $row['expires_at'];
 
 // 2. Έλεγχος αν το access token έχει λήξει
 if (time() >= $expiresAt) {
@@ -108,8 +107,8 @@ if (time() >= $expiresAt) {
     echo "New Refresh Token: $refreshToken <br>";
 
     // 3. Ενημέρωση της βάσης με τα νέα tokens
-    $stmt = $con->prepare("UPDATE tokens SET access_token = ?, refresh_token = ?, expires_at = ? WHERE id = 1");
-    $stmt->bind_param("ssi", $accessToken, $refreshToken, $expiresAt);
+    $stmt = $con->prepare("UPDATE tokens SET access_token = ?, refresh_token = ?, expires_at=CAST(? AS UNSIGNED) WHERE id = 1");
+    $stmt->bind_param("ssi", $accessToken, $refreshToken,(int)$expiresAt);
     $stmt->execute();
 	if ($stmt->affected_rows > 0) {
 			echo "Η βάση ενημερώθηκε επιτυχώς! <br>";
@@ -160,6 +159,7 @@ try {
 } catch (Exception $e) {
     echo "Σφάλμα κατά την αποστολή: " . $mail->ErrorInfo;
 }
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 ?>
