@@ -87,10 +87,7 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
         
 		
 		
-     else {
-        // 12. Αν υπάρξει σφάλμα, εμφανίζουμε το μήνυμα σφάλματος
-        die("Error refreshing token: " . json_encode($response));
-    }
+     
 }
 
 
