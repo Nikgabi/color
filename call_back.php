@@ -59,7 +59,7 @@ try {
     $refreshToken = $body['refresh_token'];
 	$expiresIn = $body['expires_in'];
 	
-	date_default_timezone_set('Europe/Athens'); // Ζώνη ώρας Αθήνας
+	//date_default_timezone_set('Europe/Athens'); // Ζώνη ώρας Αθήνας
 
 		$expiresAt = time() + $expiresIn; // UNIX timestamp
 

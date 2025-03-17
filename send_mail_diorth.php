@@ -47,7 +47,7 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
         die("Error decoding response: " . $result);
     }
 
-    date_default_timezone_set('Europe/Athens'); // Ζώνη ώρας Αθήνας
+    //date_default_timezone_set('Europe/Athens'); // Ζώνη ώρας Αθήνας
 
 // 6. Έλεγχος αν η απόκριση περιέχει νέο access token
 if (isset($response['access_token'])) {
