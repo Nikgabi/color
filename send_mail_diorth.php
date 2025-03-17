@@ -82,11 +82,7 @@ function refreshAccessToken($con, $clientId, $clientSecret, $refreshToken) {
 
         // 11. Επιστροφή των νέων tokens (αν υπάρχει νέο refresh token, το επιστρέφουμε, αλλιώς κρατάμε το παλιό)
         return [$newAccessToken, $newRefreshToken ?? $refreshToken];
-        }
-
-        
-		
-		
+        }	
      
 }
 
