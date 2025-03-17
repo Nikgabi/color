@@ -59,16 +59,23 @@ try {
     $refreshToken = $body['refresh_token'];
 	$expiresIn = $body['expires_in'];
 	
+	date_default_timezone_set('Europe/Athens'); // Ζώνη ώρας Αθήνας
+
+		$expiresAt = time() + $expiresIn; // UNIX timestamp
+
+		$stmt = $con->prepare("INSERT INTO tokens (access_token, refresh_token, expires_at) VALUES (?, ?, ?)");
+		$stmt->bind_param("ssi", $accessToken, $refreshToken, $expiresAt);
+
+		// Εκτέλεση με έλεγχο για σφάλματα
+		if (!$stmt->execute()) {
+			die("Database Error: " . $stmt->error);
+		}
+
+		$stmt->close();
 	
-	$expiresAt = time() + $expiresIn;
-	$expiresTime = date('His', $expiresAt); // Μορφή HHMMSS
-
-	echo "Expires At (HHMMSS): " . $expiresTime . "<br>";
 	
-	$fullExpiresTime = date('ymdHis', $expiresAt); // Μορφή YYMMDDHHMMSS
-
-	echo "Expires At (YYMMDDHHMMSS): " . $fullExpiresTime . "<br>";
-
+	
+	
 	
 
     echo "Access Token: " . htmlspecialchars($accessToken) . "<br>";
@@ -78,11 +85,7 @@ try {
 
     
 
-    // Αποθήκευση του access token και του refresh token στη βάση δεδομένων
-    $stmt = $con->prepare("INSERT INTO tokens (access_token, refresh_token, expires_at) VALUES (?, ?, ?)");
-    $stmt->bind_param("ssi", $accessToken->getToken(), $refreshToken,(int) $fullExpiresTime);
-    $stmt->execute();
-    $stmt->close();
+   
 
     
 
