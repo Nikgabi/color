@@ -38,7 +38,8 @@ if($row){
             d.fb_site, 
             d.linkin, 
             d.site, 
-            d.doxy_site
+            d.doxy_site,
+			d.d_meet
         FROM 
             user u 
         INNER JOIN 
@@ -63,6 +64,7 @@ if($row){
             <th>LinkedIn</th>
             <th>Ιστοσελίδα</th>
             <th>Τηλεδιάσκεψη</th>
+			<th>Κλείσε Ραντεβού</th>
         </tr>";
 
 			while ($data = mysqli_fetch_assoc($result)) {
@@ -78,6 +80,7 @@ if($row){
 				echo "<td>" . (!empty($data['linkin']) ? "<a href='" . htmlspecialchars($data['linkin']) . "' target='_blank'><button>LinkedIn</button></a>" : "-") . "</td>";
 				echo "<td>" . (!empty($data['site']) ? "<a href='" . htmlspecialchars($data['site']) . "' target='_blank'><button>Website</button></a>" : "-") . "</td>";
 				echo "<td>" . (!empty($data['doxy_site']) ? "<a href='" . htmlspecialchars($data['doxy_site']) . "' target='_blank'><button>Doxy</button></a>" : "-") . "</td>";
+				echo "<td>" . (!empty($data['d_meet']) ? "<a href='" . htmlspecialchars($data['d_meet']) . "' target=''><button>Calendar</button></a>" : "-") . "</td>";
 
 				echo "</tr>";
 			}
@@ -88,7 +91,7 @@ if($row){
         
 		echo "  <div class='w3-card' style='background-color: rgb(240,240,240); text-align:center; width: 70%; margin: auto;'>
 				
-			<h4>Έχεις την δυνατότητα να στείλεις e-mail στον γιατρό σου ή
+			<h4>Έχεις την δυνατότητα να στείλεις e-mail στον γιατρό σου , να κλείσεις ραντεβού ή
 			</h4><br>
 			<form name='doxy' action='' method='POST' class='form-container'>
 			<div style='display: flex; gap: 20px; flex-direction: row;'>

@@ -358,6 +358,10 @@
 				  <a href="https://doxy.me/nikgabi" target="_blank">
                     <i class="fa fa-stethoscope" aria-hidden="true"></i>
                   </a>
+				  <a href="nikos_book.php" >
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </a>
+				  
                   
                 </div>
               </div>
