@@ -78,6 +78,24 @@
                 Testimonials
               </span>
             </a>
+			<a href="pdf_helping.php">
+              <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+              <span>
+                pdf_help
+              </span>
+            </a>
+			<a href="normal_values.php">
+              <i class="fa fa-wheelchair" aria-hidden="true"></i>
+              <span>
+                Φυσιολ_τιμές
+              </span>
+            </a>
+			<a href="opinion.php">
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+              <span>
+                your_opinion
+              </span>
+            </a>
           </div>
         </div>
       </div>
