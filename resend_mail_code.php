@@ -1,9 +1,9 @@
 <?php
     include('connection.php');
     session_start();
-/*
+
     use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
+    //use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
     // Load Composer's autoloader
@@ -14,15 +14,13 @@
 
     try {
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'nikosgavalakis@gmail.com';
-        $mail->Password   = 'lnvw homr aify hrbk';
-        $mail->SMTPSecure = 'tls';
-        $mail->Port       = 587;
+		$mail->Host = 'smtp-relay.gmail.com'; 
+		$mail->Port = 587; 
+		$mail->SMTPSecure = 'tls'; 
+		$mail->SMTPAuth = false; // ΧΩΡΙΣ authentication!
 
         // Recipients
-        $mail->setFrom('nikosgavalakis@gmail.com', $name);
+        $mail->setFrom('nikos.gavalakis@ygeiafirst.net', $name);
         $mail->addAddress($email);
 
         // Content
@@ -40,7 +38,7 @@
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
-    } */
+    }
 
     if(isset($_POST['submitBtn2'])){
         if(!empty(trim($_POST['email']))){
@@ -55,8 +53,8 @@
                     $email=$row['email'];
                     $verify_token=$row['verify_token'];
 
-                   // resend_email_verify($name,$email,$verify_token);
-                    $_SESSION['status']="Tο verification email Link σας θα σας σταλεί στο email σας μέσα στις επόμενες 48 ώρες";
+                    resend_email_verify($name,$email,$verify_token);
+                    $_SESSION['status']="Tο verification email Link σας έχει σταλεί στο email σας";
                     header("Location:login.php");
                     exit(0);
 

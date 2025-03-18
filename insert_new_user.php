@@ -1,15 +1,14 @@
 <?php
 include('connection.php');
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-/*
+
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+//use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+
 // Load Composer's autoloader
-require 'vendor/autoload.php'; */
+require 'vendor/autoload.php';
 
 function test_input($data) {
     $data = trim($data);
@@ -17,21 +16,19 @@ function test_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-/*
+
 function sendmail_verify($name, $email, $verify_token) {
     $mail = new PHPMailer(true);
 
     try {
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'nikosgavalakis@gmail.com';
-        $mail->Password   = 'lnvw homr aify hrbk';
-        $mail->SMTPSecure = 'tls';
-        $mail->Port       = 587;
+		$mail->Host = 'smtp-relay.gmail.com'; 
+		$mail->Port = 587; 
+		$mail->SMTPSecure = 'tls'; 
+		$mail->SMTPAuth = false; // ΧΩΡΙΣ authentication!
 
         // Recipients
-        $mail->setFrom('nikosgavalakis@gmail.com', $name);
+        $mail->setFrom('nikos.gavalakis@ygeiafirst.net', 'Nikos Gavalakis');
         $mail->addAddress($email);
 
         // Content
@@ -47,9 +44,10 @@ function sendmail_verify($name, $email, $verify_token) {
 
         $mail->send();
     } catch (Exception $e) {
+		file_put_contents('mail_errors.log', $e->getMessage() . PHP_EOL, FILE_APPEND);
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
-} */
+}
 
 if (isset($_POST['SubmitBtn'])) {
     $name = test_input($_POST['name']);
@@ -58,7 +56,7 @@ if (isset($_POST['SubmitBtn'])) {
     $password = password_hash($pass, PASSWORD_BCRYPT);
     $verify_token = md5(rand());
     $role = test_input($_POST['role']);
-    $speciality = $role == "visitor" ? "NULL" : $_POST['speciality'];
+    $speciality = $role == "visitor" ? NULL : $_POST['speciality'];
 
     $check_email_query = "SELECT email FROM user WHERE email='$email' LIMIT 1";
     $check_email_query_run = mysqli_query($con, $check_email_query);
@@ -72,9 +70,9 @@ if (isset($_POST['SubmitBtn'])) {
             $query_run = mysqli_query($con, $query);
 
             if ($query_run) {
-              //  $_SESSION['id_user'] = mysqli_insert_id($con);
-               // sendmail_verify($name, $email, $verify_token);
-                $_SESSION['status'] = "Η εγγραφή σας έγινε. Για να ολοκληρωθεί επιβεβαιώστε το email σας ακολουθώντας τον σύνδεσμο που θα σας σταλθεί μέσα στις επόμενες 48 ώρες";
+                $_SESSION['id_user'] = mysqli_insert_id($con);
+                sendmail_verify($name, $email, $verify_token);
+                $_SESSION['status'] = "Η εγγραφή σας έγινε. Για να ολοκληρωθεί επιβεβαιώστε το email σας ακολουθώντας τον σύνδεσμο που σας στάλθηκε";
                 header('Location: login.php');
             } else {
                 $_SESSION['status'] = "Η εγγραφή σας απέτυχε. Ξαναδοκιμάστε";
@@ -85,7 +83,6 @@ if (isset($_POST['SubmitBtn'])) {
         $_SESSION['status'] = "Κάτι πήγε στραβά κατά τον έλεγχο του email.";
         header('Location: register.php');
     }
-    
 } else {
     echo '<p>Κάτι πήγε στραβά!!</p>';
-} 
+}
