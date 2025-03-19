@@ -1152,6 +1152,49 @@ a:focus {
 
 .w3-card-4 {box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
 
+.news-ticker {
+    width: 100%;
+    background: #bab8b8 /* Γκρι χρώμα */
+    color: black;
+    overflow: hidden;
+    position: fixed;
+    bottom: 50px; /* Ανεβαίνει 150px από το κάτω μέρος */
+    left: 0;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.news-ticker-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: ticker 80s linear infinite; /* Αργή κίνηση */
+}
+
+.news-ticker-content span {
+    margin-right: 30px; /* Απόσταση μεταξύ των ειδήσεων */
+}
+
+.news-ticker-content:hover {
+    animation-play-state: paused; /* Σταματάει όταν ο χρήστης βάζει το ποντίκι */
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+
+
+
+
+
 #container {
 	
 	margin: 25px auto 50px auto;
