@@ -37,5 +37,5 @@
     </div>
   </section><br><br>
 </div>
-
+<?php include ('tincker.php')?>
 <?php include('down.php'); ?>
