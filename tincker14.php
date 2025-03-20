@@ -9,7 +9,7 @@
             const apiKey = 'igtgdwgzrwnlib7gcuir381od8xswpbbgkalrj7l'; // Βάλε το API Key σου εδώ
 
             try {
-                const response = await fetch(`${apiUrl}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${apiKey}&count=35`);
+                const response = await fetch(`${apiUrl}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${apiKey}&count=15`);
                 const data = await response.json();
 
                 if (data.status !== 'ok') throw new Error(data.message);
@@ -20,7 +20,7 @@
                     return;
                 }
 
-                let newsHtml = items.map(item => `<a href="${item.link}" target="_blank" style="color: white; text-decoration: none;">📰 ${item.title}</a>`).join(' | ');
+                let newsHtml = items.map(item => `<a href="${item.link}" target="_blank" style="color: black; text-decoration: none;">📰 ${item.title}</a>`).join(' | ');
                 document.getElementById('news-ticker-content').innerHTML = newsHtml;
 
             } catch (error) {
