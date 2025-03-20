@@ -9,7 +9,7 @@
             const apiKey = 'igtgdwgzrwnlib7gcuir381od8xswpbbgkalrj7l'; // Βάλε το API Key σου εδώ
 
             try {
-                const response = await fetch(`${apiUrl}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${apiKey}&count=15`);
+                const response = await fetch(`${apiUrl}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${apiKey}&count=35`);
                 const data = await response.json();
 
                 if (data.status !== 'ok') throw new Error(data.message);
