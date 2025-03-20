@@ -1,4 +1,4 @@
-<?php include('up.php'); ?>
+<?php include('up2.php'); ?>
 
 <head>
 	<title>Doctors </title>
