@@ -17,10 +17,6 @@
   <meta name="author" content="Gavalakis Nikos" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <!-- jQery -->
-  <script src="js/jquery-3.7.1.min.js"></script>
-  
-  
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <!-- fonts style -->
