@@ -38,6 +38,9 @@
                   <a href="mailto:fpanagea@yahoo.gr">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
+				  <a href="fani_book.php" >
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </a>
                 </div>
               </div>
             </div>
@@ -60,6 +63,9 @@
                   </a>
                   <a href="mailto:p.kalamp@gmail.com">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+				  <a href="panos_book.php" >
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>

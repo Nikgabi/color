@@ -1,5 +1,8 @@
 <!-- footer section -->
   <footer class="footer_section">
+	
+  
+  
     <div class="container">
       <p>
 	   <span id="displayYear" hidden></span><!-- All Rights Reserved By
