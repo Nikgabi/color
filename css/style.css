@@ -1178,6 +1178,9 @@ a:focus {
     margin-right: 30px; /* Απόσταση μεταξύ των ειδήσεων */
 }
 
+#news-ticker-content{
+	color: black;
+}
 .news-ticker-content:hover {
     animation-play-state: paused; /* Σταματάει όταν ο χρήστης βάζει το ποντίκι */
 }
