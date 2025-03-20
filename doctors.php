@@ -1,4 +1,4 @@
-<?php include('up2.php'); ?>
+<?php include('up.php'); ?>
 
 <head>
 	<title>Doctors </title>
@@ -380,4 +380,4 @@
   <!-- end team section -->
 
 
-<?php include('down1.php'); ?>
+<?php include('down.php'); ?>
