@@ -1155,7 +1155,7 @@ a:focus {
 .news-ticker {
     width: 100%;
     background: #bab8b8 /* Γκρι χρώμα */
-    color: black;
+    color: rgb(0, 0, 0) !important;
     overflow: hidden;
     position: fixed;
     bottom: 50px; /* Ανεβαίνει 150px από το κάτω μέρος */
@@ -1167,7 +1167,11 @@ a:focus {
 .news-ticker-content {
     display: inline-block;
     white-space: nowrap;
-    animation: ticker 80s linear infinite; /* Αργή κίνηση */
+	will-change: transform;
+    animation-name: ticker !important;
+    animation-duration: 100s !important; /* Ορίζει τον χρόνο κύλισης */
+    animation-timing-function: linear !important;
+    animation-iteration-count: infinite !important;
 }
 
 .news-ticker-content span {
@@ -1183,7 +1187,7 @@ a:focus {
         transform: translateX(100%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-300%); /* Αυξάνει το μήκος κύλισης */
     }
 }
 
