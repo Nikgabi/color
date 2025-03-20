@@ -1154,7 +1154,7 @@ a:focus {
 
 .news-ticker {
     width: 100%;
-    background: #399988 ;
+    background: #ebf0ef ;
     color: rgb(0, 0, 0);
     overflow: hidden;
     position: fixed;
@@ -1178,9 +1178,7 @@ a:focus {
     margin-right: 30px; /* Απόσταση μεταξύ των ειδήσεων */
 }
 
-#news-ticker-content{
-	color: black;
-}
+
 .news-ticker-content:hover {
     animation-play-state: paused; /* Σταματάει όταν ο χρήστης βάζει το ποντίκι */
 }
