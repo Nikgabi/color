@@ -55,7 +55,7 @@
       <div class="header_top">
         <div class="container">
           <div class="contact_nav">
-            <a href="">
+            <a href="#">
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
                 Call : +30 6944818841
