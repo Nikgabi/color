@@ -58,13 +58,13 @@
             <a href="#">
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
-                Call : +30 6944818841
+                Call :6944818841
               </span>
             </a>
             <a href="mailto:info@ygeiafirst.net">
               <i class="fa fa-envelope" aria-hidden="true"></i>
               <span>
-                Email : info@ygeiafirst.net
+                Email :info@ygeiafirst.net
               </span>
             </a>
             <a href="location.php">
@@ -74,12 +74,12 @@
               </span>
             </a>
 			</a>
-			<a href="testimonials.php">
+		<!--	<a href="testimonials.php">
               <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
               <span>
                 Testimonials
               </span>
-            </a>
+            </a>-->
 			<a href="pdf_helping.php">
               <i class="fa fa-folder-open-o" aria-hidden="true"></i>
               <span>
@@ -89,7 +89,7 @@
 			<a href="normal_values.php">
               <i class="fa fa-wheelchair" aria-hidden="true"></i>
               <span>
-                Φυσιολ_τιμές
+                Φυσ_τιμές
               </span>
             </a>
 			<a href="opinion.php">
@@ -98,6 +98,16 @@
                 your_opinion
               </span>
             </a>
+			<?php 
+			if ((isset($_SESSION['email']) && isset($_SESSION['role'])) && $_SESSION['role'] == 'Doctor'){
+				echo '
+				<a href="form_doctor.php">
+				  <i class="fa fa-user-md" aria-hidden="true"></i>
+				  <span>
+					for_doctors
+				  </span>
+				</a>';}
+			?>
           </div>
         </div>
       </div>
