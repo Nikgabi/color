@@ -96,6 +96,7 @@ a:focus {
   padding: 5px 0;
 }
 
+
 .header_section .header_top .contact_nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1164,7 +1165,7 @@ a:focus {
     white-space: nowrap;
 }
 
-.news-ticker-content {
+.news-ticker .news-ticker-content {
     display: inline-block;
     white-space: nowrap;
 	will-change: transform;
