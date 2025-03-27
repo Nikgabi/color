@@ -43,6 +43,19 @@ async function fetchRSS() {
     }
 }
 
+// Διακοπή και συνέχεια animation όταν περνά το ποντίκι
+document.addEventListener("DOMContentLoaded", () => {
+    const tickerContent = document.getElementById('news-ticker-content');
+
+    tickerContent.addEventListener("mouseenter", () => {
+        tickerContent.style.animationPlayState = "paused";
+    });
+
+    tickerContent.addEventListener("mouseleave", () => {
+        tickerContent.style.animationPlayState = "running";
+    });
+});
+
 // Φόρτωση RSS με ανανέωση κάθε 60 δευτερόλεπτα
 fetchRSS();
 setInterval(fetchRSS, 60000);
