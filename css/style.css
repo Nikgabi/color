@@ -1155,11 +1155,11 @@ a:focus {
 
 .news-ticker {
     width: 100%;
-    background: #ebf0ef ;
+    background: #ebf0ef;
     color: rgb(0, 0, 0);
     overflow: hidden;
     position: fixed;
-    bottom: 50px; /* Ανεβαίνει 150px από το κάτω μέρος */
+    bottom: 50px;
     left: 0;
     padding: 10px;
     white-space: nowrap;
@@ -1168,30 +1168,27 @@ a:focus {
 .news-ticker .news-ticker-content {
     display: inline-block;
     white-space: nowrap;
-	will-change: transform;
-    animation-name: ticker !important;
-    animation-duration: 100s !important; /* Ορίζει τον χρόνο κύλισης */
-    animation-timing-function: linear !important;
-    animation-iteration-count: infinite !important;
+    will-change: transform;
+    animation: none; /* Αρχικά απενεργοποιημένο */
 }
 
 .news-ticker-content span {
     margin-right: 30px; /* Απόσταση μεταξύ των ειδήσεων */
 }
 
-
 .news-ticker-content:hover {
-    animation-play-state: paused; /* Σταματάει όταν ο χρήστης βάζει το ποντίκι */
+    animation-play-state: paused;
 }
 
 @keyframes ticker {
-    0% {
+    from {
         transform: translateX(100%);
     }
-    100% {
-        transform: translateX(-300%); /* Αυξάνει το μήκος κύλισης */
+    to {
+        transform: translateX(-100%);
     }
 }
+
 
 
 
