@@ -25,6 +25,7 @@
 		  
         </div>
         <div class="col-md-8">
+		
           <div class="detail-box">
             
             <?php if ((isset($_SESSION['id_user']) && isset($_SESSION['role']))&& $_SESSION['role']=='visitor'){
@@ -32,41 +33,41 @@
                 Ιατρικοί υπολογισμοί και εκτιμήσεις κινδύνων:
               </h2>
 			
-			<a href="somatometr.php">
+			<a href="' . BASE_URL . 'calculation/somatometr.php">
               Σωματομετρικά στοιχεία και υπολογισμοί
             </a>
-			<a href="strock.php">
+			<a href="' . BASE_URL . 'calculation/strock.php">
               Κολπική μαρμαρυγή και εγκεφαλικό
             </a>
 			
-			<a href="mi_er.php">
+			<a href="' . BASE_URL . 'calculation/mi_er.php">
                Κίνδυνος εμφράγματος
             </a>
-			<a href="appendix_child.php">
+			<a href="' . BASE_URL . 'calculation/appendix_child.php">
               Εκτίμηση οξ. σκωληκοειδίτιδας
             </a>
 			
 			
-			<a href="clear_creat.php">
+			<a href="' . BASE_URL . 'calculation/clear_creat.php">
               Σπειραματική διήθηση
             </a>
-			<a href="child_height.php">
+			<a href="' . BASE_URL . 'calculation/child_height.php">
               Υπολογισμός τελικού ύψους παιδιού
             </a>
-			<a href="birth.php">
+			<a href="' . BASE_URL . 'calculation/birth.php">
               Πιθανή ημερομηνία γέννησης
             </a>
-			<a href="depression.php">
+			<a href="' . BASE_URL . 'calculation/depression.php">
               Εκτίμηση για κατάθλιψη
             </a>
-			<a href="anxiety.php">
+			<a href="' . BASE_URL . 'calculation/anxiety.php">
               Εκτίμηση για άγχος
             </a>
-			<a href="anion_gap.php">
+			<a href="' . BASE_URL . 'calculation/anion_gap.php">
               Χάσμα ανιόντων
             </a><hr>
 			<h3>Τεχνητή νοημοσύνη </h3>
-			<a href="chatgpt3.php">
+			<a href="' . BASE_URL . 'calculation/chatgpt3.php">
               Ερώτημα προς το ChatGpt-4
             </a>
 			';}
@@ -76,33 +77,33 @@
                
             </div>
 				<h2 style="color:green ;">Οι υπολογισμοί για τους οποίους έχετε πρόσβαση: </h2>
-				<a href="strock.php">
+				<a href="' . BASE_URL . 'calculation/strock.php">
               Κολπική μαρμαρυγή και εγκεφαλικό
             </a>
 			
-			<a href="mi_er.php">
+			<a href="' . BASE_URL . 'calculation/mi_er.php">
                Κίνδυνος εμφράγματος
             </a>
-			<a href="appendix_child.php">
+			<a href="' . BASE_URL . 'calculation/appendix_child.php">
               Εκτίμηση οξ. σκωληκοειδίτιδας
             </a>
 			
 			
-			<a href="clear_creat.php">
+			<a href="' . BASE_URL . 'calculation/clear_creat.php">
               Σπειραματική διήθηση
             </a>
-			<a href="child_height.php">
+			<a href="' . BASE_URL . 'calculation/child_height.php">
               Υπολογισμός τελικού ύψους παιδιού
             </a>
-			<a href="birth.php">
+			<a href="' . BASE_URL . 'calculation/birth.php">
               Πιθανή ημερομηνία γέννησης
             </a>
-			<a href="anion_gap.php">
+			<a href="' . BASE_URL . 'calculation/anion_gap.php">
               Χάσμα ανιόντων
             </a><hr>
 			
 			<h4>Τεχνητή νοημοσύνη <span style="color:green;"> μόνο για εγγεγραμένους χρήστες.</span> </h4>
-			<a href="chatgpt3.php">
+			<a href="' . BASE_URL . 'calculation/chatgpt3.php">
               Ερώτημα προς το ChatGpt-4
             </a>
 				'; 
@@ -110,8 +111,9 @@
 			?>
           </div>
         </div>
+		</div>
       </div>
-    </div>
+    
   </section><br><br>
   </div>
 
