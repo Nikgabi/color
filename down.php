@@ -15,7 +15,7 @@
 		---
 		<a  href="<?php echo BASE_URL; ?>testimonials.php" >TESTIMONIALS</a>
 		---
-		<a  href="<?php echo BASE_URL; ?>about.php" >ABOUT</a>
+		<a  href="<?php echo BASE_URL; ?>auxi/about.php" >ABOUT</a>
 		---
 		<small>&copy; Copyright 2025 All Rights Reserved by ygeiafirst.net</small>
       </p>

@@ -63,7 +63,7 @@
             <?php 
               if ((isset($_SESSION['email']) && isset($_SESSION['role'])) && $_SESSION['role'] == 'Doctor') {
                 echo '
-                <a href="' . BASE_URL . 'form_doctor.php">
+                <a href="' . BASE_URL . 'auxi/form_doctor.php">
                   <i class="fa fa-user-md"></i><span>for_doctors</span>
                 </a>';
               }
