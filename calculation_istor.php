@@ -17,6 +17,7 @@
         </div>
 		
         <div class="col-md-9">
+		
           <div class="detail-box">
             
             <?php if ((isset($_SESSION['id_user']) && isset($_SESSION['role']))&& $_SESSION['role']=='visitor'){
@@ -26,25 +27,25 @@
 			  <p>Βάλετε στοιχεία από το ιστορικό σας, τις εξετάσεις σας και τυχόν γνωματεύσεις από ειδικούς γιατρούς. 
 			  Μόνο ο γιατρός που έχετε επιλέξει έχει πρόσβαση στα δεδομένα σας. Τα δεδομένα σας είναι ασφαλή.
 			  </p>
-			<a href="istoriko.php">
+			<a href="h_istory/istoriko.php">
               Εισαγωγή Ιστορικού
             </a>
-			<a href="bioximiko.php">
+			<a href="h_istory/bioximiko.php">
               Βιοχημικές εξετάσεις
             </a>
-			<a href="aimatologiko.php">
+			<a href="h_istory/aimatologiko.php">
               Αιματολογικές εξετάσεις
             </a>
-			<a href="ormon.php">
+			<a href="h_istory/ormon.php">
               Μικροβιολογικές κ.α εξετάσεις 
             </a>
-			<a href="aktino.php">
+			<a href="h_istory/aktino.php">
               Απεικονιστικές εξετάσεις
             </a>
-			<a href="loipes_exet.php">
+			<a href="h_istory/loipes_exet.php">
               Λοιπές εξετάσεις
             </a>
-			<a href="gnomat.php">
+			<a href="h_istory/gnomat.php">
               Γνωματεύσεις από ειδικούς
             </a><hr>
 			<br><br>
@@ -59,8 +60,9 @@
 			 }
 			?>
           </div>
+		  </div>
         </div>
-      </div>
+      
     </div>
   </section><br><br>
   </div>

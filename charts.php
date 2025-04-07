@@ -12,13 +12,13 @@
       <div class="row">
         <div class="col-md-2 "><br><br>
           <div class="img-box">
-            <img src="images/diagrama1.jpeg" alt="">
+            <img src="<?php echo BASE_URL; ?>images/diagrama1.jpeg" alt="">
           </div><br>
 		  <div class="img-box">
-            <img src="images/diagrama2.jpeg" alt="">
+            <img src="<?php echo BASE_URL; ?>images/diagrama2.jpeg" alt="">
           </div><br>
 		  <div class="img-box">
-            <img src="images/diagrama3.jpeg" alt="">
+            <img src="<?php echo BASE_URL; ?>images/diagrama3.jpeg" alt="">
           </div><br>
 		  
 		  
@@ -35,19 +35,19 @@
 				<h2 style="color:green;">Στατιστικά στοιχεία μέσων όρων</h2>
 				
 				  
-				<a href="diagrammata1.php">
+				<a href="<?php echo BASE_URL; ?>charts/diagrammata1.php">
 				  Πίνακας σωματομετρικών δεδομένων
 				</a>
-				<a href="bio_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/bio_chart.php">
 				  Πίνακας Βιοχημικών εξετάσεων
 				</a>
-				<a href="aima_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/aima_chart.php">
 				  Πίνακας Αιματολογικών εξετάσεων
 				</a>
-				<a href="pcyc_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/pcyc_chart.php">
 				  Πίνακας μέτρησης άγχους 
 				</a>
-				<a href="depress_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/depress_chart.php">
 				  Πίνακας μέτρησης κατάθλιψης
 				</a>
 				
@@ -58,19 +58,19 @@
 			<h2 style="color:green;">Δεδομένα σας και σύγκριση μέσων όρων</h2>
 				
 				  
-				<a href="diagrammata1.php">
+				<a href="<?php echo BASE_URL; ?>charts/diagrammata1.php">
 				  Πίνακας σωματομετρικών δεδομένων
 				</a>
-				<a href="bio_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/bio_chart.php">
 				  Πίνακας Βιοχημικών εξετάσεων
 				</a>
-				<a href="aima_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/aima_chart.php">
 				  Πίνακας Αιματολογικών εξετάσεων
 				</a>
-				<a href="pcyc_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/pcyc_chart.php">
 				  Πίνακας μέτρησης άγχους 
 				</a>
-				<a href="depress_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/depress_chart.php">
 				  Πίνακας μέτρησης κατάθλιψης
 				</a>
 				
@@ -81,19 +81,19 @@
 			<h2 style="color:green;">Σύγκριση μέσων όρων ασθενών σας</h2>
 				
 				  
-				<a href="diagrammata1.php">
+				<a href="<?php echo BASE_URL; ?>charts/diagrammata1.php">
 				  Πίνακας σωματομετρικών δεδομένων
 				</a>
-				<a href="bio_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/bio_chart.php">
 				  Πίνακας Βιοχημικών εξετάσεων
 				</a>
-				<a href="aima_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/aima_chart.php">
 				  Πίνακας Αιματολογικών εξετάσεων
 				</a>
-				<a href="pcyc_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/pcyc_chart.php">
 				  Πίνακας μέτρησης άγχους 
 				</a>
-				<a href="depress_chart.php">
+				<a href="<?php echo BASE_URL; ?>charts/depress_chart.php">
 				  Πίνακας μέτρησης κατάθλιψης
 				</a>
 				
