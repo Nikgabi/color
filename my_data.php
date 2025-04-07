@@ -40,17 +40,17 @@ if ($result && mysqli_num_rows($result) > 0) {
                 <td>$name</td>
                 
                 <td>
-					<a href='istorika.php?patient_id=$patient_id'>
+					<a href='h_istory/istorika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Ιστορικό</button>
                     </a>
-                    <a href='somatometrika.php?patient_id=$patient_id'>
+                    <a href='h_istory/somatometrika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Σωματομετρικά</button>
                     </a>
                     
-                    <a href='bioximika.php?patient_id=$patient_id'>
+                    <a href='h_istory/bioximika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Βιοχημικά</button>
                     </a>
-					<a href='teleconfer.php?patient_id=$patient_id'>
+					<a href='h_istory/teleconfer.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Τηλεδιασκέψεις</button>
                     </a>
 					
@@ -62,13 +62,13 @@ if ($result && mysqli_num_rows($result) > 0) {
                 
                 <td>
 					
-					<a href='aimatologika.php?patient_id=$patient_id'>
+					<a href='h_istory/aimatologika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Αιματολογικά</button>
                     </a>
-					<a href='ormon_res.php?patient_id=$patient_id'>
+					<a href='h_istory/ormon_res.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Μικροβιολογικές κ.α. εξετ. </button>
                     </a>
-					<a href='aktinologika.php?patient_id=$patient_id'>
+					<a href='h_istory/aktinologika.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Απεικονιστικά</button>
                     </a>
 					
@@ -80,16 +80,16 @@ if ($result && mysqli_num_rows($result) > 0) {
                 
                 <td>
 					
-					<a href='loipes_exet_res.php?patient_id=$patient_id'>
+					<a href='h_istory/loipes_exet_res.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Λοιπές εξετάσεις</button>
                     </a>
-					<a href='gnomat_res.php?patient_id=$patient_id'>
+					<a href='h_istory/gnomat_res.php?patient_id=$patient_id'>
                         <button style='margin-right: 5px;'>Γνωματεύσεις</button>
                     </a>
-					<a href='stress.php?patient_id=$patient_id'>
+					<a href='h_istory/stress.php?patient_id=$patient_id'>
                         <button>Stress</button>
                     </a>
-					<a href='depress.php?patient_id=$patient_id'>
+					<a href='h_istory/depress.php?patient_id=$patient_id'>
                         <button>Κατάθλιψη</button>
                     </a>
 					

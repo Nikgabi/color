@@ -98,7 +98,7 @@
                     } else if ((isset($_SESSION['email']) && isset($_SESSION['role'])) && $_SESSION['role'] == 'visitor') {
                       echo '<li class="nav-item"><a class="nav-link" href="' . BASE_URL . 'choose_doctor.php">ΔΙΑΛΕΞΕ ΓΙΑΤΡΟ</a></li>';
                     } else if ((isset($_SESSION['email']) && isset($_SESSION['role'])) && $_SESSION['role'] == 'Doctor') {
-                      echo '<li class="nav-item"><a class="nav-link" href="' . BASE_URL . 'teleconfer_con.php?consultant=' . $_SESSION['id_user'] . '">ΤΗΛΕΙΑΤΡΙΚΗ</a></li>';
+                      echo '<li class="nav-item"><a class="nav-link" href="' . BASE_URL . 'h_istory/teleconfer_con.php?consultant=' . $_SESSION['id_user'] . '">ΤΗΛΕΙΑΤΡΙΚΗ</a></li>';
                     }
                   ?>
                 </ul>
