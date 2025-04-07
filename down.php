@@ -13,7 +13,7 @@
 		---
 		<a  href="<?php echo BASE_URL; ?>bibliography.php" >ΒΙΒΛΙΟΓΡΑΦΙΑ</a>
 		---
-		<a  href="<?php echo BASE_URL; ?>testimonials.php" >TESTIMONIALS</a>
+		<a  href="<?php echo BASE_URL; ?>auxi/testimonials.php" >TESTIMONIALS</a>
 		---
 		<a  href="<?php echo BASE_URL; ?>auxi/about.php" >ABOUT</a>
 		---
