@@ -1,4 +1,5 @@
 <?php
+   define('BASE_URL', 'https://ygeiafirst.net/');
    $env = parse_ini_file('/var/www/html/color/.env1');
    $server = 'localhost';
    $user = 'root';
