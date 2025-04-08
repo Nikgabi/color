@@ -11,7 +11,7 @@
                 <img src="images/liakou2.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="liakou.php">"Πυρετός.Δέκα μύθοι."  </a></h2>
+                <h2><a href="blog/liakou.php">"Πυρετός.Δέκα μύθοι."  </a></h2>
 				<p style="font-style:italic;">της Χρυσούλας Λιάκου<p><br>
                 <p>Ανάλυση των μύθων σχετικά με τον πυρετό.Τι πραγματικά ισχύει.</p>
             </div>
@@ -23,7 +23,7 @@
                 <img src="images/savvas1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="savvas.php" >"Εκκολπωματίτιδα παχέως εντέρου"  </a></h2>
+                <h2><a href="blog/savvas.php" >"Εκκολπωματίτιδα παχέως εντέρου"  </a></h2>
 				<p style="font-style:italic;">του Σάββα Παπαγρηγοριάδη<p><br>
                 <p>Ακούστε για την όχι και τόσο σπάνια πάθηση.</p>
             </div>
@@ -35,7 +35,7 @@
                 <img src="images/stavroula2.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="stavroula.php">"Ο υπέρηχος: το νέο "στηθοσκόπιο" των γιατρών"  </a></h2>
+                <h2><a href="blog/stavroula.php">"Ο υπέρηχος: το νέο "στηθοσκόπιο" των γιατρών"  </a></h2>
 				<p style="font-style:italic;">της Σταυρούλας Γαβαλάκη<p><br>
                 <p>Χρήση του υπερήχου από μή ακτινολόγους.</p>
             </div>
@@ -47,7 +47,7 @@
                 <img src="images/panos2.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="panos.php">"Βρογχιολίτιδα"  </a></h2>
+                <h2><a href="blog/panos.php">"Βρογχιολίτιδα"  </a></h2>
 				<p style="font-style:italic;">του Παναγιώτη Καλαμπαλίκη<p><br>
                 <p>Βασικά και σημαντικά στοιχεία για αυτήν την συχνή πάθηση των βρεφών.</p>
             </div>
@@ -59,7 +59,7 @@
                 <img src="images/stergios1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="stergios.php">"Εξετάσεις μαστού, κάθε πότε, πώς"  </a></h2>
+                <h2><a href="blog/stergios.php">"Εξετάσεις μαστού, κάθε πότε, πώς"  </a></h2>
 				<p style="font-style:italic;">του Στέργιου Δουβετζέμη<p><br>
                 <p>Κάθε πότε κάθε γυναίκα πρέπει να επισκέπτεται τον ειδικό.</p>
             </div>
@@ -71,7 +71,7 @@
                 <img src="images/maria.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="maria.php" >"Αιμορροφιλία παρακολούθηση και θεραπεία"  </a></h2>
+                <h2><a href="blog/maria.php" >"Αιμορροφιλία παρακολούθηση και θεραπεία"  </a></h2>
 				<p style="font-style:italic;">της Μαρίας Γαβαλάκη<p><br>
                 <p>Ενημέρωση για αυτή την σπάνια πάθηση.</p>
             </div>
@@ -83,7 +83,7 @@
                 <img src="images/karam.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="karamalis.php" >"Πρόληψη καρκίνου τραχήλου μήτρας"  </a></h2>
+                <h2><a href="blog/karamalis.php" >"Πρόληψη καρκίνου τραχήλου μήτρας"  </a></h2>
 				<p style="font-style:italic;">του Γιώργου Καράμαλη<p><br>
                 <p>Κατευθυντήριες οδηγίες από την Ελληνική γυναικολογική εταιρεία.</p>
             </div>
@@ -96,7 +96,7 @@
                 <img src="images/georgop1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="testis.php">"Κρυψορχία στα παιδιά"  </a></h2>
+                <h2><a href="blog/testis.php">"Κρυψορχία στα παιδιά"  </a></h2>
 				<p style="font-style:italic;">του Ιωάννη Γεωργόπουλου<p><br>
                 <p>Πότε και γιατί πρέπει να χειρουργείται το παιδί.</p>
             </div>
@@ -109,7 +109,7 @@
                 <img src="images/panagea1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="panagea.php">"Χοληστερόλη, η καλή, η κακή και η ... άσκηση"  </a></h2>
+                <h2><a href="blog/panagea.php">"Χοληστερόλη, η καλή, η κακή και η ... άσκηση"  </a></h2>
 				<p style="font-style:italic;">της Θεοφανούς Παναγέα<p><br>
                 <p>Συμβουλές και οδηγίες για την υπερχοληστεριναιμία.</p>
             </div>
@@ -121,7 +121,7 @@
                 <img src="images/Gavalakis1.jpg" alt="Φωτογραφία άρθρου">
             </div>
             <div class="post-content">
-                <h2><a href="nikos.php" >"Ενούρηση στα παιδιά"  </a></h2>
+                <h2><a href="blog/nikos.php" >"Ενούρηση στα παιδιά"  </a></h2>
 				<p style="font-style:italic;">του Γαβαλάκη Νίκου<p><br>
                 <p>Συμβουλές στον γονιό.</p>
             </div>

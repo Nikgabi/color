@@ -38,7 +38,7 @@
                   <a href="mailto:fpanagea@yahoo.gr">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
-				  <a href="fani_book.php" >
+				  <a href="auxi/fani_book.php" >
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -64,7 +64,7 @@
                   <a href="mailto:p.kalamp@gmail.com">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
-				  <a href="panos_book.php" >
+				  <a href="auxi/panos_book.php" >
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -364,7 +364,7 @@
 				  <a href="https://doxy.me/nikgabi" target="_blank">
                     <i class="fa fa-stethoscope" aria-hidden="true"></i>
                   </a>
-				  <a href="nikos_book.php" >
+				  <a href="auxi/nikos_book.php" >
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                   </a>
 				  
