@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
   <link href="<?php echo BASE_URL; ?>css/style.css" rel="stylesheet" />
-  <link href="<?php echo BASE_URL; ?>blog.css" rel="stylesheet" />
+  <link href="<?php echo BASE_URL; ?>css/blog.css" rel="stylesheet" />
   <link href="<?php echo BASE_URL; ?>css/responsive.css" rel="stylesheet" />
 
   <!-- Google Analytics -->
