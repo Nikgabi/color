@@ -17,7 +17,7 @@
         </div>
 		<div class="col-md-9 ">
 		<div class="w3-card-4" style="background-color: rgb(240,240,240); text-align:center;">
-		<form action="<?php echo BASE_URL; ?>aima_results.php" method="POST">	
+		<form action="<?php echo BASE_URL; ?>h_istory/aima_results.php" method="POST">	
 		  <div style="display: flex; gap: 20px; flex-direction:row;">
 			<h2 style="align-items: center;">Συμπλήρωσε τις τιμές των εργαστηριακών σου εξετάσεων</h2>
 			
