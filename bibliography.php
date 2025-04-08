@@ -14,15 +14,15 @@
             </div>
             <div class="post-titles">
 				<h4 style="font-weight:bold;">ΙΑΤΡΙΚΟΙ ΑΛΓΟΡΙΘΜΟΙ ΚΑΙ ΕΞΙΣΩΣΕΙΣ</h4>
-                <h4><a href="atrial.php">Κολπική μαρμαριγή και πρόληψη εγκεφαλικού</a></h4>
-                <h4><a href="derivation.php">Πρόβλεψη καρδιακών επιπλοκών σε μεγάλες επεμβάσεις</a></h4>
-                <h4><a href="guideline.php">Εκτίμηση καρδιοαγγειακού κινδύνου</a></h4>
-                <h4><a href="Heart.php" >Θωρακικός πόνος και η "αξία" του καρδιακού σκόρ</a></h4>
-				<h4><a href="ideal.php">Εξίσωση ιδεώδους Βάρους σώματος</a></h4>
-				<h4><a href="Osmolal.php">Χάσμα Ανιόντων</a></h4>
-				<h4><a href="PHQ.php">Εκτίμηση για κατάθλιψη , Ερωτηματολόγιο PHQ-9</a></h4>
-				<h4><a href="Estimate.php" >Εκτίμηση σπειραματικής διήθησης</a></h4>
-				<h4><a href="GFR.php">Νέα Εκτίμηση σπειραματικής διήθησης Κρεατινίνη -Cystacin-C χωρίς την φυλή</a></h4>
+                <h4><a href="biblio/atrial.php">Κολπική μαρμαριγή και πρόληψη εγκεφαλικού</a></h4>
+                <h4><a href="biblio/derivation.php">Πρόβλεψη καρδιακών επιπλοκών σε μεγάλες επεμβάσεις</a></h4>
+                <h4><a href="biblio/guideline.php">Εκτίμηση καρδιοαγγειακού κινδύνου</a></h4>
+                <h4><a href="biblio/Heart.php" >Θωρακικός πόνος και η "αξία" του καρδιακού σκόρ</a></h4>
+				<h4><a href="biblio/ideal.php">Εξίσωση ιδεώδους Βάρους σώματος</a></h4>
+				<h4><a href="biblio/Osmolal.php">Χάσμα Ανιόντων</a></h4>
+				<h4><a href="biblio/PHQ.php">Εκτίμηση για κατάθλιψη , Ερωτηματολόγιο PHQ-9</a></h4>
+				<h4><a href="biblio/Estimate.php" >Εκτίμηση σπειραματικής διήθησης</a></h4>
+				<h4><a href="biblio/GFR.php">Νέα Εκτίμηση σπειραματικής διήθησης Κρεατινίνη -Cystacin-C χωρίς την φυλή</a></h4>
 				
             </div>
         </div>
@@ -35,11 +35,11 @@
             </div>
             <div class="post-titles">
 				<h4 style="font-weight:bold;">ΤΕΧΝΙΚΗ ΝΟΗΜΟΣΥΝΗ ΚΑΙ ΜΗΧΑΝΙΚΗ ΜΑΘΗΣΗ</h4>
-                <h4><a href="AI.php" >AI - Μιά επανάσταση στην Ιατρική. Πώς θα είναι ?</a></h4>
-                <h4><a href="chat.php" >ChatGPT και περιγεννητική Ιατρική</a></h4>
-                <h4><a href="2024.php" >Εφαρμογές AI στην Ιατρική</a></h4>
-                <h4><a href="reviews.php" >Ανασκόπηση των chat-bot στην Ιατρική</a></h4>
-				<h4><a href="genikos.php" >Γενικός Κανονισμός για την Προστασία Δεδομένων</a></h4>
+                <h4><a href="biblio/AI.php" >AI - Μιά επανάσταση στην Ιατρική. Πώς θα είναι ?</a></h4>
+                <h4><a href="biblio/chat.php" >ChatGPT και περιγεννητική Ιατρική</a></h4>
+                <h4><a href="biblio/2024.php" >Εφαρμογές AI στην Ιατρική</a></h4>
+                <h4><a href="biblio/reviews.php" >Ανασκόπηση των chat-bot στην Ιατρική</a></h4>
+				<h4><a href="biblio/genikos.php" >Γενικός Κανονισμός για την Προστασία Δεδομένων</a></h4>
 				
             </div>
         </div>
