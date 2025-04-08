@@ -331,6 +331,9 @@
 				  <a href="mailto:stavroula3980@gmail.com">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
+				  <a href="auxi/stavroula_book.php" >
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </a>
 				  
                   
                 </div>
