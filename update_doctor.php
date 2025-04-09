@@ -19,7 +19,6 @@ if ($stmt === false) {
 mysqli_stmt_bind_param($stmt, "i", $user);
 
 if (mysqli_stmt_execute($stmt)) {
-    mysqli_stmt_close($stmt);
     header("Location: https://ygeiafirst.net/menu/choose_doctor.php");
     exit();
 } else {
