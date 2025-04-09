@@ -39,5 +39,5 @@ include('up.php'); ?>
     </div>
   </section><br><br>
 </div>
-<?php include ('tincker16.php')?>
+<?php include ('auxi/tincker16.php')?>
 <?php include('down.php'); ?>
