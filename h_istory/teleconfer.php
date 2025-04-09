@@ -45,22 +45,22 @@ if (mysqli_num_rows($result) > 0) {
     echo "</tbody></table><br>";
 
 	if (isset($_SESSION['role']) && $_SESSION['role'] == 'Doctor'){
-		echo '<button style="background-color: rgb(162,235,182) ;"><a href="' . BASE_URL . 'patiens.php">
+		echo '<button style="background-color: rgb(162,235,182) ;"><a href="' . BASE_URL . 'menu/patiens.php">
 					  Πίσω
 					</a></button><br><br>';
 	} else {
-	echo '<button style="background-color: rgb(162,235,182) ;"><a href="' . BASE_URL . 'my_data.php">
+	echo '<button style="background-color: rgb(162,235,182) ;"><a href="' . BASE_URL . 'menu/my_data.php">
 					  Πίσω
 	</a></button><br><br>';}
     echo "</div>";
 } else {
     echo "<p style='color:red;'>Δεν βρέθηκαν ιστορικά δεδομένα για τον χρήστη.</p>";
 	if (isset($_SESSION['role']) && $_SESSION['role'] == 'Doctor'){
-		echo '<button style="background-color: rgb(162,235,182) ;"><a href="' . BASE_URL . 'patiens.php">
+		echo '<button style="background-color: rgb(162,235,182) ;"><a href="' . BASE_URL . 'menu/patiens.php">
 					  Πίσω
 					</a></button><br><br>';
 	} else {
-	echo '<button style="background-color: rgb(162,235,182) ;"><a href="' . BASE_URL . 'my_data.php">
+	echo '<button style="background-color: rgb(162,235,182) ;"><a href="' . BASE_URL . 'menu/my_data.php">
 					  Πίσω
 	</a></button><br><br>';}
 }

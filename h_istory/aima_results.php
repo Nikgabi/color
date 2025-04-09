@@ -155,7 +155,7 @@ if (isset($_POST['submit'])) {
 				
 				
 			<?php endif; ?>
-		<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>calculation_istor.php">
+		<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>menu/calculation_istor.php">
 					  Πίσω
 					</a></button><br>
 					<p style="color: red">Μπορείτε σε επόμενο χρόνο να εισάγετε νέα αποτελέσματα εξετάσεών σας</p><br><br>
