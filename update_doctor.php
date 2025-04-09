@@ -15,7 +15,7 @@
 	mysqli_stmt_bind_param($stmt, "i", $user);
 
 	if (mysqli_stmt_execute($stmt)) {
-		header("Location: choose_doctor.php");
+		header("Location: menu/choose_doctor.php");
 		exit();
 	} else {
 		echo "Σφάλμα στην εκτέλεση του query.";

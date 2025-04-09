@@ -87,16 +87,16 @@
               <div class="d-flex mr-auto flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav">
                   <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>index.php">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>calculation_istor.php">ιστορικο</a></li>
-                  <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>calculation.php">υπολογισμοι</a></li>
-                  <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>blog.php">αρθρα</a></li>
-                  <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>doctors.php">Doctors</a></li>
-                  <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>charts.php">Διαγραμματα</a></li>
+                  <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>menu/calculation_istor.php">ιστορικο</a></li>
+                  <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>menu/calculation.php">υπολογισμοι</a></li>
+                  <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>menu/blog.php">αρθρα</a></li>
+                  <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>menu/doctors.php">Doctors</a></li>
+                  <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>menu/charts.php">Διαγραμματα</a></li>
                   <?php
                     if (isset($_SESSION['consultant']) && $_SESSION['consultant'] !== '0' && !empty($_SESSION['consultant'])) {
-                      echo '<li class="nav-item"><a class="nav-link" href="' . BASE_URL . 'your_doctor.php">Ο ΓΙΑΤΡΟΣ ΣΟΥ</a></li>';
+                      echo '<li class="nav-item"><a class="nav-link" href="' . BASE_URL . 'menu/your_doctor.php">Ο ΓΙΑΤΡΟΣ ΣΟΥ</a></li>';
                     } else if ((isset($_SESSION['email']) && isset($_SESSION['role'])) && $_SESSION['role'] == 'visitor') {
-                      echo '<li class="nav-item"><a class="nav-link" href="' . BASE_URL . 'choose_doctor.php">ΔΙΑΛΕΞΕ ΓΙΑΤΡΟ</a></li>';
+                      echo '<li class="nav-item"><a class="nav-link" href="' . BASE_URL . 'menu/choose_doctor.php">ΔΙΑΛΕΞΕ ΓΙΑΤΡΟ</a></li>';
                     } else if ((isset($_SESSION['email']) && isset($_SESSION['role'])) && $_SESSION['role'] == 'Doctor') {
                       echo '<li class="nav-item"><a class="nav-link" href="' . BASE_URL . 'h_istory/teleconfer_con.php?consultant=' . $_SESSION['id_user'] . '">ΤΗΛΕΙΑΤΡΙΚΗ</a></li>';
                     }
@@ -116,9 +116,9 @@
                     echo '<a href="' . BASE_URL . 'register.php"><i class="fa fa-user"></i><span>Sign Up</span></a>';
                   } else {
                     if (isset($_SESSION['role']) && $_SESSION['role'] == 'visitor') {
-                      echo '<i><a class="" href="' . BASE_URL . 'my_data.php">YOUR DATA</a></i>';
+                      echo '<i><a class="" href="' . BASE_URL . 'menu/my_data.php">YOUR DATA</a></i>';
                     } else if (isset($_SESSION['role']) && $_SESSION['role'] == 'Doctor') {
-                      echo '<i><span><a class="" href="' . BASE_URL . 'patiens.php">ΑΣΘΕΝΕΙΣ ΣΟΥ</a></span></i>';
+                      echo '<i><span><a class="" href="' . BASE_URL . 'menu/patiens.php">ΑΣΘΕΝΕΙΣ ΣΟΥ</a></span></i>';
                     }
                   }
                 ?>

@@ -11,7 +11,7 @@
 		---
 		<a  href="<?php echo BASE_URL; ?>auxi/instructions.php">ΟΔΗΓΙΕΣ</a>
 		---
-		<a  href="<?php echo BASE_URL; ?>bibliography.php" >ΒΙΒΛΙΟΓΡΑΦΙΑ</a>
+		<a  href="<?php echo BASE_URL; ?>menu/bibliography.php" >ΒΙΒΛΙΟΓΡΑΦΙΑ</a>
 		---
 		<a  href="<?php echo BASE_URL; ?>auxi/testimonials.php" >TESTIMONIALS</a>
 		---
