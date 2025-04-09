@@ -67,9 +67,9 @@
 							<h2>Απαντήσεις για την Κατάθλιψη</h2>
 							<h3><strong>SCORE:</strong> <?php echo isset($scor) ? $scor : "-"; ?></h3><br>
                             <h3><strong>Εκτίμηση:</strong> <?php echo $message; ?></h3>
-							<h4>Βιβλιογραφία, Journal of General internal medicine: <button><a href="<?php echo BASE_URL; ?>PHQ.php" target="_blank">Δές το άρθρο</a></button></h4><br>
+							<h4>Βιβλιογραφία, Journal of General internal medicine: <button><a href="<?php echo BASE_URL; ?>biblio/PHQ.php">Δές το άρθρο</a></button></h4><br>
                  <?php endif; ?>
-				 <button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>calculation.php">Πίσω</a></button><br><br>
+				 <button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>menu/calculation.php">Πίσω</a></button><br><br>
 				 
 </div>
     </div>

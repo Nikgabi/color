@@ -98,7 +98,7 @@ $risk_2=risk_general($age,$gender); ?>
 <h5> Ο γενικός κίνδυνος για άτομα ίδιας ηλικίας και φύλου για τα επόμενα 10 χρόνια είναι:  <?php echo ($risk_2) ;?> %</h5><br>
 <h4>Βιβλιογραφία, The new England Journal of Medicine: <button><a href="https://www.nejm.org/doi/full/10.1056/NEJM199006073222304" target="_blank">Δές το άρθρο</a></button></h4><br>
 <p>Ενημερώστε τον καρδιολόγο σας ή τον γιατρό σας για τυχόν λήψη προληπτικής αγωγής</p><br>
-<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>calculation.php">Πίσω</a></button><br><br>
+<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>menu/calculation.php">Πίσω</a></button><br><br>
 </div></div>
 
 <?php include('../down.php'); ?>

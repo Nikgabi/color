@@ -150,7 +150,7 @@ $query_run = mysqli_query($con, $query);}
 				
 				
 			<?php endif; ?>
-		<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>calculation.php">
+		<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>menu/calculation.php">
 					  Υπολογισμοί
 					</a></button><br><br>
 			</div>

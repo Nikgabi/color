@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
                 <br>
                 <div style="display: flex; gap: 20px; flex-direction: row;">
 				<input type="submit" name="submit" value="Υπολογισμός" style="background-color: rgb(162,235,182) ;"><br>
-				<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>calculation.php">Πίσω</a></button><br><br>
+				<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>menu/calculation.php">Πίσω</a></button><br><br>
 				</div><br>
 				<?php if (isset($_POST['submit'])): ?>
 				<div style="display: flex; flex-direction: row ; align-items: center; gap: 15px;">

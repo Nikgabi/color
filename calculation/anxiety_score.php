@@ -73,7 +73,7 @@
                             <h3><strong>Εκτίμηση:</strong> <?php echo $message; ?></h3>
 							<h4>Βιβλιογραφία, Arch of internal medicine: <button><a href="https://pubmed.ncbi.nlm.nih.gov/16717171/" target="_blank">Δές το άρθρο</a></button></h4><br>
                  <?php endif; ?>
-			<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>calculation.php">Πίσω</a></button><br><br>
+			<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>menu/calculation.php">Πίσω</a></button><br><br>
 </div>
 </div>				 
 </div>

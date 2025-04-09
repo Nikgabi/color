@@ -76,7 +76,7 @@
 							<h3><strong>SCORE:</strong> <?php echo $scor ; ?></h3><br>
                             <h3><strong></strong> <?php echo $message; ?></h3>
                  <?php endif; ?>
-			<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>calculation.php">Πίσω</a></button><br><br>
+			<button style="background-color: rgb(162,235,182) ;"><a href="<?php echo BASE_URL; ?>menu/calculation.php">Πίσω</a></button><br><br>
 </div>
 </div>
 </div>				 

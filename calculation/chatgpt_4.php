@@ -136,7 +136,7 @@
 									<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
 										<input type="submit" name="submit" value="Ερώτηση" style="background-color: rgb(162,235,182); padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
 										<button style="background-color: rgb(162,235,182); padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-											<a href="<?php echo BASE_URL; ?>calculation.php" style="text-decoration: none; color: black;">Πίσω</a>
+											<a href="<?php echo BASE_URL; ?>menu/calculation.php" style="text-decoration: none; color: black;">Πίσω</a>
 										</button>
 									</div>
 								</form> <?php } ?>
