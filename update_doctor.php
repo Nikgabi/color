@@ -1,5 +1,3 @@
-
-
 <?php 
 session_start();
 require_once('connection.php'); // καλύτερα από include για να μην φορτωθεί ξανά κατά λάθος
