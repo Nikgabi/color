@@ -7,7 +7,8 @@ if (!isset($_SESSION['id_user'])) {
 $user = intval($_SESSION['id_user']);
 
 // Φτιάχνουμε το query με απλό string (χωρίς bind)
-$query = "UPDATE user SET consultant = '', sygkat = '' WHERE id_user = $user";
+$query = "UPDATE user SET consultant = NULL, sygkat = NULL WHERE id_user = $user";
+
 
 // Debug: εμφάνιση του query (προσωρινά)
 echo "<p>Query που θα εκτελεστεί: <code>$query</code></p>";
