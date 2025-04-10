@@ -1,7 +1,5 @@
 <?php 
-session_start();
-require_once('connection.php'); // καλύτερα από include για να μην φορτωθεί ξανά κατά λάθος
-
+include('up.php');
 if (!isset($_SESSION['id_user'])) {
     die("Σφάλμα: Δεν υπάρχει ενεργός χρήστης.");
 }
