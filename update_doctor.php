@@ -17,12 +17,14 @@ if ($stmt === false) {
 mysqli_stmt_bind_param($stmt, "i", $user);
 
 if (mysqli_stmt_execute($stmt)) {
-    header("Location: https://ygeiafirst.net/menu/choose_doctor.php");
+	echo "Redirecting...<br>";
+	var_dump(headers_sent()); // TRUE αν έχουν σταλεί headers = ERROR
+	flush(); // αναγκάζει εμφάνιση της γραμμής
+	echo "<script>window.location.href='https://ygeiafirst.net/menu/choose_doctor.php';</script>";
+    //header("Location: https://ygeiafirst.net/menu/choose_doctor.php");
     exit();
 } else {
     echo "Σφάλμα στην εκτέλεση του query: " . mysqli_stmt_error($stmt);
-    mysqli_stmt_close($stmt);
-    mysqli_close($con);
 }
 ?>
 
