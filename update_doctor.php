@@ -1,8 +1,6 @@
 <?php 
-include('up.php');
-if (!isset($_SESSION['id_user'])) {
-    die("❌ Σφάλμα: Δεν υπάρχει ενεργός χρήστης.");
-}
+session_start();
+include ('connection.php');
 
 $user = intval($_SESSION['id_user']);
 
@@ -23,7 +21,6 @@ if (!$result) {
     header("Location: https://ygeiafirst.net/menu/choose_doctor.php");
     exit();
 }
-
 ?>
 
 
