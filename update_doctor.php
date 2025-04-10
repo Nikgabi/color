@@ -20,8 +20,6 @@ if (!$result) {
     // Αν αποτύχει
     die("❌ Σφάλμα στην εκτέλεση του query: " . mysqli_error($con));
 } else {
-    echo "✅ Το query εκτελέστηκε επιτυχώς.";
-    // Κάνε redirect (αν θέλεις) — προσωρινά το αφήνω σχολιασμένο
     header("Location: https://ygeiafirst.net/menu/choose_doctor.php");
     exit();
 }
