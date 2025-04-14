@@ -94,6 +94,9 @@
                   <a href="mailto:georgeakar@gmail.com">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </a>
+				  <a href="<?php echo BASE_URL; ?>auxi/george_book.php" >
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </a>
                 </div>
               </div>
             </div>
