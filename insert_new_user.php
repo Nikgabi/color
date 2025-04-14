@@ -64,7 +64,7 @@ if (isset($_POST['SubmitBtn'])) {
     if ($check_email_query_run) {
         if (mysqli_num_rows($check_email_query_run) > 0) {
             $_SESSION['status'] = "Το email που δώσατε ήδη υπάρχει";
-            header('Location: register.php');
+            header('Location: menu/register.php');
         } else {
             $query = "INSERT INTO user(name,email,password,verify_token,role,eidikotita) VALUES('$name','$email','$password','$verify_token','$role','$speciality')";
             $query_run = mysqli_query($con, $query);
@@ -73,15 +73,15 @@ if (isset($_POST['SubmitBtn'])) {
                 $_SESSION['id_user'] = mysqli_insert_id($con);
                 sendmail_verify($name, $email, $verify_token);
                 $_SESSION['status'] = "Η εγγραφή σας έγινε. Για να ολοκληρωθεί επιβεβαιώστε το email σας ακολουθώντας τον σύνδεσμο που σας στάλθηκε";
-                header('Location: login.php');
+                header('Location: menu/login.php');
             } else {
                 $_SESSION['status'] = "Η εγγραφή σας απέτυχε. Ξαναδοκιμάστε";
-                header('Location: register.php');
+                header('Location: menu/register.php');
             }
         }
     } else {
         $_SESSION['status'] = "Κάτι πήγε στραβά κατά τον έλεγχο του email.";
-        header('Location: register.php');
+        header('Location: menu/register.php');
     }
 } else {
     echo '<p>Κάτι πήγε στραβά!!</p>';

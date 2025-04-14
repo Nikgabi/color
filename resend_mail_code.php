@@ -55,13 +55,13 @@
 
                     resend_email_verify($name,$email,$verify_token);
                     $_SESSION['status']="Tο verification email Link σας έχει σταλεί στο email σας";
-                    header("Location:login.php");
+                    header("Location:menu/login.php");
                     exit(0);
 
                     }
                     else{
                         $_SESSION['status']="Tο email σας είναι ήδη επιβεβαιωμένο. Παρακαλώ κάνετε είσοδο";
-                        header("Location:login.php");
+                        header("Location:menu/login.php");
                         exit(0);
                     }
                 }
@@ -69,14 +69,14 @@
             
             else{
                 $_SESSION['status']="Δεν έχετε κάνει εγγραφή με αυτό το mail. Παρακαλώ κάνετε εγγραφή τώρα";
-                header("Location:register.php");
+                header("Location:menu/register.php");
                 exit(0);
             }
             
          }
     else{
             $_SESSION['status']="Παρακαλώ συμπληρώστε το email σας";
-            header("Location:resend_mail.php");
+            header("Location:menu/resend_mail.php");
             exit(0);
         }
         }

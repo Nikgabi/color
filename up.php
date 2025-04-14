@@ -107,13 +107,13 @@
               <div class="quote_btn-container">
                 <?php 
                   if(!isset($_SESSION['email'])){
-                    echo '<a href="' . BASE_URL . 'login.php"><i class="fa fa-user"></i><span>Login</span></a>';
+                    echo '<a href="' . BASE_URL . 'menu/login.php"><i class="fa fa-user"></i><span>Login</span></a>';
                   } else {
-                    echo '<a href="' . BASE_URL . 'logout.php"><i class="fa fa-user"></i><span>Logout</span></a>';
+                    echo '<a href="' . BASE_URL . 'menu/logout.php"><i class="fa fa-user"></i><span>Logout</span></a>';
                   }
 
                   if(!isset($_SESSION['email'])){
-                    echo '<a href="' . BASE_URL . 'register.php"><i class="fa fa-user"></i><span>Sign Up</span></a>';
+                    echo '<a href="' . BASE_URL . 'menu/register.php"><i class="fa fa-user"></i><span>Sign Up</span></a>';
                   } else {
                     if (isset($_SESSION['role']) && $_SESSION['role'] == 'visitor') {
                       echo '<i><a class="" href="' . BASE_URL . 'menu/my_data.php">YOUR DATA</a></i>';

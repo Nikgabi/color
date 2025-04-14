@@ -19,30 +19,30 @@ session_start();
 
                 if($update_query_run){
                     $_SESSION['status']="Το email επιβεβαιώθηκε. Παρακαλώ κάνετε login";
-                    header("Location:login.php");
+                    header("Location:menu/login.php");
                     exit(0);
                 }
                 else{
                     $_SESSION['status']="Το email ΔΕΝ επιβεβαιώθηκε.";
-                    header("Location:login.php");
+                    header("Location:menu/login.php");
                     exit(0);
                 }
             }
             else{
                 $_SESSION['status']="Το email επιβεβαιώθηκε. Παρακαλώ κάντε login";
-                header("Location:login.php");
+                header("Location:menu/login.php");
                 exit(0);
             }
         }
         else{
             $_SESSION['status']="Το token δεν υπάρχει";
-            header("Location:login.php");
+            header("Location:menu/login.php");
         }
     }
     else
     {
         $_SESSION['status']="δεν επιβεβαιώθηκε το email";
-        header("Location:login.php");
+        header("Location:menu/login.php");
 
     }
 

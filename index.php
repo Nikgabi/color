@@ -12,7 +12,7 @@ include('up.php'); ?>
       <div class="row">
         <div class="col-md-5 ">
           <div class="img-box">
-            <img src="images/about-img.jpg" alt="">
+            <img src="<?php echo BASE_URL; ?>images/about-img.jpg" alt="">
           </div>
         </div>
         <div class="col-md-7">

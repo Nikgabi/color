@@ -30,7 +30,7 @@ function send_password_reset($get_name,$get_email,$token){
             <h2>Your password reset Link from ygeiafirst.net</h2>
             <h5>You receive this email to reset your password from ygeiafirst.net</h5>
             <br><br>
-            <a href='https://ygeiafirst.net/change_password.php?token=$token&email=$get_email'>click Me</a>
+            <a href='https://ygeiafirst.net/menu/change_password.php?token=$token&email=$get_email'>click Me</a>
         ";
         $mail->Body = $email_template;
 
@@ -62,13 +62,13 @@ if(isset($_POST['submitBtn3']))
         {
             send_password_reset($get_name,$get_email,$token);
             $_SESSION['status']="Στάλθηκε ένα mail με ένα password reset Link ";
-            header("Location:password_reset.php");
+            header("Location:menu/password_reset.php");
             exit(0);
         }
         else
         {
             $_SESSION['status']="Κάτι πήγε λάθος. #1 ";
-            header("Location:password_reset.php");
+            header("Location:menu/password_reset.php");
             exit(0);
         }
 
@@ -76,7 +76,7 @@ if(isset($_POST['submitBtn3']))
     else
     {
         $_SESSION['status']="Το email που δηλώσατε δεν βρέθηκε ";
-        header("Location:password_reset.php");
+        header("Location:menu/password_reset.php");
         exit(0);
     }
 }
@@ -111,37 +111,37 @@ if(isset($_POST['submitBtn4'])){
                             $update_token_run=mysqli_query($con,$update_token);
 
                             $_SESSION['status']="To Νέο Password άλλαξε επιτυχώς. Κάνετε login";
-                            header("Location:login.php");
+                            header("Location:menu/login.php");
                             exit(0); 
                         }
                         else
                         {
                             $_SESSION['status']="Αποτυχία αλλαγής password";
-                            header("Location:change_password.php?token=$token&email=$email");
+                            header("Location:menu/change_password.php?token=$token&email=$email");
                             exit(0); 
                         }
                     }
                     else{
                     $_SESSION['status']="Το νέο Password πρέπει να είναι ίδιο με την επιβεβαίωση";
-                    header("Location:change_password.php?token=$token&email=$email");
+                    header("Location:menu/change_password.php?token=$token&email=$email");
                     exit(0);
                 }
             }
             else{
                 $_SESSION['status']="Invaled token ";
-                header("Location:change_password.php?token=$token&email=$email");
+                header("Location:menu/change_password.php?token=$token&email=$email");
                 exit(0);
             }
         }
         else{
             $_SESSION['status']="Πρέπει να συμπληρωθούν όλα τα πεδία ";
-            header("Location:change_password.php?token=$token&email=$email");
+            header("Location:menu/change_password.php?token=$token&email=$email");
             exit(0);
         }
     }
     else{
         $_SESSION['status']="Το token δεν βρέθηκε ";
-        header("Location:change_password.php");
+        header("Location:menu/change_password.php");
         exit(0);
     }
 }

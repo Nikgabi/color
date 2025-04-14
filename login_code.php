@@ -28,22 +28,22 @@
                     exit(0);
                 } else {
                     $_SESSION['status'] = "Ο λογαριασμός σας δεν είναι επαληθευμένος";
-                    header("Location:login.php");
+                    header("Location:menu/login.php");
                     exit(0);
                 }
             } else {
                 $_SESSION['status'] = "Λανθασμένος κωδικός πρόσβασης";
-                header("Location:login.php");
+                header("Location:menu/login.php");
                 exit(0);
             }
         } else {
             $_SESSION['status'] = "Το email δεν βρέθηκε";
-            header("Location:login.php");
+            header("Location:menu/login.php");
             exit(0);
         }
     } else {
         $_SESSION['status'] = "Συμπληρώστε όλα τα πεδία";
-        header("Location:login.php");
+        header("Location:menu/login.php");
         exit(0);
     }
 } ?>
