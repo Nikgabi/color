@@ -60,6 +60,12 @@
             <a href="<?php echo BASE_URL; ?>auxi/opinion.php">
               <i class="fa fa-star-o"></i><span>your_opinion</span>
             </a>
+			<a href="<?php echo BASE_URL; ?>auxi/thesis.php">
+              <i class="fa fa-book" aria-hidden="true"></i>
+              <span>
+                Thesis
+              </span>
+            </a>
             <?php 
               if ((isset($_SESSION['email']) && isset($_SESSION['role'])) && $_SESSION['role'] == 'Doctor') {
                 echo '
