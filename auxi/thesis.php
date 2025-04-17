@@ -1,4 +1,4 @@
-<?php include('up.php'); ?>
+<?php include('../up.php'); ?>
 
 
 <div style="position:relative;padding-top:max(60%,324px);width:100%;height:0;">
