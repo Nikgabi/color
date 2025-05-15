@@ -38,7 +38,7 @@
 
 											// Κλήση στο API του ChatGPT
 											$api_url = "https://api.openai.com/v1/chat/completions";
-											$env = parse_ini_file('/var/www/html/color/.env1');
+											$env = parse_ini_file('/var/www/html/color/.env');
 											$api_key = $env['API_KEY'];
 											
 
