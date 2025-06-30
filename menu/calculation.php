@@ -67,7 +67,7 @@
               Χάσμα ανιόντων
             </a><hr>
 			<h3>Τεχνητή νοημοσύνη </h3>
-			<a href="' . BASE_URL . 'calculation/chatgpt3.php">
+			<a href="' . BASE_URL . 'calculation/chatgpt_4.php">
               Ερώτημα προς το ChatGpt-4
             </a>
 			';}
