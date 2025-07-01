@@ -103,7 +103,7 @@
             </a><hr>
 			
 			<h4>Τεχνητή νοημοσύνη <span style="color:green;"> μόνο για εγγεγραμένους χρήστες.</span> </h4>
-			<a href="' . BASE_URL . 'calculation/chatgpt3.php">
+			<a href="' . BASE_URL . 'calculation/chatgpt_4.php">
               Ερώτημα προς το ChatGpt-4
             </a>
 				'; 
